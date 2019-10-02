@@ -2,7 +2,7 @@
 layout: resume
 title: Resume
 description: >
-  Resume of Xavi Portilla Edo.
+  Resume of Xavier Portilla Edo.
 hide_description: true
 menu: true
 order: 3

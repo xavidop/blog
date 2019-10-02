@@ -3,7 +3,7 @@
 # You can change `author1` to your shortname.
 xavi:
   # Replace <...> with your own (remove the < >)
-  name:              Xavi Portilla Edo
+  name:              Xavier Portilla Edo
   email:             xavierportillaedo@gmail.com
 
   # Used at the bottom of each page and at the top of the `about` layout
@@ -27,7 +27,7 @@ xavi:
     # download:        <url>
     email:           xavierportillaedo@gmail.com
     linkedin:        xavierportillaedo
-    rss:             https://xavierportillaedo.github.io/xaviscode/feed.xml
+    rss:             https://xavierportillaedo.github.io/feed.xml
     # facebook:        <username>
     # google:          <number>
     # vk:              <username>

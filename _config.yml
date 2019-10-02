@@ -12,14 +12,14 @@ url:                   https://xavierportillaedo.github.io
 # Use the empty string '' otherwise.
 # For GitHub project sites, this is usually the name of the project,
 # e.g. `/hydejack`.
-baseurl:               '/xaviscode/'
+baseurl:               ''
 
 # Language of your content in 2-letter code, e.g.: en, de.
 # You may also provide a location, e.g.: en-us, de_AT.
 lang:                  en
 
 # The title of your blog. Used in the sidebar and the browser tab.
-title:                 Xavi Portilla Edo
+title:                 Xavier Portilla Edo
 
 # A short description (~150 chars) of the page used for the meta description tag.
 # Can use markdown, but no more than one paragraph (enforced by `>`)
@@ -49,7 +49,7 @@ author:
 # Add links to the sidebar.
 menu:
   - title:             Blog
-    url:               /blog/
+    url:               /index.html
   - title:             About
     url:               /about/
   - title:             Resume
@@ -127,7 +127,7 @@ defaults:
 
 # Set your Google Analytics id to receive `pageview` events.
 # To remove Google Anaylics from your page, remove the line below.
-# google_analytics:      UA-XXXXXXXX-X
+google_analytics:      UA-149142925-1
 
 # Setting a disqus shortname will enable the comment section on
 # pages with `comments: true` in the front matter.
