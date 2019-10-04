@@ -1,6 +1,5 @@
 ---
 layout: projects
-title: Projects
+title: Categories
 show_collection: projects
-
 ---

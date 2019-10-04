@@ -5,6 +5,13 @@ description: >
   A page showing Hydejack-specific markdown content.
 image: /assets/img/blog/example-content-iii.jpg
 noindex: true
+comments: true
+author: xavi
+kate: hl markdown;
+categories: [spring]
+tags:
+  - spring
+  - java
 ---
 
 Hydejack offers a few additional features to markup your markdown.

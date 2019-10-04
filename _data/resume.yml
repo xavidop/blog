@@ -2,13 +2,13 @@
 # If you don't have a JSON Resume you can just edit this YAML file instead.
 # See also: <https://jsonresume.org/>.
 basics:
-  name: "Xavi Portilla Edo"
+  name: "Xavier Portilla Edo"
   label: "Software Engineer"
   picture: "/assets/icons/icon.png"
   email: "xavierportilla@gmai.com"
   phone: "(+34) 628 921 252"
   summary: >
-    Xavi hails from Tulsa.
+    Xavier hails from Tulsa.
     He has earned degrees from the University of Oklahoma and Stanford. (Go Sooners and Cardinals!)
     Before starting Pied Piper, he worked for Hooli as a part time software developer.
     While his work focuses on applied information theory,

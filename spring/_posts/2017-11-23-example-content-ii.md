@@ -8,10 +8,9 @@ noindex: true
 comments: true
 author: xavi
 kate: hl markdown;
-categories: [blog]
+categories: [spring]
 tags:
-  - Germany
-  - France
+  - spring
 keywords:
   - Germany
   - France
