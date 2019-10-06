@@ -3,7 +3,7 @@ layout: project
 title: 'Spring'
 image: /assets/img/categories/spring.png
 screenshot: /assets/img/categories/spring.png
-caption: Spring use cases for every day development
+caption: Examples for every day devs
 description: >
  The Spring Framework is an application framework and inversion of control container for the Java platform.
  Spring is a powerful, lightweight framework used for application development. 

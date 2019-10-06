@@ -8,21 +8,14 @@ basics:
   email: "xavierportilla@gmai.com"
   phone: "(+34) 628 921 252"
   summary: >
-    Xavier hails from Tulsa.
-    He has earned degrees from the University of Oklahoma and Stanford. (Go Sooners and Cardinals!)
-    Before starting Pied Piper, he worked for Hooli as a part time software developer.
-    While his work focuses on applied information theory,
-    mostly optimizing lossless compression schema of both the length-limited and adaptive variants,
-    his non-work interests range widely,
-    everything from quantum computing to chaos theory.
-    He could tell you about it, but THAT would NOT be a “length-limited” conversation!
-    Open `_data/resume.yml` to edit this text.
+    Xavier hails from Valencia.
+    He has earned degrees from the Polytechnic University of Valencia.
   location:
     address: ""
     postalCode: ""
     city: "Madrid"
     countryCode: "ES"
-    region: "Spain"
+    region: ""
   profiles:
     - network: "Github"
       username: "xavierportillaedo"
@@ -31,72 +24,125 @@ basics:
       username: "xavierportillaedo"
       url: "https://linkedin.com/in/xavierportillaedo/"
 work:
-  - company: "Pied Piper"
-    position: "CEO/President"
-    website: "https://piedpiper.com"
-    startDate: "2013-12-01"
+  - company: "Ericsson"
+    position: "R&D Advance Software Engineer"
+    website: "https://www.ericsson.com/en"
+    startDate: "2018-09-01"
     endDate: ""
     summary: >
-      Pied Piper is a multi-platform technology based on a proprietary universal compression algorithm that has
-      consistently fielded high Weisman Scores™ that are not merely competitive,
-      but approach the theoretical limit of lossless compression.
+      Ericsson, is a Swedish multinational networking and telecommunications 
+      company headquartered in Stockholm. The company offers services, 
+      software and infrastructure in information and communications technology for telecommunications.
     highlights:
-      - "Build an algorithm for artist to detect if their music was violating copy right infringement laws"
-      - "Successfully won Techcrunch Disrupt"
-      - "Optimized an algorithm that holds the current world record for Weisman Scores"
+      - "Build 5G Policy control function"
+      - "Stack used: Java, Maven, Docker, Kubernetes, Helm"
+  - company: "Hyperloop UPV"
+    position: "Software Manager"
+    website: "https://hyperloopupv.com/"
+    startDate: "2016-09-01"
+    endDate: ""
+    summary: >
+      We are developing a futuristic pod design for the Hyperloop Pod Competition organized by SpaceX 
+      that will be held in Los Angeles at the SpaceX Headquarters
+    highlights:
+      - "Build the entire software Architecture.
+      We are focused on the improvement of the way we collect the data from the POD in order to analyze it"
+      - "Stack used: Java, Kafka, Spark, NodeJS, Electron, Docker, C++, Mule "
+  - company: "IVI RMA Global"
+    position: "Software Architect"
+    website: "https://ivi-fertility.com/"
+    startDate: "2016-01-01"
+    endDate: "2017-09-01"
+    summary: >
+      IVI RMA Global is a medical institute entirely devoted to human reproduction since 1990. 
+      Nowadays, IVIRMA Global counts with a total of 65 clinics spread around 11 countries, 
+      7 investigation centers and teaching and training centers dedicated to Assisted Reproduction professionals.
+    highlights:
+      - "Build mobility and innovation projects for IVI clinics"
+      - "Stack used: Javascript, Java, Mule, Servoy, Maven"
+  - company: "Everis"
+    position: "Software Analyst"
+    website: "https://www.everis.com/global/en"
+    startDate: "2014-01-01"
+    endDate: "2017-01-01"
+    summary: >
+      Everis is an NTT DATA Company, dedicated to consulting and outsourcing in all sectors.
+      Everis is a large family with 24,500 professionals across Europe, USA and Latin America.
+    highlights:
+      - "Build complex software solutions"
+      - "Stack used: Java, Maven, Spring"
 volunteer:
-  - organization: "CoderDojo"
-    position: "Teacher"
-    website: "https://coderdojo.com/"
-    startDate: "2012-01-01"
-    endDate: "2013-01-01"
-    summary: "Global movement of free coding clubs for young people."
+  - organization: "DevopsDays 2020"
+    position: "Main Organizer"
+    website: "https://devopsdays.org/events/2020-madrid/welcome/"
+    startDate: "2019-03-01"
+    endDate: "2020-02-21"
+    summary: "DevOpsDays is a worldwide series of community run technical conferences 
+    covering topics of software development, IT infrastructure operations, and the intersection between them."
     highlights:
-      - "Awarded 'Teacher of the Month'"
+      - "The first DevOpsDays in Spain"
 education:
-  - institution: "University of Oklahoma"
-    area: "Information Technology"
+  - institution: "Polythecnic University of Valencia"
+    area: "Computer Science and Engineering"
     studyType: "Bachelor"
-    startDate: "2011-06-01"
-    endDate: "2014-01-01"
+    startDate: "2010-09-01"
+    endDate: "2014-09-01"
     gpa: "4.0"
-    courses:
-      - "DB1101 - Basic SQL"
-      - "CS2011 - Java Introduction"
+  - institution: "Polythecnic University of Valencia"
+    area: "Mobile Application Development"
+    studyType: "Master"
+    startDate: "2016-09-01"
+    endDate: "2017-08-01"
+    gpa: "4.0"
 awards:
-  - title: "Digital Compression Pioneer Award"
-    date: "2014-11-01"
-    awarder: "Techcrunch"
-    summary: "There is no spoon."
-publications:
-  - name: "Video compression for 3d media"
-    publisher: "Hooli"
-    releaseDate: "2014-10-01"
-    website: "https://en.wikipedia.org/wiki/Silicon_Valley_(TV_series)"
-    summary: "Innovative middle-out compression algorithm that changes the way we store data."
+  - title: "Imagine Express 2018 Winner"
+    date: "2018-02-15"
+    awarder: "Imagine Creativity Center"
+  - title: "Space Apps Challenge 2017 Winner"
+    date: "2017-05-15"
+    awarder: "NASA"
+  - title: "Google Health Hachathon Winner"
+    date: "2016-05-15"
+    awarder: "Google"
+  - title: "Everis 1W4U ideas contest"
+    date: "2015-05-15"
+    awarder: "Everis"
 skills:
-  - name: "Web Development"
+  - name: "Java"
     level: "Master"
     keywords:
-      - "HTML"
-      - "CSS"
-      - "Javascript"
-  - name: "Compression"
+      - "Maven"
+      - "Spring"
+      - "Spring Boot"
+  - name: "Microservices"
     level: "Master"
     keywords:
-      - "Mpeg"
-      - "MP4"
-      - "GIF"
+      - "Docker"
+      - "Kubernetes"
+      - "Helm"
+  - name: "DevOps"
+    level: "Master"
+    keywords:
+      - "Jenkins"
+      - "CI"
+      - "CD"
 languages:
   - language: "English"
     fluency: "Native speaker"
+  - language: "Spanish"
+    fluency: "Native speaker"
+  - language: "Catalan"
+    fluency: "Native speaker"
 interests:
-  - name: "Wildlife"
+  - name: "Music"
     keywords:
-      - "Ferrets"
-      - "Unicorns"
-references:
-  - name: "Pepe Juan"
-    reference: >
-      It is my pleasure to recommend Xavi, his performance working as a consultant for Main St.
-      Company proved that he will be a valuable addition to any company.
+      - "Alternative"
+      - "Electronic"
+  - name: "Technology"
+    keywords:
+      - "Kubernetes"
+      - "Docker"
+  - name: "Innovation"
+    keywords:
+      - "Startups"
+      - "Venture Capital"

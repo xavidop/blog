@@ -9,12 +9,12 @@ order: 3
 left_column:
  - work
  - volunteer
- - awards
  - publications
- # - references
+ - references
 right_column:
  - languages
- # - skills
+ - skills
  - education
+ - awards
  - interests
 ---
