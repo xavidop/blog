@@ -24,7 +24,7 @@ title:                 Xavier Portilla Edo
 # A short description (~150 chars) of the page used for the meta description tag.
 # Can use markdown, but no more than one paragraph (enforced by `>`)
 description:           >
-  Personal Blog of Xavi Portilla Edo.
+  Personal Blog of Xavier Portilla Edo.
 
 # A shorter description for the sidebar.
 tagline:               |
@@ -302,7 +302,7 @@ remote_theme: qwtel/hydejack@v8.5.0
 
 # Used on index and about sites
 social:
-  name:                Xavi Portilla Edo
+  name:                Xavier Portilla Edo
   links:
     - https://github.com/xavierportillaedo
     - https://www.linkedin.com/in/xavierportillaedo/
