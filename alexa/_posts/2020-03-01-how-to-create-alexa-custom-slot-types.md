@@ -30,7 +30,7 @@ Building a representative set of custom values and sample utterances is an impor
 
 First of all what you need is to login in [Amazon Alexa Console](https://developer.amazon.com/alexa){:target="_blank"}. Once you have completed this step you must access any of your skills. If you don't have any skills crate yet, it's time to create it. 
 
-Now it is time to create your own custom slot type. 
+Now let's create your own custom slot type. 
 
 In Build section, on the left, there is an option called "Slot types" as you can see in the image below. Click there to view the options that Alexa developer console offers to us.
 
@@ -41,7 +41,7 @@ Build section
 
 Clicking the button "Add" you will find a new section with two options:
 * **Create custom value type:**
-  this is the option we need in order to crate a full new slot ready to use in our skill
+  this is the option we need in order to crate a full new slot which will be ready to use in our skill
 * **Use an existing slot type from Alexa's built-in library:**
   here you have all the slots that Amazon have made for you like months, days of the week, movies, etc.
 
@@ -67,12 +67,12 @@ You have two ways to add custom values to this list:
   {:.figure}
   
 
-Here you have an example with all pokemons:
+Here you have an example with all pokemons proeprly set in the Alexa DEveloper Console:
 
 ![Full-width image](/assets/img/blog/tutorials/custom-slot-types/custom-slot-types-5.png){:.lead data-width="800" data-height="100"}
 List of Pokemons
 {:.figure}
 
-I have created for you some custom values if you want to reuse. You can find them in this [post](/alexa/2020-03-01-alexa-useful-custom-slots-types)
+I have created for you some custom values if you want to reuse it. You can find them in this [post](/alexa/2020-03-01-alexa-useful-custom-slots-types)
 
 That's all folks! I hope it will be useful! If you have any doubts or questions do not hesitate to contact me or put a comment below!
