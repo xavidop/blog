@@ -20,9 +20,10 @@ keywords:
 lang: en
 ---
 
-As Alexa best practices say:
 
 The usability of the skill directly depends on how well the sample utterances and custom slot values represent real-world language use.
+
+As Alexa best practices say:
 
 Building a representative set of custom values and sample utterances is an important process and one that requires iteration. During development and testing, try using many different phrases to invoke each intent. If you can observe other users during testing, note the phrases that they speak to invoke each intent. Continually update the custom values and sample utterances file to ensure that it includes instances of your users' most common phrasings.
 

@@ -3,7 +3,7 @@ layout: post
 title: List of Alexa Skills made by me
 image: /assets/img/blog/post-headers/develop.jpg
 description: >
- My Alexa skills
+ My skills
 noindex: true
 comments: true
 author: xavi
@@ -17,10 +17,9 @@ keywords:
 lang: en
 ---
 
-I am an Alexa enthusiastic and in my free time what I usually do is new skills:
+I am an Alexa enthusiastic so this is why in my free time what I usually do is develop Alexa skills that will help or improve the life of people.
 
 Find below the list of all my skills:
-
 
 # Pokemundo
 
