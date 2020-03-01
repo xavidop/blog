@@ -111,6 +111,10 @@ awards:
     date: "2015-05-15"
     awarder: "Everis"
 skills:
+  - name: "Alexa"
+    level: "Master"
+    keywords:
+      - "Skills"
   - name: "Java"
     level: "Master"
     keywords:
