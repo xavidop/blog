@@ -1,12 +1,13 @@
 ---
 layout: project
-title: 'Java'
-image: /assets/img/categories/java.jpg
-screenshot: /assets/img/categories/java.jpg
-caption: Everything you need to develop with Java
+title: 'Alexa'
+image: /assets/img/categories/alexa.png
+screenshot: /assets/img/categories/alexa.png
+caption: Examples for every day devs
 description: >
-    Java is a widely used programming language. It is one of the most popular programming language in the world.
+ Alexa is a virtual digital assistant developed by Amazon for its Amazon Echo and Echo Dot line of computing devices. 
 ---
+
 {% assign posts = site.categories[page.slug] | default:site.tags[page.slug] | default:site.posts %}
 
 {% if page.title.size > 0 %}
@@ -31,5 +32,3 @@ description: >
   {% include components/post-list-item.html post=post format=list_entry %}
   {% if forloop.last %}</ul>{% endif %}
 {% endfor %}
-
-
