@@ -33,7 +33,7 @@ Below you can find some custom slots made by me. I hope ti will be useful!
   <p>
     You can test this custom slot in my Alexa Skill Pokemundo. Here you have the <a href="https://www.amazon.es/Xavier-Portilla-Edo-Pokemundo/dp/B07Z638QX2" target="_blank">link</a><br/>
     The id is the number of the Pokemon in the Pokedex + 1
-    <script src="https://gist.github.com/xavierportillaedo/dda153f6723bfe1b5b731c70e8a267ab.js"></script>
+    <script src="https://gist.github.com/xavidop/dda153f6723bfe1b5b731c70e8a267ab.js"></script>
   </p>
 </details>
 
@@ -43,7 +43,7 @@ Below you can find some custom slots made by me. I hope ti will be useful!
   <summary>Click to expand!</summary>
   You can test this custom slot in my Alexa Skill Resultados Futbol. Here you have the <a href="https://www.amazon.es/Xavier-Portilla-Edo-Resultados-f%C3%BAtbol/dp/B082R8715G" target="_blank">link</a><br/>
   The id is the id of the team used by the API i am using for this skill. The API is <a href="https://www.football-data.org/documentation/api" target="_blank">Football Data Org</a>
-  <script src="https://gist.github.com/xavierportillaedo/c0bafcb8e63c74015310da9429326cad.js"></script>
+  <script src="https://gist.github.com/xavidop/c0bafcb8e63c74015310da9429326cad.js"></script>
 </details>
 
 
@@ -52,7 +52,7 @@ Below you can find some custom slots made by me. I hope ti will be useful!
   <summary>Click to expand!</summary>
   You can test this custom slot in my Alexa Skill Resultados Futbol. Here you have the <a href="https://www.amazon.es/Xavier-Portilla-Edo-Resultados-f%C3%BAtbol/dp/B082R8715G" target="_blank">link</a><br/>
   The id is the id of the league used by the API i am using for this skill. The API is <a href="https://www.football-data.org/documentation/api" target="_blank">Football Data Org</a>
-  <script src="https://gist.github.com/xavierportillaedo/a8522b21562e552b35df62e343ae6abf.js"></script>
+  <script src="https://gist.github.com/xavidop/a8522b21562e552b35df62e343ae6abf.js"></script>
 </details>
 
 
@@ -61,5 +61,5 @@ Below you can find some custom slots made by me. I hope ti will be useful!
   <summary>Click to expand!</summary>
   You can test this custom slot in my Alexa Skill Resultados Baloncesto. Here you have the <a href="https://www.amazon.es/Xavier-Portilla-Edo-Resultados-Baloncesto/dp/B082V9FDLM" target="_blank">link</a><br/>
   The id is the id of the team used by the API i am using for this skill. The API is <a href="https://www.balldontlie.io/#introduction" target="_blank">Ball Don't Lie</a>
-  <script src="https://gist.github.com/xavierportillaedo/cc6e265d3d61f58308f2b469de751341.js"></script>
+  <script src="https://gist.github.com/xavidop/cc6e265d3d61f58308f2b469de751341.js"></script>
 </details>

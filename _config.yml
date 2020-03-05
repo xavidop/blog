@@ -4,7 +4,7 @@
 # IMPORTANT: Set the URL of your site.
 # Set to https://<username>.github.io when hosting on GitHub Pages
 # (unless you are using a custom domain).
-url:                   https://xavierportillaedo.github.io
+url:                   https://xavidop.github.io
 
 # IMPORTANT: Set The "base URL" of your site.
 # When your site sits in a subdirectory, set to /<name of directory>
@@ -304,7 +304,7 @@ remote_theme: qwtel/hydejack@v8.5.0
 social:
   name:                Xavier Portilla Edo
   links:
-    - https://github.com/xavierportillaedo
+    - https://github.com/xavidop
     - https://www.linkedin.com/in/xavierportillaedo/
 
 

@@ -21,8 +21,8 @@ basics:
     region: ""
   profiles:
     - network: "Github"
-      username: "xavierportillaedo"
-      url: "https://github.com/xavierportillaedo"
+      username: "xavidop"
+      url: "https://github.com/xavidop"
     - network: "LinkedIn"
       username: "xavierportillaedo"
       url: "https://linkedin.com/in/xavierportillaedo/"
