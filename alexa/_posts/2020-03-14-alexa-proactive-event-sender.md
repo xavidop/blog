@@ -22,9 +22,10 @@ keywords:
   - skill
 lang: es
 ---
-# Cliente Java de proactive events (notificaciones)
 
 Este proyecto tiene como objetivo simplificar el envío de proactive events (notificaciones) a una skill desde un proceso externo desarrollado en Java.
+
+# Cliente Java de proactive events (notificaciones)
 
 Basándome en el video [De Cero a Héroe, Parte 13: Proactive Events Notifications](https://www.youtube.com/watch?v=COnuc-LX-1Y&t=714s) de [German Viscuso](https://twitter.com/germanviscuso?s=20) y el proyecto de Github de [Luca Rosellini](https://github.com/lucarosellini/proactive-events-standalone-sender) he creado este cliente Java para que sea fácil de enviar notificaciones desde cualquier backend basado en Java/Kotlin o por ejemplo, desde cualquier dispositivo Android.
 
