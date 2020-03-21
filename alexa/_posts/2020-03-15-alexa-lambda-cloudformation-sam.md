@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Alexa Skill, AWS CloudFormation and Serverless Application Model (SAM)
+title:  Alexa Skill, AWS CloudFormation y Serverless Application Model (SAM)
 image: /assets/img/blog/post-headers/alexa-lambda-cloudformation-sam.jpg
 description: >
   Alexa Skill desarrollada en Java usando AWS CloudFormation y Serverless Application Model (SAM)
