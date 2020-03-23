@@ -1,6 +1,6 @@
 ---
 layout: post
-title:   Alexa Skill with Spring Boot
+title: Alexa Skill con Spring Boot
 image: /assets/img/blog/post-headers/alexa-springboot.jpg
 description: >
   Alexa Skill desarrollada en Java usando Spring Boot
@@ -22,19 +22,19 @@ keywords:
 lang: es
 ---
 
-You can build a custom skill for Alexa by extending a servlet that accepts requests from and sends responses to the Alexa service in the cloud.
+Puedes crear una custom Skill para Alexa extendiendo un servlet que acepta solicitudes y envía respuestas al servicio Alexa en la nube.
 
-# Alexa Skill with Spring Boot
+# Alexa Skill con Spring Boot
 
 
-This project will walk through how to build a Alexa Skill with Spring Boot and Http Servlet mapping example.
+En este post explicaré cómo construir una Alexa Skill con Spring Boot junto con un ejemplo Http Servlet mapping.
  
-Servlet mapping can be achieved either by using `ServletRegistrationBean` in Spring Boot as well as using Spring annotations. 
-In this example we are going to use the `ServletRegistrationBean` class to register the Alexa Servlet as a Spring bean.
+El servlet mapping se puede lograr mediante el uso de la clase `ServletRegistrationBean` en Spring Boot, así como también mediante anotaciones de Spring.
+En este ejemplo, vamos a utilizar la clase `ServletRegistrationBean` para registrar el Servlet de Alexa como un Spring bean.
 
-## Prerequisites
+## Requisito previo
 
-Here you have the technologies used in this project
+Aquí tienes las tecnologías utilizadas en este proyecto.
 1. Java 1.8
 2. Alexa Skill Kit 2.29.0
 3. Spring Boot 2.5.0.RELEASE
@@ -42,8 +42,8 @@ Here you have the technologies used in this project
 5. IntelliJ IDEA
 6. ngrok
 
-## Structure of the project
-Find below the structure of this project:
+## Estructura del proyecto
+A continuación, tienes la estructura de este proyecto:
 
 ```bash
   ├────src
@@ -63,17 +63,17 @@ Find below the structure of this project:
   └── pom.xml
 ```
 
-These are the main folders and files of this project:
-* **configuration**: this folder has the `WebConfig` class which will register the Alexa Http Servlet.
-* **handlers**: all the Alexa handlers. They will be process all Alexa requests.
-* **properties**: here you can find the `PropertiesUtils` class that read Spring `application.propeties` file.
-* **servlet**: the entry point of POST Requests  is here. This is the `AlexaServlet`.
-* **resources**: Alexa, Spring and Log4j2 configurations.
-* **pom.xml**: dependencies of this project.
+Estas son las principales carpetas y archivos de este proyecto:
+* **configuration**: esta carpeta tiene la clase `WebConfig` que registrará el Servlet Http de Alexa.
+* **handlers**: todos los Alexa handlers. Son los que procesarán todas las request de Alexa.
+* **properties**:aquí puede encontrar la clase `Properties Utils` que lee el archivo de configuración de Spring `application.properties`.
+* **servlet**: el punto de entrada de las requests POST está aquí. Éste es el `AlexaServlet`.
+* **resources**: configuración de Alexa, Spring y Log4j2.
+* **pom.xml**: dependencias del proyecto.
 
-## Maven dependencies
+## Dependencias Maven
 
-These are the dependencies used in this example. You can find them in `pom.xml` file:
+Estas son las dependencias utilizadas en este ejemplo. Puedes encontrarlos en el archivo `pom.xml`:
 
 * Spring Boot:
 ```xml
@@ -127,15 +127,15 @@ These are the dependencies used in this example. You can find them in `pom.xml` 
     </build>
 ```
 
-## The Alexa Http Servlet
+## El Http Servlet de Alexa
 
-Thanks to Alexa Http Servlet Support that you can find in the [Alexa official GitHub repository](https://github.com/alexa/alexa-skills-kit-sdk-for-java/tree/2.0.x/ask-sdk-servlet-support) and its  `SkillServlet` class we can register it with Spring Boot using `ServletRegistrationBean` as following.
+Gracias al soporte de Alexa a los Http Servlet que puedes encontrar en el [Repositorio GitHub oficial de Alexa](https://github.com/alexa/alexa-skills-kit-sdk-for-java/tree/2.0.x/ask-sdk-servlet-support). Este proyecto incluye la clase  `SkillServlet`  que nos permite registrarlo dentro de nuestra aplicación Spring Boot usando la clase `ServletRegistrationBean` como puedes ver más abajo.
 
-The `SkillServlet` class registers the skill instance from the SkillBuilder object, and provides a doPost method which is responsible for deserialization of the incoming request, verification of the input request before invoking the skill, and serialization of the generated response.
+La clase `SkillServlet` registra la instancia de la Skill del objeto SkillBuilder y proporciona un método doPost que es responsable de la deserialización de la request entrante, la verificación de la solicitud de entrada antes de invocar la Skill y la serialización de la respuesta generada.
 
-Our `AlexaServlet` class, located in the `servlet` folder, extends `SkillServlet` and after its registrations as a servlet, it will be our main entry point. 
+Nuestra clase `AlexaServlet`, ubicada en la carpeta `servlet`, extiende `SkillServlet` y, después de registrarla como servlet, será nuestro principal punto de entrada.
 
-This is how this class looks like:
+Echa un vistazo a la clase `AlexaServlet`:
 
 ```java
   public class AlexaServlet extends SkillServlet {
@@ -160,18 +160,18 @@ This is how this class looks like:
   }
 ```
 
-It will receive all POST requests from Alexa and will send them to a specific handler, located in `handlers` folders, that can manage those requests.
+Recibirá todas las solicitudes POST de Alexa y las enviará al handler específico, ubicado en las carpetas `handlers`, que puede ejecutar esa solicitud.
 
-## Registering the Alexa Http Servlet as Spring Beans using ServletRegistrationBean
+## Registrando el Http Servlet de Alexa como Spring Beans usando ServletRegistrationBean
 
-`ServletRegistrationBean` is used to register Servlets. We need to create a bean of this class in `WebConfig`, our Spring Configuration class. 
-The most relevant methods of the `ServletRegistrationBean` class that we used in this project are:
-* `setServlet`: Sets the servlet to be registered. In our case, `AlexaServlet`.
-* `addUrlMappings`: Add URL mappings for the Servlet. We used `/alexa`.
-* `setLoadOnStartup`: Sets priority to load Servlet on startup. It is not as important as the two methods above because we only have one http Servlet in this example.
+`ServletRegistrationBean` se utiliza para registrar Servlets. Necesitaremos crear un bean de esta clase en `WebConfig`, nuestra clase de configuración de Spring.
+Los métodos más relevantes de la clase `ServletRegistrationBean` que utilizamos en este proyecto son:
+* `setServlet`: establece el servlet que se registrará. En nuestro caso, `AlexaServlet`.
+* `addUrlMappings`: agrega URL mappings para el Servlet. Nosotros asignaremos la URL `/ alexa`.
+* `setLoadOnStartup`: Establece prioridad para cargar el Servlet en el inicio. No es tan importante como los dos métodos anteriores porque solo tenemos un Servlet en este ejemplo.
 
-The `WebConfig` class is where we register the Alexa Http Servlet. This is how we register the servlet:
-
+La clase `WebConfig` es donde registramos el Servlet Http de Alexa. 
+Así es como registramos el servlet:
 ```Java
   @Bean
   public ServletRegistrationBean<HttpServlet> alexaServlet() {
@@ -185,57 +185,63 @@ The `WebConfig` class is where we register the Alexa Http Servlet. This is how w
       return servRegBean;
   }
 ```
-## Setting properties
+## Configurando properties
 
-The servlet must meet certain requirements to handle requests sent by Alexa and adhere to the Alexa Skills Kit interface standards. 
-For more information, see Host a Custom Skill as a Web Service in the [Alexa Skills Kit technical documentation](https://developer.amazon.com/es-ES/docs/alexa/custom-skills/host-a-custom-skill-as-a-web-service.html).
+El servlet debe cumplir ciertos requisitos para manejar las solicitudes enviadas por Alexa y cumplir con los estándares de interfaz del Alexa Skill Kit.
+Para más información, mira la sección "Host a Custom Skill as a Web Service" en la [Documentación oficial del Alexa Skills Kit](https://developer.amazon.com/es-ES/docs/alexa/custom-skills/host-a-custom-skill-as-a-web-service.html).
 
-In this example you have 4 properties that you can set in `application.properties` file:
+En este ejemplo, tienes 4 properties que puedes configurar en el archivo `application.properties`:
 
-* server.port: the port that the Spring Boot app will be use.
-* com.amazon.ask.servlet.disableRequestSignatureCheck: disable/enable security.
-* com.amazon.speech.speechlet.servlet.timestampTolerance: the maximum gap between the timestamps of the request and the current local time of execution. In miliseconds. 
-* javax.net.ssl.keyStore: if the first property is set to `false` then you have to specify the path of your keystore file.
-* javax.net.ssl.keyStorePassword: if the first property is set to `false` then you have to specify the password of your keystore.
+* **server.port**: el puerto que usará la aplicación Spring Boot.
+* **com.amazon.ask.servlet.disableRequestSignatureCheck**: activar/desactivar la seguridad.
+* **com.amazon.speech.speechlet.servlet.timestampTolerance**: el gap máximo entre el timestamp de la solicitud y la hora actual de ejecución. En milisegundos.
+* **javax.net.ssl.keyStore**: Si la primera property se establece a `false`, entonces se debe especificar el path completo al fichero KeyStore.
+* **javax.net.ssl.keyStorePassword**: Si la primera property se establece a `false`, entonces se debe especificar la contraseña del keystore.
 
-## Build the Skill with Spring Boot
+## Build de la Skill con Spring Boot
 
-As it is a maven project, you can build the Spring Boot application running this command:
+Al ser un proyecto maven, se puede compilar la aplicación Spring Boot ejecutando este comando:
 
 ```bash
   mvn clean package
 ```
 
-## Run the Skill with Spring Boot
+## Ejecutar la Skill con Spring Boot
 
-Run the AlexaSkillAppStarter.java class as Java application i.e. go to Run→ Run as → Java Application
+Ejecuta la clase AlexaSkillAppStarter.java como aplicación Java, si estás en eclipse, puedes ir a Ejecutar → Ejecutar como → Aplicación Java
 
-Or, you can use
+O también puedes usar:
 ```bash
 mvn spring-boot:run
 ```
 
-After executing the main class in debug mode, you can send Alexa POST requests to http://localhost:8080/alexa.
-
-## Debug the Skill with Spring Boot
-
-For debugging the Spring boot app as Java application i.e. go to Debug→ Debug as → Java Application
-
-Or, if you use IntelliJ IDEA, you can do a right click in Main method of `AlexaSkillAppStarter` class:
+O, si usas IntelliJ IDEA, puedes hacer clic derecho en el método Main de la clase `AlexaSkillAppStarter`:
 
   ![Full-width image](/assets/img/blog/tutorials/alexa-springboot/debug.png){:.lead data-width="800" data-height="100"}
-Debugging in IntelliJ IDEA
+Ejecutando en IntelliJ IDEA
   {:.figure}
 
-After executing the main class, you can send Alexa POST requests to http://localhost:8080/alexa and debug the Skill.
+Después de ejecutar la clase principal, puedes enviar requests POST de Alexa a http://localhost:8080/alexa.
 
-## Test requests locally
+## Debuggear la Skill con Spring Boot
 
-I'm sure you already know the famous tool call [Postman](https://www.postman.com/). REST APIs have become the new standard in providing a public and secure interface for your service. Though REST has become ubiquitous, it's not always easy to test. Postman, makes it easier to test and manage HTTP REST APIs. Postman gives us multiple features to import, test and share APIs, which will help you and your team be more productive in the long run.
+Para debuggear la aplicación Spring boot como aplicación Java, si estás en eclipse, puedes ir a Debug → Debug as → Java Application
 
-After run your application you will have an endpoint available at http://localhost:8080/alexa. With Postman you can emulate any Alexa Request. 
+O, si usas IntelliJ IDEA, puedes hacer clic derecho en el método Main de la clase `AlexaSkillAppStarter`:
 
-For example, you can test a `LaunchRequest`:
+  ![Full-width image](/assets/img/blog/tutorials/alexa-springboot/debug.png){:.lead data-width="800" data-height="100"}
+Debuggeando en IntelliJ IDEA
+  {:.figure}
+
+Después de ejecutar la clase principal en modo debug, puedes enviar requests POST de Alexa a http://localhost:8080/alexa y debuggear tu skill.
+
+## Testear requests localmente
+
+Estoy seguro de que ya conoces la famosa herramienta llamada [Postman](https://www.postman.com/). Las API REST se han convertido en el nuevo estándar para proporcionar una interfaz pública y segura para nuestros servicios. Aunque REST se ha vuelto omnipresente, no siempre es fácil probarlo. Postman, hace que sea más fácil probar y administrar las API REST HTTP. Postman nos brinda múltiples funciones para importar, probar y compartir APIs, lo que te ayudará a ti y a tu equipo a ser más productivos a largo plazo.
+
+Después de ejecutar tu aplicación, tendrás un endpoint disponible en http://localhost:8080/alexa. Con Postman puedes emular cualquier request de Alexa.
+
+Por ejemplo, puedes testear un `LaunchRequest`:
 
 ```json
   {
@@ -279,36 +285,38 @@ For example, you can test a `LaunchRequest`:
 
 ```
 
-Pay attention with the timestamp field of the request to accomplish with the property `com.amazon.speech.speechlet.servlet.timestampTolerance`.
+Ten cuidado con el campo timestamp de la request para cumplir con la propiedad `com.amazon.speech.speechlet.servlet.timestampTolerance`.
 
-## Test requests directly from Alexa
+## Testear requests directamente desde el cloud de Alexa
 
+ngrok es una herramienta genial y liviana que crea un túnel seguro en tu máquina local junto con una URL pública que se puede usar para navegar por tu web en local o API.
 
-ngrok is a very cool, lightweight tool that creates a secure tunnel on your local machine along with a public URL you can use for browsing your local site or APIs.
+Cuando se está ejecutando ngrok, escucha en el mismo puerto en el que se está ejecutando el servidor web local y envía solicitudes externas a tu máquina local.
 
-When ngrok is running, it listens on the same port that you’re local web server is running on and proxies external requests to your local machine
-
-From there, it’s a simple step to get it to listen to your web server. Say you’re running your local web server on port 8080. In terminal, you’d type in: `ngrok http 8080`. This starts ngrok listening on port 8080 and creates the secure tunnel:
+Veamos como de fácil es publicar nuestra Skill ejecutandose en local para que el cloud de Alexa nos envíe requests. 
+Digamos que está ejecutando tu servidor web local en el puerto 8080. En la terminal, escribiría: `ngrok http 8080`. Esto comienza a escuchar a ngrok en el puerto 8080 y crea el túnel seguro:
 
   ![Full-width image](/assets/img/blog/tutorials/alexa-springboot/tunnel.png){:.lead data-width="800" data-height="100"}
-ngrok tunnel
+túnel con ngrok
   {:.figure}
 
-So now you have to go to [Alexa Developer console](https://developer.amazon.com/alexa/console/ask), go to your skill > endpoints > https, add the https url generated above followed by /alexa. Eg: https://fe8ee91c.ngrok.io/alexa.
+Entonces ahora vas a la [Alexa Developer console](https://developer.amazon.com/alexa/console/ask), navegar a tu Skill > endpoints > https, agregas la URL https generada anteriormente seguido de /alexa. Por ejemplo: https://fe8ee91c.ngrok.io/alexa.
 
-Select the My development endpoint is a sub-domain.... option from the dropdown and click save endpoint at the top of the page.
+Selecciona la opción "My development endpoint is a sub-domain...." desde el menú desplegable y haga clic en Save endpoint en la parte superior de la página.
 
-Go to Test tab in the Alexa Developer Console and launch your skill.
+Dirígete al tab Test en la Alexa Developer Console y lanza tu skill.
 
-The Alexa Developer Console will send a HTTPS request to the ngrok endpoint (https://fe8ee91c.ngrok.io/alexa) which will route it to your skill running on Spring Boot server at http://localhost:8080/alexa.
+La Alexa Developer Console enviará una solicitud HTTPS al endpoint ngrok (https://fe8ee91c.ngrok.io/alexa) que lo redirigirá a tu Skill ejecutándose en el servidor Spring Boot en http://localhost:8080/alexa.
 
 
-## Conclusion 
+## Conclusión 
 
-This example can be useful for all those developers who do not want to host their code in the cloud or do not want to use AWS Lambda functions. This is not a problem since, as you have seen in this example, Alexa gives you the possibility to create skills in different ways. I hope this example project is useful to you.
+Este ejemplo puede ser útil para todos aquellos desarrolladores que no quieran alojar su código en la nube o no quieran usar las funciones de AWS Lambda. Esto no es un problema ya que, como has visto en este ejemplo, Alexa te da la posibilidad de crear Skills de diferentes maneras. Espero que este proyecto de ejemplo te sea útil.
 
-You can find the code in my [**Github**](https://github.com/xavidop/alexa-java-springboot-helloworld)
+Puedes encontrar el código en mi [**Github**](https://github.com/xavidop/alexa-java-springboot-helloworld)
 
-That's all folks!
+!Eso es todo!
+
+¡Espero que te sea útil! Si tienes alguna duda o pregunta, no dudes en ponerte en contacto conmigo o poner un comentario a continuación.
 
 Happy coding!
