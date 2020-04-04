@@ -202,3 +202,11 @@ paypal:
 download:
   name: Download
   icon: icon-box-add
+medium:
+  name: Medium
+  icon: icon-medium
+  prepend: "https://medium.com/@"
+devto:
+  name: Dev.to
+  icon: icon-dev-dot-to
+  prepend: "https://dev.to/"
