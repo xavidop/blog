@@ -71,6 +71,10 @@ Ejecuta la función lambda (Skill) localmente ejecutando el comando `sam local i
 ```bash
 sam local invoke HelloWorldFunction --template HelloWorldFunction\.aws-sam\build\template.yaml
 ```
+**NOTA:** Usando LocalDebugger.java es tan sencillo como **ejecutar** desde Visual Studio Code o IntelliJ. Échale un ojo a las cofiguraciones para los dos IDEs en:
+For this type of running it is not necessary to run any SAM CLI Command.
+1. `.vscode\launch.json`
+2. `.idea\runConfigurations\LocalDebugger.xml`
 
 ## Debuggea tu Skill localmente
 
@@ -84,6 +88,12 @@ sam local invoke HelloWorldFunction --template HelloWorldFunction\.aws-sam\build
 
 Con AWS Toolkit instalado en el IDE, es fácil configurar y depurar con puntos de ruptura tus Skills dependiendo del `event.json` utilizados como prueba
 
+**NOTA:** Usando LocalDebugger.java es tan sencillo como **debuggear** desde Visual Studio Code o IntelliJ. Échale un ojo a las cofiguraciones para los dos IDEs en:
+For this type of running it is not necessary to run any SAM CLI Command.
+1. `.vscode\launch.json`
+2. `.idea\runConfigurations\LocalDebugger.xml`
+
+
 ## Prueba tu Skill localmente
 
 Los eventos de prueba están incluidos en el directorio  `events`  de este proyecto.
@@ -91,6 +101,8 @@ Los eventos de prueba están incluidos en el directorio  `events`  de este proye
 ```bash
 sam local invoke HelloWorldFunction --template HelloWorldFunction\.aws-sam\build\template.yaml --event  events/event.json
 ```
+
+**NOTA:** Usando LocalDebugger.java puedes hacer la request de abajo directamente a http://localhost:3001/:
 
 En el fichero event.json tienes un ejemplo de un `LaunchRequest` mockeado de una Skill:
 
@@ -136,6 +148,28 @@ En el fichero event.json tienes un ejemplo de un `LaunchRequest` mockeado de una
 
 
 ```
+## Testear requests directamente desde Alexa
+
+ngrok es una herramienta genial y liviana que crea un túnel seguro en tu máquina local junto con una URL pública que se puede usar para navegar por tu web en local o API.
+
+Cuando se está ejecutando ngrok, escucha en el mismo puerto en el que se está ejecutando el servidor web local y envía solicitudes externas a tu máquina local.
+
+Veamos como de fácil es publicar nuestra Skill ejecutandose en local para que el cloud de Alexa nos envíe requests. 
+Digamos que está ejecutando tu servidor web local en el puerto 3001. En la terminal, escribiría: `ngrok http 3001`. Esto comienza a escuchar a ngrok en el puerto 3001 y crea el túnel seguro:
+
+  ![Full-width image](/assets/img/blog/tutorials/alexa-nodejs/tunnel.png){:.lead data-width="800" data-height="100"}
+Túnel
+  {:.figure}
+
+
+Entonces ahora vas a la [Alexa Developer console](https://developer.amazon.com/alexa/console/ask), navegar a tu Skill > endpoints > https, agregas la URL https generada anteriormente . Por ejemplo: https://20dac120.ngrok.io.
+
+Selecciona la opción "My development endpoint is a sub-domain...." desde el menú desplegable y haga clikc en Save endpoint en la parte superior de la página.
+
+Dirígete al tab Test en la Alexa Developer Console y lanza tu skill.
+
+La Alexa Developer Console enviará una solicitud HTTPS al endpoint ngrok (https://20dac120.ngrok.io) que lo redirigirá a tu Skill ejecutándose en el servidor Web en http://localhost:3001.
+
 
 ## Despliega tu Skill en AWS
 
