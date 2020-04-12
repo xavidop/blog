@@ -97,57 +97,24 @@ Puedes encontrar toda la documentación en su repositorio [GitHub](https://githu
 A continuación, tienes la clase `AlexaRequestProcessor.cs` que ejecutará todas las requests de Alexa utilizando el paquete Nugget Alexa.NET y muestra lo fácil que es desarrollar este tipo de aplicaciones de voz en .NET core:
 
 ```csharp
-    public class AlexaRequestProcessor
+   public class AlexaRequestProcessor
     {
-        public SkillResponse Process(SkillRequest input)
+        public async Task<SkillResponse> ProcessAsync(SkillRequest input)
         {
 
-            Session session = input.Session;
-            if (session.Attributes == null)
-                session.Attributes = new Dictionary<string, object>();
+            String currentLocale = input.Request.Locale.Split('-')[0];
+            LocalizationManager.Init(currentLocale);
+            var request = new AlexaRequestPipeline();
+            request.RequestHandlers.Add(new LaunchRequestIntentHandler());
+            request.RequestHandlers.Add(new SessionEndedRequestIntentHandler());
+            request.RequestHandlers.Add(new CancelIntentHandler());
+            request.RequestHandlers.Add(new HelpIntentHandler());
+            request.RequestHandlers.Add(new HelloWorldIntentHandler());
+            request.ErrorHandlers.Add(new ErrorHandler());
+            return await request.Process(input);
 
-            Type requestType = input.GetRequestType();
-            if (input.GetRequestType() == typeof(LaunchRequest))
-            {
-                string speech = "Welcome! Hello world!";
-                Reprompt rp = new Reprompt("You can Say hello or help");
-                return ResponseBuilder.Ask(speech, rp, session);
-            }
-            else if (input.GetRequestType() == typeof(SessionEndedRequest))
-            {
-                return ResponseBuilder.Tell("Goodbye!");
-            }
-            else if (input.GetRequestType() == typeof(IntentRequest))
-            {
-                var intentRequest = (IntentRequest)input.Request;
-                switch (intentRequest.Intent.Name)
-                {
-                    case "AMAZON.CancelIntent":
-                    case "AMAZON.StopIntent":
-                        return ResponseBuilder.Tell("Goodbye!");
-                    case "AMAZON.HelpIntent":
-                        {
-                            Reprompt rp = new Reprompt("What's next?");
-                            return ResponseBuilder.Ask("Here's some help. What's next?", rp, session);
-                        }
-                    case "HelloWorldIntent":
-                        {
-                            string helloWorld = "HelloWorld";
-                            Reprompt rp = new Reprompt(helloWorld);
-                            return ResponseBuilder.Ask(helloWorld, rp, session);
-                        }
-                    default:
-                        {
-                            string speech = "I didn't understand - try again?";
-                            Reprompt rp = new Reprompt(speech);
-                            return ResponseBuilder.Ask(speech, rp, session);
-                        }
-                }
-            }
-            return ResponseBuilder.Tell("Goodbye!");
         }
     }
-
 ```
 
 
