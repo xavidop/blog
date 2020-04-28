@@ -277,7 +277,7 @@ Aquí tienes la información del evento: hora de la request de Alexa y todos los
 
 Si nos desplazamos hacia abajo, veremos los breadcrumbs. Una vista rápida de lo que sucedió durante la request:
 
-![Full-width image](/assets/img/blog/tutorials/alexa-monitoring/middle.png){:.lead data-width="800" data-height="100"}
+![Full-width image](/assets/img/blog/tutorials/alexa-monitoring/midle.png){:.lead data-width="800" data-height="100"}
 Breadcrumbs
 {:.figure}
 
@@ -317,7 +317,7 @@ Por ejemplo:
 * Dame todas las reuqests de Alexa que vinieron de la release actual:
     * release:XXX
     
-Puedes guardar estas búsquedas pqra que estén disponibles con un solo clic.
+Puedes guardar estas búsquedas para que estén disponibles con un solo clic.
 
 ## Conclusión
 
