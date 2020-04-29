@@ -75,15 +75,28 @@ work:
       - "Build complex software solutions"
       - "Stack used: Java, Maven, Spring"
 volunteer:
-  - organization: "DevopsDays 2020"
-    position: "Main Organizer"
-    website: "https://devopsdays.org/events/2020-madrid/welcome/"
+  - organization: "DevopsDays Madrid"
+    position: "Organizer"
+    website: "https://devopsdays.org/madrid"
     startDate: "2019-03-01"
-    endDate: "2020-02-21"
+    endDate: ""
     summary: "DevOpsDays is a worldwide series of community run technical conferences 
     covering topics of software development, IT infrastructure operations, and the intersection between them."
     highlights:
       - "The first DevOpsDays in Spain"
+  - organization: "Alexa Developers Madrid"
+    position: "Organizer"
+    website: "https://twitter.com/alexadevsmadrid"
+    startDate: "2020-03-01"
+    endDate: ""
+    summary: "Community of alexa developers in Madrid which aim focus is sharing knowledge about Amazon Alexa platform."
+  - organization: "DZone Inc"
+    position: "Most Valuable Blogger and Core member"
+    website: "https://dzone.com/users/4278252/xavidop.html"
+    startDate: "2020-03-01"
+    endDate: ""
+    summary: "DZone.com is one of the world’s largest online communities and leading publisher of knowledge resources for software developers. 
+    Every day, hundreds of thousands of developers come to DZone.com to read about the latest technology trends and learn about new technologies, methodologies, and best practices through shared knowledge."
 education:
   - institution: "Polythecnic University of Valencia"
     area: "Computer Science and Engineering"

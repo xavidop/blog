@@ -5,8 +5,8 @@ title:  About Xavier Portilla
 ---
 
 # Short Bio
- Xavier completed his bachelor in computer science and engineering at Polytechninc University of Valencia in 2014. 
- Then he completed his master in appllication sofwtare development in 2017.
+ Xavier completed his bachelor in computer science and engineering at Polytechnic University of Valencia in 2014. 
+ Then he completed his master in application sofwtare development in 2017.
  During his academic career, he had the opportunity to work on various projects, such as [Hyperloop UPV](https://www.youtube.com/watch?v=7pP3uMDhH1A), the future of transport.
 
 He creates this site as a way to showcase his work and allow visitors to dive deep into his experience and expertise. Resumes are great for a quick glimpse in your background and there is often a lot more detail to a product, project or business one has worked on. This is his way of showcasing the details behind the projects and businesses he has been so lucky to have worked on.
