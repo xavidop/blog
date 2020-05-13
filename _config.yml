@@ -48,10 +48,14 @@ author:
 
 # Add links to the sidebar.
 menu:
-  - title:             Blog
+  - title:             Posts in spanish
     url:               /index.html
+  - title:             Posts in english
+    url:               https://dzone.com/users/4278252/xavidop.html
   - title:             Categories
     url:               /projects/
+  - title:             Talks
+    url:               /talks/
   - title:             Resume
     url:               /resume/
   - title:             About
