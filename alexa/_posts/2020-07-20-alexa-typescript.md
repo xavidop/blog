@@ -113,7 +113,7 @@ Estos son los archivos principales del proyecto:
 * `skill.json`: El skill manifest. Uno de los archivos más importantes de nuestro proyecto
 
 
-## Lambda function ienn TypeScript
+## Lambda function en TypeScript
 
 El SDK de ASK para Node.js te facilita el desarrollo de Skills de gran calidad al permitirte pasar más tiempo implementando funciones y menos tiempo escribiendo código repetitivo.
 
