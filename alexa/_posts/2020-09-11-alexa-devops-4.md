@@ -106,7 +106,7 @@ Este paquete npm tiene una opción para establecer el output del informe al tipo
 
 Después de que el informe se haya subido a Codecov, así es como se ve:
 
-![Full-width image](/assets/img/blog/tutorials/alexa-devops/codecov.png){:.lead data-width="800" data-height="100"}
+![Full-width image](/assets/img/blog/tutorials/alexa-devops/codecov.jpg){:.lead data-width="800" data-height="100"}
 Codecov
   {:.figure}
 

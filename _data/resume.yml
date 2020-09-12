@@ -111,6 +111,12 @@ education:
     endDate: "2017-08-01"
     gpa: "4.0"
 awards:
+  - title: "Azure Content Hero"
+    date: "2020-05-01"
+    awarder: "Microsoft"
+  - title: "Hyperloop Pod Competition top 10 team"
+    date: "2019-07-10"
+    awarder: "SpaceX"
   - title: "Imagine Express 2018 Winner"
     date: "2018-02-15"
     awarder: "Imagine Creativity Center"

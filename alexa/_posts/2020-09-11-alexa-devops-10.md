@@ -95,7 +95,7 @@ No hay informes definidos en este trabajo.
 
 Pero podemos ver en la [Alexa Developer Console](https://developer.amazon.com/alexa/console/ask) el nuevo estado de nuestra Skill de Alexa en la pestaña Certificación:
 
-![Full-width image](/assets/img/blog/tutorials/alexa-devops/submit.png){:.lead data-width="800" data-height="100"}
+![Full-width image](/assets/img/blog/tutorials/alexa-devops/submit.jpg){:.lead data-width="800" data-height="100"}
 Skill enviada a certificación
   {:.figure}
 

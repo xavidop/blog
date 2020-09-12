@@ -1,6 +1,6 @@
 ---
 layout: post
-title: DevOps en tu Alexa Skill.
+title: DevOps en tu Alexa Skill
 image: /assets/img/blog/post-headers/alexa-devops1.jpg
 description: >
    Creación de un pipeline DevOps usando CircleCI  

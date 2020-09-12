@@ -44,7 +44,7 @@ author:
   name:                Xavi Portilla Edo
   email:               xavierportillaedo@gmail.com
   # Used by `jekyll-seo-tag`:
-  #twitter:             xavidop
+  twitter:             xavidop
 
 # Add links to the sidebar.
 menu:
@@ -77,7 +77,7 @@ copyright:           Made with ❤ by Xavier Portilla Edo © 2020. All rights re
 permalink:             /:categories/:year-:month-:day-:title/
 
 # Pagination configuration (used by the `blog` layout)
-paginate:              10
+paginate:              20
 paginate_path:         /page-:num/
 
 
@@ -295,8 +295,8 @@ remote_theme: qwtel/hydejack@v8.5.0
 #   yandex:              <verification-id>
 
 # Used for Twitter cards
-#twitter:
-#  username:            xavidop
+twitter:
+  username:            xavidop
 
 # Used for Facebook open graph
 # facebook:

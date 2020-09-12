@@ -176,7 +176,7 @@ Es por eso que vamos a agregar el paquete npm `mochawesome` para generar un boni
 
 Así es como se ve este informe:
 
-![Full-width image](/assets/img/blog/tutorials/alexa-devops/mochahtml.png){:.lead data-width="800" data-height="100"}
+![Full-width image](/assets/img/blog/tutorials/alexa-devops/mochahtml.jpg){:.lead data-width="800" data-height="100"}
 Unit tests HTML Report 
   {:.figure}
 
