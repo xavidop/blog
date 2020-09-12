@@ -8,7 +8,7 @@ noindex: true
 comments: true
 author: xavi
 kate: hl markdown;
-categories: [alexa]
+categories: [alexa, devops]
 tags:
   - alexa
 keywords:
