@@ -78,7 +78,7 @@ En estos breadcrumbs, colocaremos datos relevantes de nuestra Skill de Alexa, co
 
 ## Sentry en nuestra Skill
 
-No voy a comenzar desde cero en este post. Reutilizaré el proyecto que he usado en mi publicación [Alexa Skill, AWS CloudFormation y Serverless Application Model (SAM)](https://xavidop.github.io/alexa/2020-03-15-alexa-lambda-cloudformation-sam/)
+No voy a comenzar desde cero en este post. Reutilizaré el proyecto que he usado en mi publicación [Alexa Skill, AWS CloudFormation y Serverless Application Model (SAM)](/alexa/2020-03-15-alexa-lambda-cloudformation-sam/)
 
 ### Configurando Sentry en nuestra Skill
 

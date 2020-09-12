@@ -117,35 +117,35 @@ El job de build ejecutará las siguientes tareas:
 
 ### Pretests
 
-El job de pretest ejecutará el checkeo de calidad del código estático. Consulta la explicación completa [aquí](docs/ESLINT.md).
+El job de pretest ejecutará el checkeo de calidad del código estático. Consulta la explicación completa [aquí](/alexa/devops/2020-09-11-alexa-devops-2).
 
 ### Test
 
-El job de test ejecutará las pruebas unitarias.. Consulta la explicación completa [aquí](docs/UNITTESTS.md).
+El job de test ejecutará las pruebas unitarias.. Consulta la explicación completa [aquí](/alexa/devops/2020-09-11-alexa-devops-3).
 
 ### Code Coverage
 
-El job codecov ejecutará el informe de cobertura de código. Consulta la explicación completa [aquí](docs/CODECOV.md).
+El job codecov ejecutará el informe de cobertura de código. Consulta la explicación completa [aquí](/alexa/devops/2020-09-11-alexa-devops-4).
 
 ### Deploy
 
-El job de deploy desplegará la Skill de Alexa en la nube de Alexa en el stage de development. Consulta la explicación completa [aquí](docs/DEPLOY.md).
+El job de deploy desplegará la Skill de Alexa en la nube de Alexa en el stage de development. Consulta la explicación completa [aquí](/alexa/devops/2020-09-11-alexa-devops-5).
 
 ### Testing the Voice User Interface
 
-Estos jobs verificarán nuestro interaction model. Consulta la explicación completa [aquí](docs/VUITESTS.md).
+Estos jobs verificarán nuestro interaction model. Consulta la explicación completa [aquí](/alexa/devops/2020-09-11-alexa-devops-6).
 
 ### Integration tests
 
-Estos jobs verificarán el interaction model y nuestro backend también. Consulta la explicación completa [aquí](docs/INTEGRATIONTESTS.md).
+Estos jobs verificarán el interaction model y nuestro backend también. Consulta la explicación completa [aquí](/alexa/devops/2020-09-11-alexa-devops-7).
 
 ### End to end tests
 
-Estos jobs verificarán el sistema completo utilizando la voz como entrada. Consulta la explicación completa [aquí](docs/ENDTOENDTESTS.md).
+Estos jobs verificarán el sistema completo utilizando la voz como entrada. Consulta la explicación completa [aquí](/alexa/devops/2020-09-11-alexa-devops-8).
 
 ### Validation tests
 
-Estos jobs validarán la Skill de Alexa antes de enviarla a certificación. Consulta la explicación completa [aquí](docs/VALIDATIONTESTS.md).
+Estos jobs validarán la Skill de Alexa antes de enviarla a certificación. Consulta la explicación completa [aquí](/alexa/devops/2020-09-11-alexa-devops-9).
 
 ### Store-artifacts
 
@@ -183,7 +183,7 @@ Este job es un job diferente que solo existe en el nodo `workflows` en el archiv
 
 ### Submit
 
-Estos jobs enviarán la Skill de Alexa a certificación. Consulta la explicación completa [aquí](docs/SUBMIT.md).
+Estos jobs enviarán la Skill de Alexa a certificación. Consulta la explicación completa [aquí](/alexa/devops/2020-09-11-alexa-devops-10).
 
 ### Workflow
 
