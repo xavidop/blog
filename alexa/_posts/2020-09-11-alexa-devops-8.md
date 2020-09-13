@@ -106,7 +106,7 @@ Ahora estamos listos para escribir nuestro conjunto de pruebas end-to-end.
 
 ### Escribiendo tests end-to-end
 
-En este paso de la canalización vamos a desarrollar algunas pruebas end-to-end escritas con Bespoken.
+En este paso del pipeline vamos a desarrollar algunas pruebas end-to-end escritas con Bespoken.
 
 Una vez que hemos probado nuestra interfaz de usuario de voz, nuestro backend y comprobados que todo esté correcto.
 Es hora de probar todos los componentes de software interelacionados en una solicitud de una Skill de Alexa. **Pero ahora, usando la voz como input.**

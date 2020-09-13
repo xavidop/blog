@@ -91,7 +91,7 @@ Este script tiene dos parámetros:
 
 ### Informes
 
-No hay informes definidos en este trabajo.
+No hay informes definidos en este job.
 
 Pero podemos ver en la [Alexa Developer Console](https://developer.amazon.com/alexa/console/ask) el nuevo estado de nuestra Skill de Alexa en la pestaña Certificación:
 

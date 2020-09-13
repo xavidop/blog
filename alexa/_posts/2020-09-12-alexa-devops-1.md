@@ -50,7 +50,7 @@ Vamos a utilizar esta poderosa herramienta para hacer algunos pasos en nuestro p
 
 ## Dockerfile
 
-Antes de explicar la canalización, es importante explicar la imagen de Docker que vamos a utilizar en este pipeline.
+Antes de explicar el pipeline, es importante explicar la imagen de Docker que vamos a utilizar.
 Puedes encontrar toda la explicación en [este repositorio](https://github.com/xavidop/alexa-ask-aws-cli-docker).
 
 ## Pipeline
@@ -78,7 +78,7 @@ En primer lugar, cada caja representada en la imagen de arriba es un job y se de
 El job de checkout ejecutará las siguientes tareas:
 1. Checkout del código en `/home/node/project`
 2. Dar permiso de ejecución al usuario `node` para poder ejecutar todos los hooks
-3. Persistir el código para reutilizarlo en el próximo trabajo
+3. Persistir el código para reutilizarlo en el próximo job
 
 ```yaml
   checkout:
@@ -97,7 +97,7 @@ El job de checkout ejecutará las siguientes tareas:
 El job de build ejecutará las siguientes tareas:
 1. Restaurar el código que hemos descargado en el paso anterior en la carpeta `/home/node/project`
 2. Ejecutar `npm install` para descargar todas las dependencias de Node.js
-3. Persistir el código para reutilizarlo en el próximo trabajo
+3. Persistir el código para reutilizarlo en el próximo job
 
 ```yaml
   build:
