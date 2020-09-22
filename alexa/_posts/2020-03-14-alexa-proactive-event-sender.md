@@ -82,7 +82,7 @@ Si quieres que la skill acpete más de un schema, simplemente agrégalos a ```ev
 
 El proceso se describe más a fondo en la [documentación oficial de la API de proactive events de Alexa](https://developer.amazon.com/docs/smapi/proactive-events-api.html#onboard-smapi).
 
-Puede encontrar un ejemplo de cómo configurar una skill para proactive events en el repositorio oficial de Gihub de Alexa: https://github.com/alexa/alexa-cookbook/tree/master/feature-demos/skill-demo-proactive- eventos
+Puede encontrar un ejemplo de cómo configurar una skill para proactive events en el repositorio oficial de GitHub de Alexa: https://github.com/alexa/alexa-cookbook/tree/master/feature-demos/skill-demo-proactive- eventos
 
 ## Prerrequisitos
 
