@@ -5,7 +5,7 @@ basics:
   name: "Xavier Portilla Edo"
   label: "Software Engineer"
   picture: "/assets/icons/icon.png"
-  email: "xavierportilla@gmai.com"
+  email: "xavierportilla@gmail.com"
   phone: "(+34) 628 921 252"
   summary: >
     Xavier hails from Valencia.
@@ -111,7 +111,7 @@ education:
     endDate: "2017-08-01"
     gpa: "4.0"
 awards:
-  - title: "Azure Content Hero"
+  - title: "Microsoft Azure Content Hero"
     date: "2020-05-01"
     awarder: "Microsoft"
   - title: "Hyperloop Pod Competition top 10 team"
