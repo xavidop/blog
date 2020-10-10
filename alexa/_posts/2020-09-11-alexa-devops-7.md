@@ -49,7 +49,7 @@ Usaremos esta poderosa herramienta para ejecutar los tests de integración. ¡Em
 
 ### Instalación
 
-La ASK CLI y la herramienta bash `esperan` se incluyen en la [Docker image](https://hub.docker.com/repository/docker/xavidop/alexa-ask-aws-cli) que estamos usando, por lo que no es necesario instalar nada más.
+La ASK CLI y la herramienta bash `expect` se incluyen en la [Docker image](https://hub.docker.com/repository/docker/xavidop/alexa-ask-aws-cli) que estamos usando, por lo que no es necesario instalar nada más.
 
 ### Desarrollando integration tests
 
