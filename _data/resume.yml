@@ -5,7 +5,7 @@ basics:
   name: "Xavier Portilla Edo"
   label: "Software Engineer"
   picture: "/assets/icons/icon.png"
-  email: "xavierportilla@gmail.com"
+  email: "xavierportillaedo@gmail.com"
   phone: "(+34) 628 921 252"
   summary: >
     Xavier hails from Valencia.
@@ -27,18 +27,29 @@ basics:
       username: "xavierportillaedo"
       url: "https://linkedin.com/in/xavierportillaedo/"
 work:
+  - company: "Voiceflow Inc."
+    position: "Site reliability Engineer"
+    website: "https://www.voiceflow.com/"
+    startDate: "2021-01-01"
+    endDate: ""
+    summary: >
+      Voiceflow is helping the world have better conversations with technology
+      Voiceflow is changing the way voice apps are built by creating a collaborative design platform for voice app development.
+    highlights:
+      - "The SRE team is responsible for how code is deployed, configured, and monitored, as well as the availability, latency, change management, emergency response, and capacity management of services in production."
+      - "Stack used: Typescript, Terraform, Golang, Docker, Kubernetes, Helm, Bashscript, AWS and Google Cloud Platform"
   - company: "Ericsson"
-    position: "R&D Advance Software Engineer"
+    position: "Software Arquitect, DevOps and Q&A Engineer"
     website: "https://www.ericsson.com/en"
     startDate: "2018-09-01"
-    endDate: ""
+    endDate: "2020-12-31"
     summary: >
       Ericsson, is a Swedish multinational networking and telecommunications 
       company headquartered in Stockholm. The company offers services, 
       software and infrastructure in information and communications technology for telecommunications.
     highlights:
-      - "Build 5G Policy control function"
-      - "Stack used: Java, Maven, Docker, Kubernetes, Helm"
+      - "Build 5G Policy control function. Belonging to the microservices integration team. Automating deployments and tests end-to-end"
+      - "Stack used: Java, Maven, Docker, Kubernetes, Helm, Bashscript"
   - company: "Hyperloop UPV"
     position: "Software Manager"
     website: "https://hyperloopupv.com/"
@@ -50,24 +61,12 @@ work:
     highlights:
       - "Build the entire software Architecture.
       We are focused on the improvement of the way we collect the data from the POD in order to analyze it"
-      - "Stack used: Java, Kafka, Spark, NodeJS, Electron, Docker, C++, Mule "
-  - company: "IVI RMA Global"
-    position: "Software Architect"
-    website: "https://ivi-fertility.com/"
-    startDate: "2016-01-01"
-    endDate: "2017-09-01"
-    summary: >
-      IVI RMA Global is a medical institute entirely devoted to human reproduction since 1990. 
-      Nowadays, IVIRMA Global counts with a total of 65 clinics spread around 11 countries, 
-      7 investigation centers and teaching and training centers dedicated to Assisted Reproduction professionals.
-    highlights:
-      - "Build mobility and innovation projects for IVI clinics"
-      - "Stack used: Javascript, Java, Mule, Servoy, Maven"
+      - "Stack used: Java, Javascipt, Kafka, Spark, NodeJS, Electron, Docker, C++, Mule "
   - company: "Everis"
     position: "Software Analyst"
     website: "https://www.everis.com/global/en"
     startDate: "2014-01-01"
-    endDate: "2017-01-01"
+    endDate: "2018-08-01"
     summary: >
       Everis is an NTT DATA Company, dedicated to consulting and outsourcing in all sectors.
       Everis is a large family with 24,500 professionals across Europe, USA and Latin America.
@@ -84,12 +83,12 @@ volunteer:
     covering topics of software development, IT infrastructure operations, and the intersection between them."
     highlights:
       - "The first DevOpsDays in Spain"
-  - organization: "Alexa Developers Madrid"
+  - organization: "Alexa Community Spain"
     position: "Organizer"
-    website: "https://twitter.com/alexadevsmadrid"
+    website: "https://twitter.com/alexadevsspain"
     startDate: "2020-03-01"
     endDate: ""
-    summary: "Community of alexa developers in Madrid which aim focus is sharing knowledge about Amazon Alexa platform."
+    summary: "Community of alexa developers in Spain which aim focus is sharing knowledge about Amazon Alexa platform."
   - organization: "DZone Inc"
     position: "Most Valuable Blogger and Core member"
     website: "https://dzone.com/users/4278252/xavidop.html"

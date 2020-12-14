@@ -21,11 +21,12 @@ xavi:
   # Comment/uncommet to show/hide. Rearrange to change the order in which they appear.
   social:
     twitter:         xavidop
+    twitch:          xavidop
     github:          xavidop
     #download:       <url>
     email:           xavierportillaedo@gmail.com
     linkedin:        xavierportillaedo
-    medium:          xavidop
+    #medium:          xavidop
     #devto:           xavidop
     rss:             https://xavidop.github.io/feed.xml
     # web:             <web>
@@ -45,7 +46,6 @@ xavi:
     # behance:         <username>
     # deviantart:      <username>
     # ello:            <username>
-    # twitch:          <username>
     # steam:           <number>
     # reddit:          <username>
     # tumblr:          <username>

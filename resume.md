@@ -12,9 +12,9 @@ left_column:
  - publications
  - references
 right_column:
- - languages
  - skills
  - education
  - awards
+ - languages
  - interests
 ---
