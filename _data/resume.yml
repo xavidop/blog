@@ -145,10 +145,14 @@ skills:
       - "Docker"
       - "Kubernetes"
       - "Helm"
+      - "AWS"
+      - "GCP"
+      - "Terraform"
   - name: "DevOps"
     level: "Master"
     keywords:
       - "Jenkins"
+      - "Circle CI"
       - "CI"
       - "CD"
 languages:
