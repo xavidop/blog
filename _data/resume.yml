@@ -28,7 +28,7 @@ basics:
       url: "https://linkedin.com/in/xavierportillaedo/"
 work:
   - company: "Voiceflow Inc."
-    position: "Site reliability Engineer"
+    position: "Site Reliability Engineer"
     website: "https://www.voiceflow.com/"
     startDate: "2021-01-01"
     endDate: ""
