@@ -3,9 +3,6 @@
 layout: page
 title:  Talks
 ---
-
-# Talks
-
 Here you can find the talks I have been uploaded to my [Youtube profile](https://www.youtube.com/channel/UCHKPJg8TjYnhokWPEOdVHVA?sub_confirmation=1)
 
 Enjoy!
