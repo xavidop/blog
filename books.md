@@ -10,8 +10,6 @@ Here you can find the Books I wrote:
 # La Revolución de Alexa
 
  ![image](/assets/img/books/la_revolucion_de_alexa.jpg)
-La revolución de Alexa
- {:.figure}
 
 * **Authors:** Xavier Portilla Edo, Vicente Gerardo Guzmán Lucio
 * **ISBN:** 
