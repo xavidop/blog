@@ -12,10 +12,10 @@ Here you can find the Books I wrote:
  ![image](/assets/img/books/la_revolucion_de_alexa.jpg)
 
 * **Authors:** Xavier Portilla Edo, Vicente Gerardo Guzmán Lucio
-* **ISBN:** 
+* **ISBN:** 9798585691928
 * **Released:** December 2020
 * **Publisher:** Self-published
-* **Buy:** Amazon Kindle, Apple Books, Google Books
+* **Buy:** [Amazon Kindle](https://www.amazon.es/dp/B08R8X5QM5), Apple Books, Google Books
 
 First book about Alexa Skills Development written in spanish ever.
 
