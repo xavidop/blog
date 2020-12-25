@@ -12,6 +12,9 @@ Here you can find the Books I wrote:
  ![image](/assets/img/books/la_revolucion_de_alexa.jpg)
 
 * **Authors:** Xavier Portilla Edo, Vicente Gerardo Guzmán Lucio
+* **Technical Reviewer:** Joaquín Engelmo Moriche
+* **Reviwer:** Joan Orellana Rey
+* **Graphic Designer:** Alfredo Porras Lucio
 * **ISBN:** 9798585691928
 * **Released:** December 2020
 * **Publisher:** Self-published
