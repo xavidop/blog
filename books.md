@@ -18,7 +18,7 @@ Here you can find the Books I wrote:
 * **ISBN:** 9798585691928
 * **Released:** December 2020
 * **Publisher:** Self-published
-* **Buy:** [Amazon Kindle](https://www.amazon.es/dp/B08R8X5QM5), Apple Books, [Google Books](https://books.google.es/books/about?id=u6AQEAAAQBAJ), [Google Play](https://play.google.com/store/books/details?id=u6AQEAAAQBAJ)
+* **Buy:** [Amazon Kindle](https://www.amazon.es/dp/B08R8X5QM5), [Apple Books](https://books.apple.com/es/book/id1546878047), [Google Books](https://books.google.es/books/about?id=u6AQEAAAQBAJ), [Google Play](https://play.google.com/store/books/details?id=u6AQEAAAQBAJ)
 
 First book about Alexa Skills Development written in spanish ever.
 
