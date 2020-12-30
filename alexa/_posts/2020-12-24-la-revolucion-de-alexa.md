@@ -44,7 +44,7 @@ Aquí tenéis todos los datos del libro:
 * **Fecha de publicación:** diciembre 2020
 * **Editorial:** auto editado
 
-**Lo podéis comprar aquí:** [Amazon Kindle](https://www.amazon.es/dp/B08R8X5QM5), Apple Books (próximamente), Google Books (próximamente).
+**Lo podéis comprar aquí:** [Amazon Kindle](https://www.amazon.es/dp/B08R8X5QM5), Apple Books, [Google Books](https://books.google.es/books/about?id=u6AQEAAAQBAJ), [Google Play](https://play.google.com/store/books/details?id=u6AQEAAAQBAJ)
 
 Me gustaría dar las gracias a todas aquellas personas que han contribuido a que esto fuera posible. !Muchas gracias!
 
