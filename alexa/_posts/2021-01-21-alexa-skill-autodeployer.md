@@ -22,7 +22,7 @@ keywords:
 lang: es
 ---
 
-Imagina que encuentras una template de una skill de Alexa en Internet y quieres probarla de inmediato.
+Imagina que encuentras un template de una skill de Alexa en Internet y quieres probarla de inmediato.
 
 # Alexa Skill Auto-Deployer
 
