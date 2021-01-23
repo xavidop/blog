@@ -21,6 +21,9 @@ keywords:
   - skill
 lang: es
 ---
+{:.no_toc}
+1. this unordered seed list will be replaced by toc as unordered list
+{:toc}
 
 Como vimos en el anterior [post](/alexa/devops/2020-09-11-alexa-devops-1), hemos desarrollado un pipeline entero para una Skill de Alexa usando CircleCI. Ahora vamos a construir lo mismo, pero usando la nueva herramienta de integración continua proporcionada por GitHub, GitHub Actions para así comprender su funcionamiento y ver las diferencias respecto a la anterior plataforma de CI/CD usada.
 

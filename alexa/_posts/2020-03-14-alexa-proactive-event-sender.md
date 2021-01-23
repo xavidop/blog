@@ -22,6 +22,9 @@ keywords:
   - skill
 lang: es
 ---
+{:.no_toc}
+1. this unordered seed list will be replaced by toc as unordered list
+{:toc}
 
 Este proyecto tiene como objetivo simplificar el envío de proactive events (notificaciones) a una skill desde un proceso externo desarrollado en Java.
 

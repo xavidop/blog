@@ -21,6 +21,10 @@ keywords:
   - skill
 lang: es
 ---
+{:.no_toc}
+1. this unordered seed list will be replaced by toc as unordered list
+{:toc}
+
 Este es el último paso de nuestro pipeline. Anteriormente, hemos realizado muchas pruebas diferentes y, si todo está bien, es hora de enviar nuestra Skill de Alexa a certificación. Es decir, hemos concluido la parte de integración continua.
 
 # DevOps en tu Alexa Skill: Submit

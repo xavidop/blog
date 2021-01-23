@@ -16,6 +16,9 @@ keywords:
   - skill
 lang: es
 ---
+{:.no_toc}
+1. this unordered seed list will be replaced by toc as unordered list
+{:toc}
 
 Soy un entusiasta de Alexa, por eso en mi tiempo libre lo que suelo hacer es desarrollar Skills de Alexa que ayudarán o mejorarán la vida de las personas.
 

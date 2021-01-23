@@ -21,6 +21,9 @@ keywords:
   - skill
 lang: es
 ---
+{:.no_toc}
+1. this unordered seed list will be replaced by toc as unordered list
+{:toc}
 
 Las pruebas de integración aseguran que los componentes de una aplicación se estén ejecutando correctamente a un nivel que incluye toda la infraestructura de la aplicación, como la interfaz de usuario de voz, el backend y la integración con sistemas externos.
 

@@ -21,6 +21,9 @@ keywords:
   - skill
 lang: es
 ---
+{:.no_toc}
+1. this unordered seed list will be replaced by toc as unordered list
+{:toc}
 
 Una prueba unitaria es un método que llama a funciones o fragmentos de códigos de nuestro código fuente con varios inputs
 y luego valida si los outputs son los que desean esperar. Así, estas pruebas validan si el resultado es el esperado.

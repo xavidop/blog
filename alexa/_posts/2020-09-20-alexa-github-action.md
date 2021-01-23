@@ -21,6 +21,9 @@ keywords:
   - skill
 lang: es
 ---
+{:.no_toc}
+1. this unordered seed list will be replaced by toc as unordered list
+{:toc}
 
 Siempre es buena práctica en el mundo de la programación intentar desarrollar cosas que sean reusables. Así cualquier persona puede integrar lo que se ha desarrollado y rápidamente puede comenzar a usarlo.
 

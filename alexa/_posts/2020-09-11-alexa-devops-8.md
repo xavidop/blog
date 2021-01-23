@@ -21,6 +21,9 @@ keywords:
   - skill
 lang: es
 ---
+{:.no_toc}
+1. this unordered seed list will be replaced by toc as unordered list
+{:toc}
 
 Este tipo de prueba nos permite verificar si la interacción de los componentes del software en nuestra Alexa Skill, como, VUI, código lambda o la base de datos, funciona como se esperaba.
 En resumen, las pruebas end-to-end evalúan la capacidad de la aplicación para satisfacer todas las solicitudes que el usuario final puede realizar.

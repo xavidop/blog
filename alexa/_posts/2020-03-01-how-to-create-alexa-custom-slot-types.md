@@ -19,7 +19,9 @@ keywords:
   - skill
 lang: es
 ---
-
+{:.no_toc}
+1. this unordered seed list will be replaced by toc as unordered list
+{:toc}
 
 La usabilidad de la Skill depende directamente de cómo esten definidos los utterances de ejemplo y los custom slot types representen el uso del lenguaje del mundo real.
 

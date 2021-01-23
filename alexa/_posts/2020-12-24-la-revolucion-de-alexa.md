@@ -20,9 +20,15 @@ keywords:
   - skill
 lang: es
 ---
-# La Revolución de Alexa
+
+{:.no_toc}
+1. this unordered seed list will be replaced by toc as unordered list
+{:toc}
 
 !Por fin sale a luz este gran proyecto!
+
+# La Revolución de Alexa
+
 
 Mi primer libro junto con [Vicente Gerardo Guzmán Lucio](https://luciomsp.github.io/).
 

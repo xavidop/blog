@@ -21,6 +21,9 @@ keywords:
   - skill
 lang: es
 ---
+{:.no_toc}
+1. this unordered seed list will be replaced by toc as unordered list
+{:toc}
 
 Sin duda, uno de los aspectos a los que debe prestar más atención un desarrollador es intentar generar siempre código claro, comprensibles y mantenible, en definitiva, generar código limpio.
 

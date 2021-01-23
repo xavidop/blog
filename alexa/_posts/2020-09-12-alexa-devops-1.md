@@ -21,6 +21,10 @@ keywords:
   - skill
 lang: es
 ---
+{:.no_toc}
+1. this unordered seed list will be replaced by toc as unordered list
+{:toc}
+
 "DevOps es la unión de personas, procesos y productos para permitir la entrega continua de valor a nuestros usuarios finales." - Donovan Brown, Microsoft
 
 DevOps es una "cultura" que tiene un conjunto de prácticas que combina el desarrollo de software (Dev) y las operaciones IT (Ops) que tiene como objetivo acortar el ciclo de vida del desarrollo y proporcionar una entrega continua con alta calidad de software. La cultura DevOps desarrolla una mentalidad de "production-first". 

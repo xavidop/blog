@@ -21,6 +21,9 @@ keywords:
   - skill
 lang: es
 ---
+{:.no_toc}
+1. this unordered seed list will be replaced by toc as unordered list
+{:toc}
 
 Las Skills de Alexa se pueden desarrollar utilizando las Lambda functions de AWS o usando un servidor REST.
 Lambda function es la implementación de Amazon de funciones serverless disponibles en AWS.

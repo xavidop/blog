@@ -21,6 +21,9 @@ keywords:
   - skill
 lang: es
 ---
+{:.no_toc}
+1. this unordered seed list will be replaced by toc as unordered list
+{:toc}
 
 Cuando se verifica el código en los pasos anteriores, es hora de desplegar la Skill de Alexa para comenzar los siguientes pasos que ejecutarán diferentes tipos de pruebas. 
 Hay algunas pruebas como pruebas de VUI, pruebas de integración, pruebas end-to-end y pruebas de validación que no podemos ejecutar en localhost con nuestro código. 

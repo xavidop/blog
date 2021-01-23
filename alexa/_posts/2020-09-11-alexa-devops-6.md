@@ -21,6 +21,9 @@ keywords:
   - skill
 lang: es
 ---
+{:.no_toc}
+1. this unordered seed list will be replaced by toc as unordered list
+{:toc}
 
 Según la definición de Wikipedia, "la Voice User Interface (VUI) permite la interacción humana con las computadoras a través de una plataforma de voz para iniciar procesos o servicios de manera automática. la VUI es la interfaz de cualquier aplicación de voz".
 

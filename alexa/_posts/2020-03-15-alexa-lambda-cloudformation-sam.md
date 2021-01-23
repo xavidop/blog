@@ -23,7 +23,9 @@ keywords:
   - skill
 lang: es
 ---
-
+{:.no_toc}
+1. this unordered seed list will be replaced by toc as unordered list
+{:toc}
 
 Este proyecto contiene código fuente y archivos extra para crear una Alexa Skill basado en una aplicación serverless que se puede desplegar con la  Serverless Application Model (SAM) CLI.
 

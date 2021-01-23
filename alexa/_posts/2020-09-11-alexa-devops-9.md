@@ -21,6 +21,10 @@ keywords:
   - skill
 lang: es
 ---
+{:.no_toc}
+1. this unordered seed list will be replaced by toc as unordered list
+{:toc}
+
 Hay otro paso importante en el proceso de desarrollo de Alexa Skills. No está relacionado con el código o si la Skill y sus componentes se están ejecutando correctamente.
 Este paso es la validación de nuestra Skill de Alexa antes de enviarla a certificación. Significa que los metadatos de nuestra Skill (logos, descripción, ejemplos, etc.) están correctamente rellenados. Podemos comprobarlo en nuestro pipeline gracias a ASK CLI y al uso de la Alexa Skill Management API.
 

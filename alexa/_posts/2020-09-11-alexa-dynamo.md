@@ -22,6 +22,9 @@ keywords:
   - skill
 lang: es
 ---
+{:.no_toc}
+1. this unordered seed list will be replaced by toc as unordered list
+{:toc}
 
 Mockear las dependencias, especialmente las externas, es una práctica común al escribir pruebas o cuando se está desarrollando localmente.
 La inyección de dependencia generalmente hace que sea fácil proporcionar una implementación mockeada para nuestras dependencias, e.g. la base de datos.

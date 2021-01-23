@@ -22,6 +22,9 @@ keywords:
   - skill
 lang: es
 ---
+{:.no_toc}
+1. this unordered seed list will be replaced by toc as unordered list
+{:toc}
 
 Puedes crear una custom Skill para Alexa extendiendo un servlet que acepta solicitudes y envía respuestas al servicio Alexa en la nube.
 

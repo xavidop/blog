@@ -16,6 +16,10 @@ keywords:
   - recap
 lang: es
 ---
+{:.no_toc}
+1. this unordered seed list will be replaced by toc as unordered list
+{:toc}
+
 Este 2020 ha sido un año muy duro para todos, pero creo que personalmente ha sido un gran año. 
 Un año en el que he cumplido muchos sueños.
 

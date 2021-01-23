@@ -21,6 +21,9 @@ keywords:
   - skill
 lang: es
 ---
+{:.no_toc}
+1. this unordered seed list will be replaced by toc as unordered list
+{:toc}
 
 El propósito de este contenedor es poder utilizar la [Amazon ASK CLI](https://developer.amazon.com/docs/smapi/ask-cli-intro.html#alexa-skills-kit-command-line-interface-ask-cli) y la [Amazon AWS CLI](https://docs.aws.amazon.com/cli/index.html) en un contenedor Docker en pieplines de DevOps.
 

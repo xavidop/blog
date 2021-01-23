@@ -21,6 +21,9 @@ keywords:
   - football
 lang: es
 ---
+{:.no_toc}
+1. this unordered seed list will be replaced by toc as unordered list
+{:toc}
 
 Un custom slot type define una lista de valores representativos para un slot de un o varios utterances. Loscustom slot type se utilizan para listas de elementos que no están cubiertos por el conjunto de tipos incorporado por Amazon.
 Cuando utilizas un custom slot, defines el tipo y sus valores, y especificas el nombre del custom slot como parte de la definición del intent.

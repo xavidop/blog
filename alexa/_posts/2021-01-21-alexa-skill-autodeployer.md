@@ -21,6 +21,10 @@ keywords:
   - skill
 lang: es
 ---
+{:.no_toc}
+1. this unordered seed list will be replaced by toc as unordered list
+{:toc}
+
 
 Imagina que encuentras un template de una skill de Alexa en Internet y quieres probarla de inmediato.
 

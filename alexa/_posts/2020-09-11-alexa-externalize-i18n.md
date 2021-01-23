@@ -21,6 +21,9 @@ keywords:
   - skill
 lang: es
 ---
+{:.no_toc}
+1. this unordered seed list will be replaced by toc as unordered list
+{:toc}
 
 En informática, la internacionalización es el proceso de diseño de software para que se pueda adaptar a diferentes idiomas y regiones sin la necesidad de reingeniería o hacer cambios en el código.
 En el caso del software, significa traducir a varios idiomas, utilizar diferentes monedas o diferentes formatos de fecha entre otros.

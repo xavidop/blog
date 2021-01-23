@@ -21,6 +21,9 @@ keywords:
   - skill
 lang: es
 ---
+{:.no_toc}
+1. this unordered seed list will be replaced by toc as unordered list
+{:toc}
 
 Debuggear es esencial para los desarrolladores, pero debuggear en arquitecturas serverless requiere un enfoque totalmente diferente.
 
