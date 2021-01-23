@@ -210,11 +210,11 @@ hydejack:
 
   # You can set this to `true` if you don't want to set the `theme-color` meta tag,
   # This only affects the meta tag, not the color specified in the app manifest.
-  no_theme_color:      true
+  no_theme_color:      false
 
   # Set to `true` when building with the `--lsi` option
   # This will increase site build speed!
-  use_lsi:             true
+  use_lsi:             false
 
   # When using Google Analytics, set to `true` to display a cookie notice banner.
   # When enabled, no user-related data will be stored until the user gives consent.
@@ -355,7 +355,7 @@ titles_from_headings:
 
 kramdown:
   footnote_backlink:   '&#x21a9;&#xfe0e;'
-  math_engine:         katex
+  math_engine:         mathjax
   math_engine_opts:
     preview:           true
     preview_as_code:   true
@@ -369,33 +369,3 @@ compress_html:
 
 sass:
   style:               compressed
-
-# Jekyll Compose Defaults
-# ---------------------------------------------------------------------------------------
-
-jekyll_compose:
-  default_front_matter:
-    drafts:
-      layout: post
-      description: > 
-        A short ~160 character description of your post for search engines,
-        social media previews, etc.
-      image:
-        path: /assets/img/sidebar-bg.jpg
-    posts:
-      layout: post
-      description: > 
-        A short ~160 character description of your post for search engines,
-        social media previews, etc.
-      image:
-        path: /assets/img/sidebar-bg.jpg
-    projects:
-      layout: project
-      description: > 
-        A short ~160 character description of your post for search engines,
-        social media previews, etc.
-      image:
-        path: /assets/img/sidebar-bg.jpg
-      links:
-        - title: Project Link
-          url: https://example.com
