@@ -214,7 +214,7 @@ hydejack:
 
   # Set to `true` when building with the `--lsi` option
   # This will increase site build speed!
-  use_lsi:             false
+  use_lsi:             true
 
   # When using Google Analytics, set to `true` to display a cookie notice banner.
   # When enabled, no user-related data will be stored until the user gives consent.
