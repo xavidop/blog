@@ -304,7 +304,7 @@ plugins:
 # ---------------------------------------------------------------------------------------
 
 # theme: jekyll-theme-hydejack
-remote_theme: hydecorp/hydejack@v9.0.5
+theme: jekyll-theme-hydejack
 
 # SEO Tag
 # ---------------------------------------------------------------------------------------
@@ -355,7 +355,7 @@ titles_from_headings:
 
 kramdown:
   footnote_backlink:   '&#x21a9;&#xfe0e;'
-  math_engine:         mathjax
+  math_engine:         katex
   math_engine_opts:
     preview:           true
     preview_as_code:   true
