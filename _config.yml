@@ -18,6 +18,10 @@ baseurl:               ''
 # You may also provide a location, e.g.: en-us, de_AT.
 lang:                  en
 
+legal:
+  - title:             Cookies Policy
+    href:              /cookies-policy
+
 # The title of your blog. Used in the sidebar and the browser tab.
 title:                 Xavier Portilla Edo
 
