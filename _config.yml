@@ -157,7 +157,7 @@ tinyletter:           xavidop
 
 hydejack:
   # Configure the order of complementary content on blog posts
-  post_addons:         [about, newsletter, related, random, comments]
+  post_addons:         [comments, about, newsletter, related, random]
 
   # Configure the order of complementary content on project pages
   project_addons:      [about, newsletter, other]
