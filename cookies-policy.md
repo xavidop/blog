@@ -4,9 +4,9 @@ title: Cookies Policy
 permalink: cookies-policy
 ---
 
-<h1>Cookie Policy for Technical Grimoire</h1>
+<h1>Cookie Policy for My blog</h1>
 
-<p>This is the Cookie Policy for Technical Grimoire, accessible from https://xavidop.me/</p>
+<p>This is the Cookie Policy for Xavier Portilla Edo's blog, accessible from https://xavidop.me/</p>
 
 <p><strong>What Are Cookies?</strong></p>
 
