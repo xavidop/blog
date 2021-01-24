@@ -6,7 +6,7 @@ permalink: cookies-policy
 
 <h1>Cookie Policy for Technical Grimoire</h1>
 
-<p>This is the Cookie Policy for Technical Grimoire, accessible from https://technicalgrimoire.com/</p>
+<p>This is the Cookie Policy for Technical Grimoire, accessible from https://xavidop.me/</p>
 
 <p><strong>What Are Cookies?</strong></p>
 
@@ -49,6 +49,6 @@ permalink: cookies-policy
 <p>However if you are still looking for more information then you can contact us through one of our preferred contact methods:</p>
 
 <ul>
-<li>Email: technicalgrimoire@gmail.com</li>
+<li>Email: xavierportillaedo@gmail.com</li>
 
 </ul>
