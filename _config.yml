@@ -146,10 +146,10 @@ google_analytics:      UA-149142925-1
 
 # Setting a disqus shortname will enable the comment section on
 # pages with `comments: true` in the front matter.
-disqus:                xaviscode
+disqus:                xavidop
 
 # Setting a tinyletter username will enable the newsletter subscription box.
-tinyletter:           xavierportillaedo
+tinyletter:           xavidop
 
 # Hydejack Settings
 # ----------------------------------------------------------------------------------------
