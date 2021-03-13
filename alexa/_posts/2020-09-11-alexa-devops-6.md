@@ -4,7 +4,6 @@ title: DevOps en tu Alexa Skill. VUI (Voice User Interface) Tests.
 image: /assets/img/blog/post-headers/alexa-test-vui.jpg
 description: >
   Pruebas de la VUI (Voice User Interface) con ASK CLI
-noindex: true
 comments: true
 author: xavi
 kate: hl markdown;

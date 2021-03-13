@@ -4,7 +4,6 @@ title: GitHub Action para el uso de la ASK CLI y Bespoken Tools
 image: /assets/img/blog/post-headers/alexa-github-action.jpg
 description: >
    GitHub Action para ejecutar comandos de la ASK CLI en worflows de GitHub Actions
-noindex: true
 comments: true
 author: xavi
 kate: hl markdown;

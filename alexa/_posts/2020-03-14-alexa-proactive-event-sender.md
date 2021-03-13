@@ -4,7 +4,6 @@ title:  Cliente Java para enviar Proactive Events
 image: /assets/img/blog/post-headers/alexa-proactive-event-sender.jpg
 description: >
   Cliente Java para enviar Proactive Events
-noindex: true
 comments: true
 author: xavi
 kate: hl markdown;

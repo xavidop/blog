@@ -4,7 +4,6 @@ title: DevOps en tu Alexa Skill. Deploy.
 image: /assets/img/blog/post-headers/alexa-deploy.jpg
 description: >
    Despliegue de una Skill con la ASK CLI
-noindex: true
 comments: true
 author: xavi
 kate: hl markdown;

@@ -4,7 +4,6 @@ title: Alexa Skill con TypeScript
 image: /assets/img/blog/post-headers/alexa-typescript.jpg
 description: >
    Alexa Skill desarrollada en TypeScript usando Visual Studio Code
-noindex: true
 comments: true
 author: xavi
 kate: hl markdown;

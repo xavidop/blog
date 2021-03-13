@@ -4,7 +4,6 @@ title: DevOps en tu Alexa Skill. Submit.
 image: /assets/img/blog/post-headers/alexa-submit.jpg
 description: >
    Submitear una Skill para certificar
-noindex: true
 comments: true
 author: xavi
 kate: hl markdown;

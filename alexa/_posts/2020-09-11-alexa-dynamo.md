@@ -4,7 +4,6 @@ title: Alexa Skill con DynamoDB local
 image: /assets/img/blog/post-headers/alexa-dynamo.jpg
 description: >
    Alexa Skill desarrollada en Node.js usando DynamoDB en tu propio ordenador
-noindex: true
 comments: true
 author: xavi
 kate: hl markdown;

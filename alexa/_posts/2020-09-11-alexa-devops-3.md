@@ -4,7 +4,6 @@ title: DevOps en tu Alexa Skill. Tests Unitarios.
 image: /assets/img/blog/post-headers/alexa-unit-tests.jpg
 description: >
    Test unitarios en una Alexa Skill
-noindex: true
 comments: true
 author: xavi
 kate: hl markdown;

@@ -4,7 +4,6 @@ title: Alexa Skill Auto-Deployer
 image: /assets/img/blog/post-headers/alexa-skill-autodeployer.jpg
 description: >
    Despliegue automático de un template de una Alexa Skill
-noindex: true
 comments: true
 author: xavi
 kate: hl markdown;

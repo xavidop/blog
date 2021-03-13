@@ -4,7 +4,6 @@ title: Externalizar tu i18n en tu Skill de Alexa
 image: /assets/img/blog/post-headers/alexa-externalize-i18n.jpg
 description: >
    Externacionalización de las traducciones de nuestra Skill
-noindex: true
 comments: true
 author: xavi
 kate: hl markdown;

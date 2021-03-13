@@ -4,7 +4,6 @@ title: DevOps en tu Alexa Skill. Code Coverage.
 image: /assets/img/blog/post-headers/alexa-code-coverage.jpg
 description: >
    Code Coverage de nuestras pruebas unitarias usando Codecov  
-noindex: true
 comments: true
 author: xavi
 kate: hl markdown;

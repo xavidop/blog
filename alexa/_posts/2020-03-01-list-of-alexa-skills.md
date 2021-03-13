@@ -4,7 +4,6 @@ title: Listado de mis Alexa Skills
 image: /assets/img/blog/post-headers/develop.jpg
 description: >
  Mis skills
-noindex: true
 comments: true
 author: xavi
 kate: hl markdown;

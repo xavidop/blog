@@ -4,7 +4,6 @@ title: Recapitulación del 2020
 image: /assets/img/blog/post-headers/dod.png
 description: >
    Mis aventuras del 2020
-noindex: true
 comments: true
 author: xavi
 kate: hl markdown;

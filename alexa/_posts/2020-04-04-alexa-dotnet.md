@@ -4,7 +4,6 @@ title: Alexa Skill con .NET Core
 image: /assets/img/blog/post-headers/alexa-dotnet.jpg
 description: >
   Alexa Skill desarrollada en .NET Core usando Visual Studio
-noindex: true
 comments: true
 author: xavi
 kate: hl markdown;

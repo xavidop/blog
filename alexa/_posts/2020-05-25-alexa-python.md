@@ -4,7 +4,6 @@ title: Alexa Skill con Python
 image: /assets/img/blog/post-headers/alexa-python.jpg
 description: >
    Alexa Skill desarrollada en Python usando Visual Studio Code
-noindex: true
 comments: true
 author: xavi
 kate: hl markdown;

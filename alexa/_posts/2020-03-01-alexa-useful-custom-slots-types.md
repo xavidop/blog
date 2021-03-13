@@ -4,7 +4,6 @@ title: Alexa custom slot types útiles
 image: /assets/img/blog/post-headers/dictionaries.jpg
 description: >
   Un conjunto de custom slot types de Alexa listas para usa por desarrolladores españoles
-noindex: true
 comments: true
 author: xavi
 kate: hl markdown;

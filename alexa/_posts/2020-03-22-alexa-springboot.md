@@ -4,7 +4,6 @@ title: Alexa Skill con Spring Boot
 image: /assets/img/blog/post-headers/alexa-springboot.jpg
 description: >
   Alexa Skill desarrollada en Java usando Spring Boot
-noindex: true
 comments: true
 author: xavi
 kate: hl markdown;

@@ -4,7 +4,6 @@ title: Cómo monitorizar nuestra Skill de Alexa
 image: /assets/img/blog/post-headers/alexa-monitoring.jpg
 description: >
   Tutorial sobre cómo monitorizar nuestra Skill con Sentry
-noindex: true
 comments: true
 author: xavi
 kate: hl markdown;

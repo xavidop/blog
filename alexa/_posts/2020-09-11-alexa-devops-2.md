@@ -4,7 +4,6 @@ title: DevOps en tu Alexa Skill. Análisis de código estático.
 image: /assets/img/blog/post-headers/alexa-static-code.jpg
 description: >
    ESLint como Code Style Checker
-noindex: true
 comments: true
 author: xavi
 kate: hl markdown;

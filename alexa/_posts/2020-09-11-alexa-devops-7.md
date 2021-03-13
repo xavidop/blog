@@ -4,7 +4,6 @@ title: DevOps en tu Alexa Skill. Integration Tests.
 image: /assets/img/blog/post-headers/alexa-integration-test.jpg
 description: >
    Simulando diálogos usando texto como input
-noindex: true
 comments: true
 author: xavi
 kate: hl markdown;

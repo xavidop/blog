@@ -4,7 +4,6 @@ title: Nuevo libro. La Revolución de Alexa
 image: /assets/img/blog/post-headers/alexa-la-revolucion-de-alexa.jpg
 description: >
    Primer libro sobre desarrollo de Alexa Skills en castellano.
-noindex: true
 comments: true
 author: xavi
 kate: hl markdown;

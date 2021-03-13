@@ -4,7 +4,6 @@ title: Alexa Skill con Node.js
 image: /assets/img/blog/post-headers/alexa-nodejs.jpg
 description: >
    Alexa Skill desarrollada en Node.js usando Visual Studio Code
-noindex: true
 comments: true
 author: xavi
 kate: hl markdown;

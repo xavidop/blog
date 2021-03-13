@@ -4,7 +4,6 @@ title: Cómo crear Alexa custom slot types
 image: /assets/img/blog/post-headers/slots.jpg
 description: >
   Sencillo tutorial sobre cómo crear Alexa custom slot types
-noindex: true
 comments: true
 author: xavi
 kate: hl markdown;

@@ -4,7 +4,6 @@ title: DevOps en tu Alexa Skill. End-to-end Tests.
 image: /assets/img/blog/post-headers/alexa-bespoken.jpg
 description: >
    Bespoken como herramienta clave end-to-end
-noindex: true
 comments: true
 author: xavi
 kate: hl markdown;

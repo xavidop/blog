@@ -4,7 +4,6 @@ title: Alexa y Kubernetes. Alexa Skill cómo un Web Server (I)
 image: /assets/img/blog/post-headers/alexa-webserver.jpg
 description: >
    Crear una Alexa Skill como un Servidor Web
-noindex: true
 comments: true
 author: xavi
 kate: hl markdown;

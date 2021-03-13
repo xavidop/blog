@@ -4,7 +4,6 @@ title: DevOps en tu Alexa Skill. Validation Tests.
 image: /assets/img/blog/post-headers/alexa-validation.jpg
 description: >
    Comprobar que nuestra Skill está lista para su certificación
-noindex: true
 comments: true
 author: xavi
 kate: hl markdown;

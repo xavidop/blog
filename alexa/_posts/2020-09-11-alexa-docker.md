@@ -4,7 +4,6 @@ title: Imagen Docker para usar la ASK CLI y la AWS CLI
 image: /assets/img/blog/post-headers/alexa-docker.jpg
 description: >
    Imagen útil para utilizar la ASK CLI y la AWS CLI en pipelines DevOps
-noindex: true
 comments: true
 author: xavi
 kate: hl markdown;

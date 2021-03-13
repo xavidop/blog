@@ -4,7 +4,6 @@ title: Pipeline de una Alexa Skill con GitHub Actions
 image: /assets/img/blog/post-headers/alexa-devops-github-actions.jpg
 description: >
    Pipeline DevOps usando GitHub Actions  
-noindex: true
 comments: true
 author: xavi
 kate: hl markdown;
