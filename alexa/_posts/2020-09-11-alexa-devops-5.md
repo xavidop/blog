@@ -58,14 +58,14 @@ Cuando desplegemos nuestra Skill en el stage de desarrollo, actualizaremos el ma
 Podemos usar los siguientes comandos en ASK CLI para desplegar nuestra Skill de Alexa:
 
 1. Para ask cli v1:
-```bash
+~~~bash
     ask deploy --debug --force
-```
+~~~
 
 2. Para ask cli v2:
-```bash
+~~~bash
     ask deploy --debug --ignore-hash
-```
+~~~
 
 ### Informes
 
@@ -86,7 +86,7 @@ Este job ejecutará las siguientes tareas:
 4. Ejecutar `ask deploy --debug --force` que desplegará todo el código de la carpeta `src/`como una lambda de AWS.
 5. Conservar nuevamente el código que reutilizaremos en el próximo job
 
-```yaml
+~~~yaml
   deploy:
     executor: ask-executor
     steps:
@@ -99,7 +99,7 @@ Este job ejecutará las siguientes tareas:
           root: /home/node/
           paths:
             - project
-```
+~~~
 **NOTA:** Si queremos ejecutar con éxito todos los comandos ASK CLI, debemos configurar 5 variables de entorno:
 
 * `ASK_DEFAULT_PROFILE`

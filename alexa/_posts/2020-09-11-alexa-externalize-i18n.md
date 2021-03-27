@@ -115,16 +115,16 @@ API de POEditor
 
 Este es un ejemplo de request:
 
-```bash
+~~~bash
   curl -X POST https://api.poeditor.com/v2/terms/list \
       -d api_token="3af6ba0fa02f86fcf38bbe1b533461f1" \
       -d id="7717" \
       -d language="es"
-```
+~~~
 
 Este es un ejemplo de la respuesta:
 
-```json
+~~~json
   {
     "response": {
       "status": "success",
@@ -242,7 +242,7 @@ Este es un ejemplo de la respuesta:
     }
   }
 
-```
+~~~
 Una vez se ha entendido cómo funciona la API, es hora de integrarla en nuestra Skill de Alexa.
 
 Utilizaremos el siguiente flujo para descargar las traducciones:
@@ -253,7 +253,7 @@ Diagrama de flujo descarga de traducciones
 
 El siguiente código ubicado en `utilities/i18nUtils.js` ejecutará lo mismo que explicamos en el diagrama de flujo:
 
-```javascript
+~~~javascript
 
   async function downloadTranslations(locale, handlerInput) {
 
@@ -320,13 +320,13 @@ El siguiente código ubicado en `utilities/i18nUtils.js` ejecutará lo mismo que
 
     }
 
-```
+~~~
 
 Para hacer de manera fácil una request POST `x-www-form-urlencoded` en Node.js, utilizaremos el paquete npm `request-promise`.
 
 Este código se llamará desde el `localisationRequestInterceptor`:
 
-```javascript
+~~~javascript
 
 const Alexa = require('ask-sdk-core');
 
@@ -343,7 +343,7 @@ module.exports = {
         }
     }
 }
-```
+~~~
 
 ## Usando traducciones en la Skill Alexa
 
@@ -353,7 +353,7 @@ He eliminado el paquete npm `i18next` porque ya no lo usaremos. Ahora tendremos 
 
 Esta función buscará un término en las traducciones descargadas anteriormente. También se encuentra en `i18nUtils.js`:
 
-```javascript
+~~~javascript
 
   function getTranslation(key, handlerInput, replaceObjects) {
 
@@ -370,11 +370,11 @@ Esta función buscará un término en las traducciones descargadas anteriormente
 
     }
 
-```
+~~~
 
 Ahora podemos llamar a esta función donde queramos en nuestra Skill de Alexa:
 
-```javascript
+~~~javascript
   const Alexa = require('ask-sdk-core');
   const i18nUtils = require('../utilities/i18nUtils');
 
@@ -394,11 +394,11 @@ Ahora podemos llamar a esta función donde queramos en nuestra Skill de Alexa:
       }
   };
 
-```
+~~~
 
 Esta función admite el reemplazo de cadenas como el paquete `i18next`. En este caso, se usará el paquete npm `sprintf-js`:
 
-```javascript
+~~~javascript
   const Alexa = require('ask-sdk-core');
   const i18nUtils = require('../utilities/i18nUtils');
 
@@ -425,7 +425,7 @@ Esta función admite el reemplazo de cadenas como el paquete `i18next`. En este 
           }
       }
   };
-```
+~~~
 
 ## Guardando traducciones en la Alexa Skill
 
@@ -437,7 +437,7 @@ Diagrama de flujo de presistencia de traducciones
 
 Este flujo se implementa en el interceptor `saveAttributesResponseInterceptor`:
 
-```javascript
+~~~javascript
   const Alexa = require('ask-sdk-core');
   var moment = require('moment');
 
@@ -491,14 +491,14 @@ Este flujo se implementa en el interceptor `saveAttributesResponseInterceptor`:
   };
 
 
-```
+~~~
 
 
 ## Running the Skill and DynamoDB locally with Visual Studio Code
 
 El fichero `launch.json` situado en la carpeta `.vscode` tiene la configuración para Visual Studio Code que nos permite ejecutar nuestro lambda localmente:
 
-```json
+~~~json
 
   {
     "version": "0.2.0",
@@ -524,14 +524,14 @@ El fichero `launch.json` situado en la carpeta `.vscode` tiene la configuración
       ]
   }
 
-```
+~~~
 Este archivo de configuración ejecutará el siguiente comando:
 
-```bash
+~~~bash
 
   node --inspect-brk=28448 lambda\custom\local-debugger.js --portNumber 3001 --skillEntryFile lambda/custom/index.js --lambdaHandler handler
 
-```
+~~~
 
 This configuration uses the `local-debugger.js` file which runs a [TCP server](https://nodejs.org/api/net.html) listening on http://localhost:3001
 
@@ -567,7 +567,7 @@ En ese shell podemos ejecutar consultas para verificar el contenido de nuestra b
 
 1. Obtener todo el contenido de nuestra tabla:
 
-```javascript
+~~~javascript
 
   //GET ALL VALUES FROM TABLE
 
@@ -596,7 +596,7 @@ En ese shell podemos ejecutar consultas para verificar el contenido de nuestra b
       else ppJson(data); // successful response
   });
 
-```
+~~~
 
 Luego podemos mostrar los datos de la tabla:
 
@@ -607,7 +607,7 @@ Tabla
 
 2. Obtener la información de nuestra tabla:
 
-```javascript
+~~~javascript
 
   //GET TABLE INFORMATION
   var params = {
@@ -628,7 +628,7 @@ Tabla
       else ppJson(data); // successful response
   });
 
-```
+~~~
 
 Ahora podemos mostrar la información de nuestra tabla:
 
@@ -640,34 +640,34 @@ Estas consultas están utilizando el [AWS SDK para JavaScript](https://docs.aws.
 
 AWS CLI también puede acceder a este DynamoDB local. Antes de usar la CLI, necesitamos crear un perfil `fake` que usará la región, accessKeyId y secretAccessKey utilizados por nuestra base de datos local y el cliente. Así que en nuestro `~/.aws/credentials` nosotros tenemos que crear el perfil `fake` :
 
-```bash
+~~~bash
 
   [fake]
   aws_access_key_id=fake
   aws_secret_access_key=fake
 
-```
+~~~
 
 Y en nuestro `~/.aws/config` establecemos la región local para nuestro perfil `fake`:
 
-```bash
+~~~bash
 
   [fake]
   region = local
 
-```
+~~~
 
 Después de crearlo, ahora podemos ejecutar consultas utilizando la AWS CLI utilizando nuestro perfil `fake`:
 
-```bash
+~~~bash
 
   aws dynamodb list-tables --endpoint-url http://localhost:8000 --region local --profile fake
 
-```
+~~~
 
 Este comando devolverá una lista de tablas de nuestra base de datos local:
 
-```json
+~~~json
 
   {
       "TableNames": [
@@ -675,7 +675,7 @@ Este comando devolverá una lista de tablas de nuestra base de datos local:
       ]
   }
 
-```
+~~~
 
 Puedes encontrar más información sobre cómo realizar consultas con la AWS CLI [aquí](https://docs.aws.amazon.com/cli/latest/reference/dynamodb/index.html)
 

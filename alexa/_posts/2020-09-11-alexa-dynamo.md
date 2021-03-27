@@ -84,7 +84,7 @@ Por lo tanto, si quieres mantener la información entre tus ejecuciones, puede e
 
 Este código se encuentra en el archivo `utilities/utils.js`:
 
-```javascript
+~~~javascript
 
   function getLocalDynamoDBClient(options) {
 
@@ -114,7 +114,7 @@ Este código se encuentra en el archivo `utilities/utils.js`:
         return new AWS.DynamoDB();
   }
 
-```
+~~~
 
 ## Usando DynamoDB local
 
@@ -125,7 +125,7 @@ Necesitamos agregar el paquete npm `ask-sdk-dynamodb-persistence-adapter` para c
 
 Este código se encuentra en el archivo `utilities/utils.js`:
 
-```javascript
+~~~javascript
 
   function getPersistenceAdapter(tableName, createTable, dynamoDBClient) {
 
@@ -145,12 +145,12 @@ Este código se encuentra en el archivo `utilities/utils.js`:
    return new DynamoDbPersistenceAdapter(options);
   }
 
-```
+~~~
 Una vez que tenemos DynamoDB local ejecutándose, el cliente creado, el adaptador de persistencia creado y utilizando este cliente, es hora de configurar el adaptador a nuestra Skill.
 
 Así es como se ve nuestro `index.js`:
 
-```javascript
+~~~javascript
 
   var local = process.env.DYNAMODB_LOCAL
   let persistenceAdapter;
@@ -186,11 +186,11 @@ Así es como se ve nuestro `index.js`:
           SaveAttributesResponseInterceptor)
       .lambda();
 
-```
+~~~
 
 Finalmente, tenemos un ejemplo de persistencia de los datos en nuestro interceptor `SaveAttributesResponseInterceptor` ubicado en la carpeta `interceptors`:
 
-```javascript
+~~~javascript
 
   const Alexa = require("ask-sdk-core");
 
@@ -210,7 +210,7 @@ Finalmente, tenemos un ejemplo de persistencia de los datos en nuestro intercept
     },
   };
 
-```
+~~~
 
 Como puedes ver, el interceptor anterior está almacenando en DynamoDB la request entrante. Este es solo un ejemplo tonto que se utiliza para mostrarle cómo funciona.
 
@@ -218,7 +218,7 @@ Como puedes ver, el interceptor anterior está almacenando en DynamoDB la reques
 
 El fichero `launch.json` situado en la carpeta `.vscode` tiene la configuración para Visual Studio Code que nos permite ejecutar nuestro lambda localmente:
 
-```json
+~~~json
 
   {
     "version": "0.2.0",
@@ -244,14 +244,14 @@ El fichero `launch.json` situado en la carpeta `.vscode` tiene la configuración
       ]
   }
 
-```
+~~~
 Este archivo de configuración ejecutará el siguiente comando:
 
-```bash
+~~~bash
 
   node --inspect-brk=28448 lambda\custom\local-debugger.js --portNumber 3001 --skillEntryFile lambda/custom/index.js --lambdaHandler handler
 
-```
+~~~
 
 This configuration uses the `local-debugger.js` file which runs a [TCP server](https://nodejs.org/api/net.html) listening on http://localhost:3001
 
@@ -288,7 +288,7 @@ En ese shell podemos ejecutar consultas para verificar el contenido de nuestra b
 
 1. Obtener todo el contenido de nuestra tabla:
 
-```javascript
+~~~javascript
 
   //GET ALL VALUES FROM TABLE
 
@@ -317,7 +317,7 @@ En ese shell podemos ejecutar consultas para verificar el contenido de nuestra b
       else ppJson(data); // successful response
   });
 
-```
+~~~
 
 Luego podemos mostrar los datos de la tabla:
 
@@ -328,7 +328,7 @@ Contenido de la tabla
 
 2. Obtener la información de nuestra tabla:
 
-```javascript
+~~~javascript
 
   //GET TABLE INFORMATION
   var params = {
@@ -349,7 +349,7 @@ Contenido de la tabla
       else ppJson(data); // successful response
   });
 
-```
+~~~
 
 Ahora podemos mostrar la información de nuestra tabla:
 
@@ -361,34 +361,34 @@ Estas consultas están utilizando el [AWS SDK para JavaScript](https://docs.aws.
 
 AWS CLI también puede acceder a este DynamoDB local. Antes de usar la CLI, necesitamos crear un perfil `fake` que usará la región, accessKeyId y secretAccessKey utilizados por nuestra base de datos local y el cliente. Así que en nuestro `~/.aws/credentials` nosotros tenemos que crear el perfil `fake` :
 
-```bash
+~~~bash
 
   [fake]
   aws_access_key_id=fake
   aws_secret_access_key=fake
 
-```
+~~~
 
 Y en nuestro `~/.aws/config` establecemos la región local para nuestro perfil `fake`:
 
-```bash
+~~~bash
 
   [fake]
   region = local
 
-```
+~~~
 
 Después de crearlo, ahora podemos ejecutar consultas utilizando la AWS CLI utilizando nuestro perfil `fake`:
 
-```bash
+~~~bash
 
   aws dynamodb list-tables --endpoint-url http://localhost:8000 --region local --profile fake
 
-```
+~~~
 
 Este comando devolverá una lista de tablas de nuestra base de datos local:
 
-```json
+~~~json
 
   {
       "TableNames": [
@@ -396,7 +396,7 @@ Este comando devolverá una lista de tablas de nuestra base de datos local:
       ]
   }
 
-```
+~~~
 
 Puedes encontrar más información sobre cómo realizar consultas con la AWS CLI [aquí](https://docs.aws.amazon.com/cli/latest/reference/dynamodb/index.html)
 

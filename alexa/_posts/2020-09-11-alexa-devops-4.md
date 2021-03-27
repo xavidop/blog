@@ -64,9 +64,9 @@ Ahora podemos volver a nuestro código para configurar el proyecto.
 
 Después de esto, podemos instalar la librería de Node.js `codecov` usando npm. `--save-dev` se usa para guardar el paquete npm con fines de desarrollo. Ejemplo: pruebas unitarias, minificación.
 
-```bash
+~~~bash
     npm install codecov --save-dev
-```
+~~~
 
 Es importante notar que el code coverage será generado por una herramienta externa llamada `nyc` que su output será utilizado por esta librería para cargarlo en Codecov. 
 
@@ -80,10 +80,10 @@ Para usar la librería, necesitamos establecer una variable de entorno llamada `
 
 Después de eso tenemos que crear el archivo de configuración `codecov.yml` en la raíz de nuestro repositorio con este contenido:
 
-```yaml
+~~~yaml
     fixes:
       - "src/::lambda/custom/src/"
-```
+~~~
 
 ¿Por qué? Bueno, nuestro código JavaScript no se encuentra en la raíz de nuestro proyecto, por lo que cuando ejecutamos el informe de code coverage, comenzará desde la subcarpeta `src/`.
 Entonces, tenemos que cambiar la carpeta del informe para establecer la ruta correcta comenzando desde el directorio raíz del repositorio.
@@ -100,9 +100,9 @@ Tanto `nyc` como `Istanbul` son las bibliotecas de cobertura de código más uti
  
 Puede instalar `nyc` usando npm. `--save-dev` se usa para guardar el paquete npm con fines de desarrollo. Ejemplo: pruebas unitarias, minificación.
 
-```bash
+~~~bash
     npm install nyc --save-dev
-```
+~~~
 
 Este paquete npm tiene una opción para establecer el output del informe al tipo `.lcov`, que es el tipo que la librería de Node.js `codecov` necesita para poder cargarlo en la plataforma.
 
@@ -132,7 +132,7 @@ Este job ejecutará las siguientes tareas:
 2. Ejecutar `npm run codecov` para ejecutar Code Coverage y luego cargarlo en Codecov.
 3. Conservar nuevamente el código que reutilizaremos en el próximo job
 
-```yaml
+~~~yaml
   codecov:
     executor: ask-executor
     steps:
@@ -143,7 +143,7 @@ Este job ejecutará las siguientes tareas:
           root: /home/node/
           paths:
             - project
-```
+~~~
 **NOTA:** Recuerda establecer la variable de entorno `CODECOV_TOKEN` en CircleCI.
 
 ## Recursos

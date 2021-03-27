@@ -70,7 +70,7 @@ El job de checkout ejecutará las siguientes tareas:
 1. Checkout del código.
 2. Dar permiso de ejecución para poder ejecutar todos los tests
 
-```yaml
+~~~yaml
   checkout:
     runs-on: ubuntu-latest
     name: Checkout
@@ -82,7 +82,7 @@ El job de checkout ejecutará las siguientes tareas:
       - run: |
           chmod +x -R ./test;
           ls -la
-```
+~~~
 
 ### build
 
@@ -90,7 +90,7 @@ El job de build ejecutará las siguientes tareas:
 1. Checkout del código.
 2. Ejecutar `npm install` para descargar todas las dependencias de Node.js
 
-```yaml
+~~~yaml
   build:
     runs-on: ubuntu-latest
     name: Build
@@ -104,7 +104,7 @@ El job de build ejecutará las siguientes tareas:
         cd lambda;
         npm install
 
-```
+~~~
 
 ### Pretests
 
@@ -149,7 +149,7 @@ El job de store-artifacts ejecutará las siguientes tareas:
 1. Descargar el código.
 2. Almacenar el código completo de nuestra Skill de Alexa como un artefacto. Será accesible en GitHub Actions cuando queramos verlo.
 
-```yaml
+~~~yaml
 {% raw %}
   store-artifacts:
     runs-on: ubuntu-latest
@@ -166,7 +166,7 @@ El job de store-artifacts ejecutará las siguientes tareas:
         name: code
         path: ${{ github.workspace }}
 {% endraw %}
-```
+~~~
 
 ### Submit
 
@@ -176,7 +176,7 @@ Estos jobs enviarán la Skill de Alexa a certificación. Consulta la explicació
 
 Al final del archivo de configuración GitHub Actions, definiremos nuestro pipeline como un workflow de GitHub Actions que ejecutará los jobs explicados anteriormente:
 
-```yaml
+~~~yaml
 {% raw %}
 
 on: [push]
@@ -478,7 +478,7 @@ jobs:
         name: code
         path: ${{ github.workspace }}
 {% endraw %}
-```
+~~~
 
 El archivo de configuración GitHub Actions se encuentra en `.github/workflows/main.yml`.
 

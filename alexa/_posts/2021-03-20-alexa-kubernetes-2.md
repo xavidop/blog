@@ -42,14 +42,14 @@ Aquí tienes las tecnologías utilizadas en este proyecto:
 
 Docker puede crear imágenes automáticamente leyendo las instrucciones de un Dockerfile. Un Dockerfile es un documento de texto que contiene todos los comandos que un usuario puede ejecutar en una la línea de comandos para crear una imagen Docker. Al utilizar la compilación de Docker, los usuarios pueden crear una compilación automatizada que ejecute varias instrucciones que se ejecutan en la línea de comandos en sucesión.
 
-```dockerfile
+~~~dockerfile
 FROM node:12.18-alpine
 WORKDIR /usr/src
 COPY ./app/ .
 RUN npm install
 EXPOSE 3000
 ENTRYPOINT ["npm", "start"]
-```
+~~~
 
 Estos son los pasos que ejecutará el `Dockerfile` cuando hagamos el build de la imagen Docker:
 1. Usaremos la versión NodeJS 12.18 que se ejecuta en un contenedor Linux Alpine.
@@ -66,20 +66,20 @@ El `Dockerfile` se encuentra en la carpeta `docker`.
 Explicado todos los pasos de nuestro `Dockerfile`, es hora de hacer el build para tener nuestro contenedor listo para ejecutarse.
 
 Este es un ejemplo de un comando `build` de Docker:
-```bash
+~~~bash
 ## Build
 docker build -t xavidop/alexa-skill-nodejs-express:latest -f docker/Dockerfile .
-```
+~~~
 
 **NOTA:** este comando debe ejecutarse en la carpeta raíz de este proyecto.
 
 ## Push de la imagen Docker
 
 Este es un ejemplo de un comando Docker Push:
-```bash
+~~~bash
 ## Push
 docker push xavidop/alexa-skill-nodejs-express:latest
-```
+~~~
 
 **NOTA:** este comando debe ejecutarse en la carpeta raíz de este proyecto.
 
@@ -93,10 +93,10 @@ Docker Hub
 
 Podemos ejecutar nuestro contenedor docker una vez que hayamos ejecutado el comando build. 
 Podemos ejecutarlo con el siguiente comando:
-```bash
+~~~bash
 #Run
 docker run -i -p 3000:3000 -t xavidop/alexa-skill-nodejs-express:latest
-```
+~~~
 
 **NOTA:** este comando debe ejecutarse en la carpeta raíz de este proyecto.
 

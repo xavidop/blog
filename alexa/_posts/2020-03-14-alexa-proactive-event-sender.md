@@ -34,28 +34,28 @@ Basándome en el video [De Cero a Héroe, Parte 13: Proactive Events Notificatio
 <iframe width="560" height="315" src="https://www.youtube.com/embed/COnuc-LX-1Y" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Esta libreria realiza las siguientes operaciones:
-1. Obtiene un token de autenticación de Alexa mediante el uso del ```client_id``` y ```client_secret``` de la skill.
-2. Utiliza el token obtenido en el paso anterior para las notificaciones *broadcast* a aquellos usuarios de la skill que tienen permisos a notificaciones en la aplicación Alexa. Envía eventos siguiendo el esquema [```AMAZON.MessageAlert.Activated```](https://developer.amazon.com/docs/smapi/schemas-for-proactive-events.html#message-alert).
+1. Obtiene un token de autenticación de Alexa mediante el uso del ~~~client_id~~~ y ~~~client_secret~~~ de la skill.
+2. Utiliza el token obtenido en el paso anterior para las notificaciones *broadcast* a aquellos usuarios de la skill que tienen permisos a notificaciones en la aplicación Alexa. Envía eventos siguiendo el esquema [~~~AMAZON.MessageAlert.Activated~~~](https://developer.amazon.com/docs/smapi/schemas-for-proactive-events.html#message-alert).
 
 ## Agregar proactive events (notificaciones) a tu skill
 
 Recuerda que si quieres enviar proactive events (notificaciones) a tu skill, debes modificar el manifest de la skilll (skill.json) para agregar permisos de notificación y declarar el schema(s) de los proactive events (notificaciones) que su skill puede enviar. Usando SMAPI, debes:
 
-1. Agregar el objeto ```permissions``` al ```manifiest``` de la skill (skill.json):
+1. Agregar el objeto ~~~permissions~~~ al ~~~manifiest~~~ de la skill (skill.json):
 
 
-```json
+~~~json
     "permissions": [
         {
             "name": "alexa::devices:all:notifications:write"
         }
     ]
-```
+~~~
 
-2. Agregar el objeto ```events``` al ```manifiest``` de la skill:
+2. Agregar el objeto ~~~events~~~ al ~~~manifiest~~~ de la skill:
 
 
-```json
+~~~json
     "events": {
       "publications": [
         {
@@ -71,16 +71,16 @@ Recuerda que si quieres enviar proactive events (notificaciones) a tu skill, deb
         }
       ]
     }
-```
+~~~
 
 3. volver a desplegar la skill:
 
 
-```bash
+~~~bash
    ask deploy -t skill
-```
+~~~
 
-Si quieres que la skill acpete más de un schema, simplemente agrégalos a ```events.publications```  y recuerda cambiar el tipo de evento en la clase ```Event``` del package ```com.xavidop.alexa.model.event```.
+Si quieres que la skill acpete más de un schema, simplemente agrégalos a ~~~events.publications~~~  y recuerda cambiar el tipo de evento en la clase ~~~Event~~~ del package ~~~com.xavidop.alexa.model.event~~~.
 
 El proceso se describe más a fondo en la [documentación oficial de la API de proactive events de Alexa](https://developer.amazon.com/docs/smapi/proactive-events-api.html#onboard-smapi).
 
@@ -93,21 +93,21 @@ Necesitas al menos Java> = 1.8 para ejecutar el código y Maven para descargar l
 
 ## Instalar
 
-Para descargar las dependencias del proyecto, simplemente añade esta dependencia de maven en el ```pom.xml``` del proyecto:
+Para descargar las dependencias del proyecto, simplemente añade esta dependencia de maven en el ~~~pom.xml~~~ del proyecto:
 
-```xml
+~~~xml
     <dependency>
       <groupId>com.xavidop.alexa</groupId>
       <artifactId>alexa-proactive-event-sender</artifactId>
       <version>LATEST</version>
     </dependency>
-```
+~~~
 
 ## Cómo usarlo
 
 Después de agregar la dependencia, puede usar el cliente de la siguiente manera:
 
-```java
+~~~java
     String clientId = "YOUR-CLIENT";
     String secretId = "YOUR-SECRET";
 
@@ -121,14 +121,14 @@ Después de agregar la dependencia, puede usar el cliente de la siguiente manera
     urlRegion.setEnvironment(Environment.DEV);
 
     client.sendProactiveEvent(event, urlRegion);
-```
+~~~
     
-* ```Environment```: los proactive events se puede enviar a los endpoints de las skills en estado ```live``` o ```development```. Los valores permitidos son ``` DEV``` y ```PRO```.
-* ```Región ```: identifica la región del endpoint de Alexa que se utilizará para enviar proactive events. Los valores permitidos son ```EU``` (Europa), ```NA``` (Norteamérica) y ```FE``` (Oriente). ** Recuerda **: si sus usuarios estan en NA y está enviando proactive events a través del endpoint de la UE, los usuarios ubicados en NA no recibirán ninguna notificación.
+* ~~~Environment~~~: los proactive events se puede enviar a los endpoints de las skills en estado ~~~live~~~ o ~~~development~~~. Los valores permitidos son ~~~ DEV~~~ y ~~~PRO~~~.
+* ~~~Región ~~~: identifica la región del endpoint de Alexa que se utilizará para enviar proactive events. Los valores permitidos son ~~~EU~~~ (Europa), ~~~NA~~~ (Norteamérica) y ~~~FE~~~ (Oriente). ** Recuerda **: si sus usuarios estan en NA y está enviando proactive events a través del endpoint de la UE, los usuarios ubicados en NA no recibirán ninguna notificación.
 
 Estos son los valores por defecto de un proactive events cuando lo creas:
 
-```json
+~~~json
     {
         "timestamp": "",
         "referenceId": "UUID-AUTOGENERATED",
@@ -154,7 +154,7 @@ Estos son los valores por defecto de un proactive events cuando lo creas:
             "payload": {}
         }
     }
-```
+~~~
 
 El código y la librería la teneis disponible en mi [**Github**](https://github.com/xavidop/alexa-proactive-event-sender)
 

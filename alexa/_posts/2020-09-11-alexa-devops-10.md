@@ -57,20 +57,20 @@ Podemos utilizar los siguientes comandos de la Alexa Skill Management API (SMAPI
 En nuestro caso, solo enviaremos a certificar y no la publicaremos automáticamente, solo certificaremos.
 
 1. Para ask cli v1:
-```bash
+~~~bash
     ask api submit -s ${skill_id} --publication-method MANUAL_PUBLISHING
-```
+~~~
 
 2. Para ask cli v2:
-```bash
+~~~bash
     ask smapi submit-skill-for-certification -s ${skill_id} --publication-method MANUAL_PUBLISHING
-```
+~~~
 
 Estos comandos están integrados en el archivo de script bash `test/submit/submit.sh`.
 
 Aquí podemos encontrar el script bash completo:
 
-```bash
+~~~bash
     #!/bin/bash
     skill_id=$1
 
@@ -86,7 +86,7 @@ Aquí podemos encontrar el script bash completo:
         submit=$(ask smapi submit-skill-for-certification -s ${skill_id} --publication-method MANUAL_PUBLISHING)
         exit 0
     fi
-```
+~~~
 
 Este script tiene dos parámetros:
 1. El id de la Skill
@@ -116,14 +116,14 @@ Este job ejecutará las siguientes tareas:
 1. Restaurar el código que hemos descargado en el paso anterior en la carpeta `/home/node/project`
 2. Ejecutar el script `submit`.
 
-```yaml
+~~~yaml
   submit:
     executor: ask-executor
     steps:
       - attach_workspace:
           at: /home/node/
       - run: cd test/submit/ && ./submit.sh $SKILL_ID v1
-```
+~~~
 
 **NOTE:** To perform these tests in CircleCI you have to set the environment variable `SKILL_ID` with the id of your Alexa Skill.
 

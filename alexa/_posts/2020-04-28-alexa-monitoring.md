@@ -86,17 +86,17 @@ No voy a comenzar desde cero en este post. Reutilizaré el proyecto que he usado
 
 En primer lugar, lo que tenemos que agregar es la dependencia de Sentry en el archivo `pom.xml`:
 
-```xml
+~~~xml
         <dependency>
             <groupId>io.sentry</groupId>
             <artifactId>sentry</artifactId>
             <version>1.7.30</version>
         </dependency>
-```
+~~~
 
 Después de eso, necesitamos inicializar el cliente Sentry. Lo inicializaremos al mismo tiempo que se llama a la lambda con el método `Sentry.init()`:
 
-```java 
+~~~java 
     public class App extends SkillStreamHandler {
 
         private static Skill getSkill() {
@@ -125,7 +125,7 @@ Después de eso, necesitamos inicializar el cliente Sentry. Lo inicializaremos a
         }
 
     }
-```
+~~~
 
 Cuando se llama a `Sentry.inti()`, leerá el archivo `sentry.properties` ubicado en src/main/resources que tiene las siguientes properties:
 * **dsn**: la URL única de nuestro proyecto Sentry. Puedes obtenerlo online en el proyecto de Sentry que hayas configurado para la Skill. Por ejemplo: ttp://fasdfasd@sentry.io/asdfas
@@ -138,7 +138,7 @@ Cuando se llama a `Sentry.inti()`, leerá el archivo `sentry.properties` ubicado
 Después de agregar la dependencia y setear las properties correctamente, ahora nos vamos a centrar en nuestros dos interceptores. `LogRequestInterceptor` y `LogResponseInterceptor`.
 ¿Por qué esos dos?
 * En el `LogRequestInterceptor` tenemos la request recibida que tiene toda la información que necesitamos para crear nuestros tags y el User en Sentry para trackear correctamente la request actual:
-```java
+~~~java
      public class LogRequestInterceptor implements RequestInterceptor {
      
          static final Logger logger = LogManager.getLogger(LogRequestInterceptor.class);
@@ -183,11 +183,11 @@ Después de agregar la dependencia y setear las properties correctamente, ahora 
              logger.info(input.getRequest().toString());
          }
      }
-```
+~~~
 * En el `LogResponseInterceptor` tenemos aquí la respuesta que vamos a enviar al dispositivo y podemos, por ejemplo, calcular el tiempo en milisegundos de la ejecución actual.
 Como estas son las últimas líneas de nuestra Skill durante la ejecución, una de las tareas principales de este interceptor es enviar el evento Sentry a la nube con el método `Sentry.capture()`.
 Finalmente, limpiamos todo con `Sentry.clearContext()` para futuras requests de Alexa:
-```java
+~~~java
 public class LogResponseInterceptor implements ResponseInterceptor {
 
     static final Logger logger = LogManager.getLogger(LogRequestInterceptor.class);
@@ -219,7 +219,7 @@ public class LogResponseInterceptor implements ResponseInterceptor {
         logger.info(output.toString());
     }
 }
-```
+~~~
 
 ### Logging en nuestra Skill con Sentry
 
@@ -237,7 +237,7 @@ Por último, pero no menos importante cuando hablamos de monitorización, son la
 En nuestra ejemplo de Skill de Alexa tenemos un lugar para capturar todas las excepciones, el `MyExceptionHandler`.
 Cuando tenemos una excepción, el `LogResponseInterceptor` no se ejecutará. Entonces, es por eso que en este handler capturamos la excepción con Sentry y también limpiamos el contexto de Sentry para futuras requests:
 
-```java
+~~~java
 public class MyExceptionHandler implements ExceptionHandler {
     @Override
     public boolean canHandle(HandlerInput input, Throwable throwable) {
@@ -256,7 +256,7 @@ public class MyExceptionHandler implements ExceptionHandler {
                 .build();
     }
 }
-```
+~~~
 
 ### El poder de Sentry
 

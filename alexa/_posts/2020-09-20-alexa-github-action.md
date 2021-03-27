@@ -66,7 +66,7 @@ Las Actions se pueden ejecutar directamente en una máquina o en un contenedor D
 
 Dicho esto, veamos el archivo de configuración de la GitHub Action que se encuentra en el fichero `action.yml`.
 
-```yaml
+~~~yaml
 {% raw %}
 
   # action.yml
@@ -91,7 +91,7 @@ Dicho esto, veamos el archivo de configuración de la GitHub Action que se encue
       - ${{ inputs.command }}
 {% endraw %}
 
-```
+~~~
 
 Como se observa en el fichero anterior, la GitHub Action tiene como input un parámetro llamado `command` el cual será el comando de la ASK CLI que queramos ejecutar.
 Este comando se ejecutará en un contendor docker específico cuyo Dockerfile viene especificado en la sección `run` de la GitHub Action. 
@@ -105,7 +105,7 @@ Esta segunda imagen Docker es exactamente igual que la mencionada pero se le ha 
 
 Esta nueva imagen Docker se puede encontrar en `.github/action/Dockerfile`:
  
-```Dockerfile
+~~~Dockerfile
   # Original source from https://hub.docker.com/repository/docker/xavidop/alexa-ask-aws-cli
   FROM xavidop/alexa-ask-aws-cli:latest
   LABEL maintainer="Xavier Portilla Edo <xavierportillaedo@gmail.com>"
@@ -115,17 +115,17 @@ Esta nueva imagen Docker se puede encontrar en `.github/action/Dockerfile`:
   RUN chmod 777 /home/node/entrypoint.sh
 
   ENTRYPOINT ["/home/node/entrypoint.sh"]
-```
+~~~
 
 El `entrypoint` nuevo que le hemos añadido a esta nueva Dockerfile lo único que va a hacer va a ser ejecutar el comando que se le pase a través del parámetro de entrada de la GitHub Action `command`:
 
-```bash
+~~~bash
 
   #!/bin/bash
   result=$($1)
   echo "::set-output name=result::$result"
 
-```
+~~~
 Como output, el `entrypoint` devolverá el resultado de la ejecución del comando recibido desde la GitHub Action a través del parámetro `command` en el formato requerido por GitHub.
 
 Este formato es el siguiente: `::set-outpt name={ID_PARAMETRO_SALIDA}::{VALOR_PARAMETRO_SALIDA}`.
@@ -135,7 +135,7 @@ Este formato es el siguiente: `::set-outpt name={ID_PARAMETRO_SALIDA}::{VALOR_PA
 ### Ejemplo de uso
 
 Podemos utilizar el siguiente ejemplo:
-```yaml
+~~~yaml
 {% raw %}
   - name: Alexa ASK AWS CLI Action
     uses: xavidop/alexa-ask-aws-cli-docker@v1.0.6
@@ -152,7 +152,7 @@ Podemos utilizar el siguiente ejemplo:
   - name: Get the output
     run: echo "The result was ${{ steps.command.outputs.result }}"
 {% endraw %}
-```
+~~~
 
 **NOTA:** Es importante mencionar que para que la GitHub Action funcione le debemos pasar todas las variables de entorno que necesita la ASK CLI como se observa en el ejemplo anterior.
 
@@ -160,7 +160,7 @@ Podemos utilizar el siguiente ejemplo:
 
 Este es un ejemplo de cómo se puede integrar la GitHub Action en un workflow de GitHub Actions:
 
-```yaml
+~~~yaml
 {% raw %}
   on: [push]
 
@@ -188,7 +188,7 @@ Este es un ejemplo de cómo se puede integrar la GitHub Action en un workflow de
         - name: Get the output
           run: echo "The result was ${{ steps.ask.outputs.result }}"
 {% endraw %}
-```
+~~~
 
 ### Testear la GitHub Action en cada commit
 
@@ -197,7 +197,7 @@ Así podemos detectar que los nuevos cambios que se hagan no romperán el funcio
 
 Este workflow lo podéis encontrar en `.github/workflows/main.yaml`:
 
-```yaml
+~~~yaml
 {% raw %}
 on: [push]
 
@@ -226,7 +226,7 @@ jobs:
       - name: Get the output
         run: echo "The result was ${{ steps.ask.outputs.result }}"
 {% endraw %}
-```
+~~~
 
 Como se puede ver, en la propiedad `uses` del step `Test action step` del workflow, se le indica que coja la Action del directorio raíz del repositorio(`./`) en vez de coger la versión del marketplace(`xavidop/alexa-ask-aws-cli-docker@v1.0.6`)
 

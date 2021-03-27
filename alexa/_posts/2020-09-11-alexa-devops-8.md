@@ -70,9 +70,9 @@ Virtual device
 
 Como nuestra imagen  Docker tiene instalado el paquete npm `bespoken-tools`, mencionado en la sección anterior, podemos ejecutar el comando que configurará nuestro conjunto de pruebas:
 
-```bash
+~~~bash
   bst init
-```
+~~~
 
 Este comando mostrará el siguiente prompt:
 
@@ -91,14 +91,14 @@ Después de ejecutar ese comando, Bespoken creará un archivo json `testing.json
 
 Primero, echaremos un vistazo a nuestro archivo `testing.json`:
 
-```json
+~~~json
   {
       "virtualDeviceToken": "alexa-8ffa4668-0fe2-45dd-8687-4f0b159a4e44",
       "locales": "es-ES",
       "type": "e2e",
       "platform": "alexa"
   }
-```
+~~~
 
 Realmente fácil, ¿verdad? En ese archivo podemos ver la información que hemos introducido en el comando `bst init`.
 
@@ -117,7 +117,7 @@ En la carpeta `test/e2e-bespoken-test/e2e` podemos encontrar el archivo del conj
 
 Este es el archivo de pruebas end-to-end:
 
-```yaml
+~~~yaml
 
   ---
   configuration:
@@ -140,7 +140,7 @@ Este es el archivo de pruebas end-to-end:
   - ayuda: "puedes decirme hola * ayudar"
   - cancela: "hasta *"
 
-```
+~~~
 Como podemos ver, tenemos 3 pruebas en esta suite:
 1. La primera probará una solicitud LaunchRequest y el intent HelloWorld.
 2. La segunda probará una solicitud LaunchRequest, AMAZON.HelpIntent y finalizará la sesión utilizando AMAZON.StopIntent.
@@ -150,9 +150,9 @@ Estas pruebas end-to-end se pueden realizar con el paquete npm `bespoken-tools`.
 
 usaremos el siguiente comando `bst` para ejecutarlas:
 
-```bash
+~~~bash
   bst test --config test/e2e-bespoken-test/testing.json
-```
+~~~
 
 Cuando ejecutamos esta suite, esto es lo que sucede en Bespoken:
 
@@ -191,7 +191,7 @@ Este job ejecutará las siguientes tareas:
 3. Almacenar el informe HTML generado por la ejecución anterior como un artefacto de este job.
 4. Conservar nuevamente el código que reutilizaremos en el próximo job
    
-```yaml
+~~~yaml
 
   end-to-end-test:
     executor: ask-executor
@@ -206,7 +206,7 @@ Este job ejecutará las siguientes tareas:
           paths:
             - project
 
-```
+~~~
 
 ## Recursos
 

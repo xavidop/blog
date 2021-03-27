@@ -56,9 +56,9 @@ Construye tu aplicación con el comando `sam build`.
 
 Para construir y desplegar tu aplicación por primera vez, ejecuta lo siguiente en tu shell:
 
-```bash
+~~~bash
 sam build HelloWorldFunction --template template.yaml --build-dir HelloWorldFunction\.aws-sam\build
-```
+~~~
 
 La SAM CLI instala las dependencias definidas en `HelloWorldFunction/pom.xml`, crea un deployment package, y lo guarda en el directorio `.aws-sam/build`.
 
@@ -69,9 +69,9 @@ Puedes probar una sola función lambda (nuestra Skill) invocándola directamente
 
 Ejecuta la función lambda (Skill) localmente ejecutando el comando `sam local invoke`.
 
-```bash
+~~~bash
 sam local invoke HelloWorldFunction --template HelloWorldFunction\.aws-sam\build\template.yaml
-```
+~~~
 **NOTA:** Usando LocalDebugger.java es tan sencillo como **ejecutar** desde Visual Studio Code o IntelliJ. Échale un ojo a las cofiguraciones para los dos IDEs en:
 For this type of running it is not necessary to run any SAM CLI Command.
 1. `.vscode\launch.json`
@@ -83,9 +83,9 @@ Los eventos de prueba están incluidos en el directorio  `events`  de este proye
 
 Para poder debuggear tu aplicación localmente ejecuta el siguiente comando:
 
-```bash
+~~~bash
 sam local invoke HelloWorldFunction --template HelloWorldFunction\.aws-sam\build\template.yaml --event events/event.json --debug-port 56531
-```
+~~~
 
 Con AWS Toolkit instalado en el IDE, es fácil configurar y depurar con puntos de ruptura tus Skills dependiendo del `event.json` utilizados como prueba
 
@@ -99,15 +99,15 @@ For this type of running it is not necessary to run any SAM CLI Command.
 
 Los eventos de prueba están incluidos en el directorio  `events`  de este proyecto.
 
-```bash
+~~~bash
 sam local invoke HelloWorldFunction --template HelloWorldFunction\.aws-sam\build\template.yaml --event  events/event.json
-```
+~~~
 
 **NOTA:** Usando LocalDebugger.java puedes hacer la request de abajo directamente a http://localhost:3001/:
 
 En el fichero event.json tienes un ejemplo de un `LaunchRequest` mockeado de una Skill:
 
-```json
+~~~json
 {
   "version": "1.0",
   "session": {
@@ -148,7 +148,7 @@ En el fichero event.json tienes un ejemplo de un `LaunchRequest` mockeado de una
 }
 
 
-```
+~~~
 ## Testear requests directamente desde Alexa
 
 ngrok es una herramienta genial y liviana que crea un túnel seguro en tu máquina local junto con una URL pública que se puede usar para navegar por tu web en local o API.
@@ -176,9 +176,9 @@ La Alexa Developer Console enviará una solicitud HTTPS al endpoint ngrok (https
 
 Para desplegar tu función Lambda (nuestra Skill) por primera vez ejecuta el siguiente comando:
 
-```bash
+~~~bash
 sam deploy --guided
-```
+~~~
 
 El comando va a empaquetar y desplegar la aplicación serverles a AWS con una serie de prompts:
 

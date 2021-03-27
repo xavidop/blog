@@ -56,14 +56,14 @@ Toda lógica significativa debe estar contenida dentro de la carpeta `BusinessLo
 Tanto el proyecto Lambda como el proyecto de Web API deben ser wrappers de la lógica de negocio de nuestra Skill.
 
 Cómo instalar las `Amazon.Lambda.Tools` de manera global si aún no están instaladas:
-```bsh
+~~~bsh
     dotnet tool install -g Amazon.Lambda.Tools
-```
+~~~
 
 Si ya están instaladas, verifica si hay una nueva versión disponible.
-```bash
+~~~bash
     dotnet tool update -g Amazon.Lambda.Tools
-```
+~~~
 
 ### Archivos del proyecto
 
@@ -98,7 +98,7 @@ Puedes encontrar toda la documentación en su repositorio [GitHub](https://githu
 
 A continuación, tienes la clase `AlexaRequestProcessor.cs` que ejecutará todas las requests de Alexa utilizando el paquete Nugget Alexa.NET y muestra lo fácil que es desarrollar este tipo de aplicaciones de voz en .NET core:
 
-```csharp
+~~~csharp
    public class AlexaRequestProcessor
     {
         public async Task<SkillResponse> ProcessAsync(SkillRequest input)
@@ -117,7 +117,7 @@ A continuación, tienes la clase `AlexaRequestProcessor.cs` que ejecutará todas
 
         }
     }
-```
+~~~
 
 
 ## Compila la Skill con Visual Studio
@@ -166,7 +166,7 @@ Después de ejecutar tu aplicación, tendrás un endpoint disponible en http://l
 
 Por ejemplo, puedes testear un `LaunchRequest`:
 
-```json
+~~~json
   {
     "version": "1.0",
     "session": {
@@ -205,13 +205,13 @@ Por ejemplo, puedes testear un `LaunchRequest`:
       "locale": "en-US"
     }
   }
-```
+~~~
 
 También puedes ejecutar pruebas unitarias:
-```bash
+~~~bash
     cd "alexa_dotnet_lambda_helloworld/test/alexa_dotnet_lambda_helloworld.Tests"
     dotnet test
-```
+~~~
 
 ## Desplegar tu Alexa Skill
 
@@ -232,10 +232,10 @@ Desplegar la lambda en AWS
 Una vez hayas editado el template y el código, puedes desplegar la aplicación utilizando las [Amazon.Lambda.Tools](https://github.com/aws/aws-extensions-for-dotnet-cli#aws-lambda-amazonlambdatools) desde la command line.
 
 Desplegar la aplicación:
-```bash
+~~~bash
     cd "alexa_dotnet_lambda_helloworld/src/alexa_dotnet_lambda_helloworld"
     dotnet lambda deploy-serverless
-```
+~~~
 ## Testear requests directamente desde Alexa
 
 ngrok es una herramienta genial y liviana que crea un túnel seguro en tu máquina local junto con una URL pública que se puede usar para navegar por tu web en local o API.

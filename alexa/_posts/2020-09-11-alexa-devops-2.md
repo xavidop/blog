@@ -53,9 +53,9 @@ ESLint nos permite arreglar automáticamente casi todas las reglas.
 
 Podemos instalar ESLint usando npm. `--save-dev` se usa para guardar el paquete npm con fines de desarrollo. Ejemplo: pruebas unitarias, minificación.
 
-```bash
+~~~bash
     npm install eslint --save-dev
-```
+~~~
 
 ### Configuración
 
@@ -63,13 +63,13 @@ Una vez que tenemos ESLint instalado ahora tenemos que configurarlo. Con ESLint 
 
 En nuestro caso vamos a utilizar el conjunto de reglas StrongLoop de IBM. Este paquete se puede instalar con el siguiente comando:
 
-```bash
+~~~bash
     npm install --save-dev eslint-config-strongloop
-```
+~~~
 
 Ahora es el momento de configurar este conjunto de reglas. Primero, tenemos que crear el archivo `.eslintrc.json` en la carpeta `lambda/custom`:
 
-```json
+~~~json
     {
         "extends": "strongloop",
         "parserOptions": {
@@ -86,7 +86,7 @@ Ahora es el momento de configurar este conjunto de reglas. Primero, tenemos que 
         }
     }
 
-```
+~~~
 
 Como se puede ver, ampliamos las reglas de strongloop y agregamos algunas configuraciones adicionales:
 
@@ -101,7 +101,7 @@ El último paso es definir el `.eslintignore` ubicado en la misma carpeta para p
 
 Es algo así como el archivo `.gitignore`:
 
-```properties
+~~~properties
     node_modules/
     package-lock.json
     .DS_Store
@@ -110,7 +110,7 @@ Es algo así como el archivo `.gitignore`:
     mochawesome-report/
     .nyc_output/
     *.lcov
-```
+~~~
 
 ### Informes
 
@@ -127,9 +127,9 @@ Vamos a dar un paso adelante. Queremos saber un poco más sobre nuestro análisi
 
 Es por eso que vamos a agregar el paquete npm `eslint-detail-reporter` para generar un bonito informe HTML con más información, en lugar del explicado anteriormente:
 
-```bash
+~~~bash
     npm install eslint-detailed-reporter --save-dev
-```
+~~~
 
 Así es como se ve este informe:
 
@@ -164,7 +164,7 @@ Este job ejecutará las siguientes tareas:
 5. Almacenar el informe HTML como un artefacto de este job.
 6. Conservar nuevamente el código que reutilizaremos en el próximo job
 
-```yaml
+~~~yaml
   pretest:
     executor: ask-executor
     steps:
@@ -182,7 +182,7 @@ Este job ejecutará las siguientes tareas:
           root: /home/node/
           paths:
             - project
-```
+~~~
 
 ## Recursos
 * [DevOps Wikipedia](https://en.wikipedia.org/wiki/DevOps) - Wikipedia reference

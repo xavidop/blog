@@ -54,15 +54,15 @@ Este framework facilita la creación de pruebas de caja negra para una Skill de 
 Podemos instalar `ask-sdk-test` usando npm. `--save-dev` se usa para guardar el paquete npm con fines de desarrollo. Ejemplo: pruebas unitarias, minificación.
 
 
-```bash
+~~~bash
     npm install ask-sdk-test --save-dev
-```
+~~~
 
 Este marco utiliza el paquete npm `mocha` para ejecutar las pruebas. Así que necesitamos instalarlo también:
 
-```bash
+~~~bash
     npm install mocha chai --save-dev 
-```
+~~~
 
 ### Desarrollando Tests
 
@@ -74,7 +74,7 @@ Vamos a explicar paso a paso este fichero.
 
 Primero, se requiere la inicialización del framework de prueba y la librería i18n para desarrollar pruebas unitarias:
 
-```javascript
+~~~javascript
     // include the testing framework
     const test = require('ask-sdk-test');
     const skillHandler = require('../src/index.js').handler;
@@ -98,11 +98,11 @@ Primero, se requiere la inicialización del framework de prueba y la librería i
 
     const alexaTest = new test.AlexaTest(skillHandler, skillSettings);
 
-```
+~~~
 
 Con las líneas anteriores ahora podemos comenzar a escribir pruebas unitarias tan fácil como esto:
 
-```javascript
+~~~javascript
 
     describe('Hello World Skill', function() {
         // tests the behavior of the skill's LaunchRequest
@@ -146,7 +146,7 @@ Con las líneas anteriores ahora podemos comenzar a escribir pruebas unitarias t
 
     });
 
-```
+~~~
 
 
 ### Informes
@@ -157,9 +157,9 @@ El primer informe que necesitamos crear es el informe de JUnit.
 
 Necesitamos instalar este informe:
 
-```bash
+~~~bash
     npm install mocha-junit-reporter --save-dev 
-```
+~~~
 
 Este informe generará un archivo .xml como salida que CircleCI utilizará para mostrar los resultados de la verificación de código:
 
@@ -172,9 +172,9 @@ Vamos a dar un paso adelante. Queremos saber un poco más sobre los resultados d
 
 Es por eso que vamos a agregar el paquete npm `mochawesome` para generar un bonito informe HTML con más información en lugar del explicado anteriormente:
 
-```bash
+~~~bash
     npm install mochawesome --save-dev
-```
+~~~
 
 Así es como se ve este informe:
 
@@ -184,22 +184,22 @@ Unit tests HTML Report
 
 Finalmente, para generar dos informes con un solo comando instalaremos otro paquete npm: `mocha-multi-reporters`
 
-```bash
+~~~bash
     npm install mocha-multi-reporters --save-dev
-```
+~~~
 
 Luego tenemos que configurar este paquete npm para especificar los dos informes que vamos a ejecutar y su configuración.
 
 The configuration file is `mocha.json` file in `lambda/custom` folder:
 
-```json
+~~~json
     {
         "reporterEnabled": "mocha-junit-reporter, mochawesome",
         "mochaJunitReporterReporterOptions": {
             "mochaFile": "reports/mocha/test-results.xml"
         }
     }  
-```
+~~~
 
 El informe JUnit se almacenará en la carpeta `lambda/custom/reports/mocha/` y el de HTML se almacenará en `lambda/custom/mochawesome-report`.
 
@@ -223,7 +223,7 @@ Este job ejecutará las siguientes tareas:
 4. Almacenar el informe HTML como un artefacto de este job.
 5. Conservar nuevamente el código que reutilizaremos en el próximo job
 
-```yaml
+~~~yaml
   test:
     executor: ask-executor
     steps:
@@ -238,7 +238,7 @@ Este job ejecutará las siguientes tareas:
           root: /home/node/
           paths:
             - project
-```
+~~~
 
 ## Recursos
 * [DevOps Wikipedia](https://en.wikipedia.org/wiki/DevOps) - Wikipedia reference

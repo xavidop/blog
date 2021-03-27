@@ -61,26 +61,26 @@ La documentación oficial de Alexa dice que la API de validación de Skills de A
 Este es un proceso asincrónico. por lo que tenemos que comenzar la validación con un comando y luego obtener el resultado con otro cuando finalice la validación:
 
 1. Para ask cli v1:
-```bash
+~~~bash
     #start the evaluation
     id=ask api validate-skill -s ${skill_id} -l ${locale}
     #get the results of the evaluation
     ask api get-validation -i ${id} -s ${skill_id}
-```
+~~~
 
 2. Para ask cli v2:
-```bash
+~~~bash
     #start the evaluation
     id=ask smapi submit-skill-validation -s ${skill_id} -l ${locale} -g developmentx
     #get the results of the evaluation
     ask smapi get-skill-validations --validation-id ${id} -s ${skill_id} -g development
-```
+~~~
 
 Estos comandos están integrados en el archivo de script bash `test/validation-test/skill_validation_checker.sh`.
 
 Aquí podemos encontrar el script bash completo:
 
-```bash
+~~~bash
     #!/bin/bash
     skill_id=$1
 
@@ -149,7 +149,7 @@ Aquí podemos encontrar el script bash completo:
 
     done
 
-```
+~~~
 
 La prueba detecta automáticamente si Alexa Skill está lista para enviar a certificación.
 
@@ -174,7 +174,7 @@ Este job ejecutará las siguientes tareas:
 2. Ejecutar el script `skill_validation_checker`.
 3. Conservar nuevamente el código que reutilizaremos en el próximo job
 
-```yaml
+~~~yaml
   validation-test:
     executor: ask-executor
     steps:
@@ -185,7 +185,7 @@ Este job ejecutará las siguientes tareas:
           root: /home/node/
           paths:
             - project
-```
+~~~
 
 **NOTA:** Para realizar estas pruebas en CircleCI, debemos configurar la variable de entorno `SKILL_ID` con el ID de nuestra Alexa Skill.
 

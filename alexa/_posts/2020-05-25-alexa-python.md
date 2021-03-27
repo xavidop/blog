@@ -59,11 +59,11 @@ Utilizaremos esta poderosa herramienta para crear, construir, desplegar y gestio
 
 Para crear la Alexa Skill, vamos a usar la ASK CLI previamente configurada. Primero de todo, debemos ejecutar este comando:
 
-```bash
+~~~bash
 
     ask new
 
-```
+~~~
 Este comando se ejecutará un proceso interactivo de creación paso a paso:
 
 1. Lo primero que nos preguntará la ASK CLI es el runtime de nuestra Skill. En nuestro caso, `Python3`:
@@ -85,7 +85,7 @@ Template
 
 Estos son los archivos principales del proyecto:
 
-```bash
+~~~bash
 
     ├───.ask
     │       config
@@ -108,7 +108,7 @@ Estos son los archivos principales del proyecto:
     └───local_debugger.py
 
 
-```
+~~~
 
 * .ask: carpeta que contiene el archivo de configuración de ASK CLI. Este archivo de configuración permanecerá vacío hasta que ejecutemos el comando `ask deploy`
 * `.vscode/launch.json`: Preferencias de ejecución para ejecutar localmente tu Skill para testing local y ejecuta tambien las tareas definidas en `.vscode/tasks.json`. Esta configuración ejecuta `lambda/custom/local-debugger.js`. Este script ejecuta un servidor en http://localhost:3001 para debuggear la Skill.
@@ -137,7 +137,7 @@ El archivo Python principal en nuestro proyecto lambda es`hello_world.py` situad
 
 La función `handler` se ejecuta cada vez que AWS Lambda es invocado por el cloud de Alexa.
 En teoría, una función AWS Lambda es solo una función única. Esto significa que necesitamos definir la lógica para que una request a la función pueda enrutarse al código apropiado, de ahí los handlers.
-```python
+~~~python
 
   from ask_sdk_core.skill_builder import SkillBuilder
   from ask_sdk_model import Response
@@ -169,10 +169,10 @@ En teoría, una función AWS Lambda es solo una función única. Esto significa 
 
   handler = sb.lambda_handler()
 
-```
+~~~
 Es importante echar un vistazo al `LaunchRequestHandler` como un ejemplo de handler de Skills de Alexa escrito en Python:
 
-```python
+~~~python
 
   class LaunchRequestHandler(AbstractRequestHandler):
       """Handler for Skill Launch."""
@@ -193,7 +193,7 @@ Es importante echar un vistazo al `LaunchRequestHandler` como un ejemplo de hand
               .response
           )
 
-```
+~~~
 
 ## Construir la Skill con Visual Studio Code
 
@@ -207,7 +207,7 @@ El primer archivo se usa para ejecutar la Skill localmente pero antes de ese mom
 3. `build`: Finalmente, copiará todo el código fuente de `lambda\py` a la carpeta `site-packages` del Python Virtual environment.   
 
 Aquí podéis ver el `task.json` donde están las tareas explicadas anteriormente y los comandos separados por sistema operativo:
-```json
+~~~json
   {
       // See https://go.microsoft.com/fwlink/?LinkId=733558
       // for the documentation about the tasks.json format
@@ -259,7 +259,7 @@ Aquí podéis ver el `task.json` donde están las tareas explicadas anteriorment
       ]
   }
 
-```
+~~~
 
 ¡Después de eso, la Skill está lista para ser lanzada localmente!
 
@@ -277,7 +277,7 @@ Debes reemplazar `python3.8` si estás utilizando otra versión de Python.
 
 El fichero `launch.json` situado en la carpeta `.vscode` tiene la configuración para Visual Studio Code que nos permite ejecutar nuestro lambda localmente:
 
-```json
+~~~json
 
   {
       "version": "0.2.0",
@@ -330,15 +330,15 @@ El fichero `launch.json` situado en la carpeta `.vscode` tiene la configuración
       ]
   }
 
-```
+~~~
 
 Este archivo de configuración ejecutará los pasos explicados en la sección anterior y ejecutará el siguiente comando:
 
-```bash
+~~~bash
 
   .venv/skill_env/scripts/python local_debugger.py --portNumber 3001 --skillEntryFile .venv/skill_env/Lib/site-packages/hello_world.py --lambdaHandler handler
 
-```
+~~~
 
 Esta configuración utiliza el fichero `local_debugger.py` que corre un [servidor TCP](https://docs.python.org/3/library/socket.html) listening on http://localhost:3001
 
@@ -374,7 +374,7 @@ Después de ejecutar tu aplicación, tendrás un endpoint disponible en http://l
 
 Por ejemplo, puedes testear un `LaunchRequest`:
 
-```json
+~~~json
 
   {
     "version": "1.0",
@@ -415,7 +415,7 @@ Por ejemplo, puedes testear un `LaunchRequest`:
     }
   }
 
-```
+~~~
 
 ## Desplegar la Alexa Skill
 
@@ -423,7 +423,7 @@ Con el código listo, tenemos que implementarlo en AWS Lambda para que pueda con
 
 Antes de desplegar la Skill Alexa, Podemos ver que el fichero `config` en la carpeta `.ask` está vacio:
 
-```json
+~~~json
     {
       "deploy_settings": {
         "default": {
@@ -434,13 +434,13 @@ Antes de desplegar la Skill Alexa, Podemos ver que el fichero `config` en la car
       }
     }
 
-```
+~~~
 
 Desplegamos la Alexa Skill con la ASK CLI:
 
-```bash
+~~~bash
     ask deploy
-```
+~~~
 
 Como dice la documentación oficial:
 
@@ -456,7 +456,7 @@ Como dice la documentación oficial:
 
 Después de la ejecución del comando anterior, tendremos el archivo `config` debidamente llenado:
 
-```json
+~~~json
 
   {
     "deploy_settings": {
@@ -492,7 +492,7 @@ Después de la ejecución del comando anterior, tendremos el archivo `config` de
     }
   }
 
-```
+~~~
 
 ## Testear requests directamente desde el cloud de Alexa
 

@@ -76,7 +76,7 @@ async function getFiles(dir) {
 
     const pUnlink = Promise.all(
       (await getFiles('./assets/js'))
-        .filter(f => f.match(/assets\/js\/*hydejack-*/i))
+        .filter(f => f.match(/assets\/js\/(.*)hydejack-(.*)/i))
         .map(unlink)
     );
 
@@ -85,12 +85,7 @@ async function getFiles(dir) {
       resolve(`./assets/css/hydejack-${vNext}.css`)
     );
 
-    const pSearchW = rename(
-      resolve(`./assets/js/search-worker-${vPrev}.js`),
-      resolve(`./assets/js/search-worker-${vNext}.js`)
-    );
-
-    await Promise.all([pUnlink, pFiles, pJSCSS, pSearchW]);
+    await Promise.all([pUnlink, pFiles, pJSCSS]);
 
     await writeFile('./assets/version.json', JSON.stringify({ version: vNext, prevVersion: vPrev }, null, 2));
 

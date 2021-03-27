@@ -10,7 +10,7 @@
   hashchange
 >
   {% if page.cover %}{% include_cached body/sidebar.html cover=page.cover theme_color=page.theme_color image=image color=color %}{% endif %}
-  <!--{% include_cached body/menu.html %}-->
+  {% include_cached body/menu.html %}
   {% include body/full-main.html %}
   {% unless page.cover %}{% include_cached body/sidebar.html cover=page.cover theme_color=page.theme_color image=image color=color %}{% endunless %}
 </hy-push-state>

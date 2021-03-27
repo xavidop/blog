@@ -46,7 +46,7 @@ import {
     share(),
   );
 
-  combineLatest(toc$, isLarge$)
+  combineLatest([toc$, isLarge$])
     .pipe(
       switchMap(([toc, isLarge]) => {
         if (!toc || !isLarge) return NEVER;
@@ -74,7 +74,7 @@ import {
     )
     .subscribe();
 
-  combineLatest(toc$, isLarge$)
+  combineLatest([toc$, isLarge$])
     .pipe(
       switchMap(([toc, isLarge]) => {
         if (!toc || !isLarge) return NEVER;

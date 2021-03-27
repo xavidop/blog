@@ -48,7 +48,7 @@ Aquí tienes las tecnologías utilizadas en este proyecto.
 ## Estructura del proyecto
 A continuación, tienes la estructura de este proyecto:
 
-```bash
+~~~bash
   ├────src
   │    └───main
   │        ├───java
@@ -67,7 +67,7 @@ A continuación, tienes la estructura de este proyecto:
   │                application.properties
   │                log4j2.xml
   └── pom.xml
-```
+~~~
 
 Estas son las principales carpetas y archivos de este proyecto:
 * **configuration**: esta carpeta tiene la clase `WebConfig` que registrará el Servlet Http de Alexa.
@@ -84,33 +84,33 @@ Estas son las principales carpetas y archivos de este proyecto:
 Estas son las dependencias utilizadas en este ejemplo. Puedes encontrarlos en el archivo `pom.xml`:
 
 * Spring Boot:
-```xml
+~~~xml
    <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.2.5.RELEASE</version>
   </parent>
-```
+~~~
 
 * Alexa Skill Kit:
-```xml
+~~~xml
   <dependency>
       <groupId>com.amazon.alexa</groupId>
       <artifactId>ask-sdk</artifactId>
       <version>2.29.0</version>
   </dependency>
-```
+~~~
 
 * Spring Boot starter web:
-```xml
+~~~xml
   <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-web</artifactId>
   </dependency>
-```
+~~~
 
 * Log4j2:
-```xml
+~~~xml
   <dependency>
       <groupId>org.apache.logging.log4j</groupId>
       <artifactId>log4j-api</artifactId>
@@ -121,10 +121,10 @@ Estas son las dependencias utilizadas en este ejemplo. Puedes encontrarlos en el
       <artifactId>log4j-core</artifactId>
       <version>2.13.1</version>
   </dependency>
-```
+~~~
 
 * Spring Boot Maven build plug-in:
-```xml
+~~~xml
   <build>
         <plugins>
             <plugin>
@@ -133,7 +133,7 @@ Estas son las dependencias utilizadas en este ejemplo. Puedes encontrarlos en el
             </plugin>
         </plugins>
     </build>
-```
+~~~
 
 ## El Http Servlet de Alexa
 
@@ -145,7 +145,7 @@ Nuestra clase `AlexaServlet`, ubicada en la carpeta `servlet`, extiende `SkillSe
 
 Echa un vistazo a la clase `AlexaServlet`:
 
-```java
+~~~java
     public class AlexaServlet extends SkillServlet {
     
         public AlexaServlet() {
@@ -173,7 +173,7 @@ Echa un vistazo a la clase `AlexaServlet`:
         }
     
     }
-```
+~~~
 
 Recibirá todas las solicitudes POST de Alexa y las enviará al handler específico, ubicado en las carpetas `handlers`, que puede ejecutar esa solicitud.
 
@@ -187,7 +187,7 @@ Los métodos más relevantes de la clase `ServletRegistrationBean` que utilizamo
 
 La clase `WebConfig` es donde registramos el Servlet Http de Alexa. 
 Así es como registramos el servlet:
-```Java
+~~~Java
   @Bean
   public ServletRegistrationBean<HttpServlet> alexaServlet() {
 
@@ -199,7 +199,7 @@ Así es como registramos el servlet:
       servRegBean.setLoadOnStartup(1);
       return servRegBean;
   }
-```
+~~~
 ## Configurando properties
 
 El servlet debe cumplir ciertos requisitos para manejar las solicitudes enviadas por Alexa y cumplir con los estándares de interfaz del Alexa Skill Kit.
@@ -217,18 +217,18 @@ En este ejemplo, tienes 4 properties que puedes configurar en el archivo `applic
 
 Al ser un proyecto maven, se puede compilar la aplicación Spring Boot ejecutando este comando:
 
-```bash
+~~~bash
   mvn clean package
-```
+~~~
 
 ## Ejecutar la Skill con Spring Boot
 
 Ejecuta la clase AlexaSkillAppStarter.java como aplicación Java, si estás en eclipse, puedes ir a Ejecutar → Ejecutar como → Aplicación Java
 
 O también puedes usar:
-```bash
+~~~bash
 mvn spring-boot:run
-```
+~~~
 
 O, si usas IntelliJ IDEA, puedes hacer clic derecho en el método Main de la clase `AlexaSkillAppStarter`:
 
@@ -258,7 +258,7 @@ Después de ejecutar tu aplicación, tendrás un endpoint disponible en http://l
 
 Por ejemplo, puedes testear un `LaunchRequest`:
 
-```json
+~~~json
   {
     "version": "1.0",
     "session": {
@@ -298,7 +298,7 @@ Por ejemplo, puedes testear un `LaunchRequest`:
     }
   }
 
-```
+~~~
 
 Ten cuidado con el campo timestamp de la request para cumplir con la propiedad `com.amazon.speech.speechlet.servlet.timestampTolerance`.
 

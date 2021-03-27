@@ -63,9 +63,9 @@ Es hora de probar todos los componentes de software interelacionados en una requ
 Estas pruebas de integración se pueden realizar con ASK CLI. utilizaremos el siguiente comando ASK CLI:
 
 1. Para ask cli v1 y v2:
-```bash
+~~~bash
     ask dialog -s ${skill_id} -l ${locale}
-```
+~~~
 
 Con este comando realizaremos una simulación de un diálogo con nuestra Alexa Skill usando texto plano como entrada. Con esto, podemos probar que todos los componentes software estén funcionando correctamente.
 
@@ -73,7 +73,7 @@ Esos comandos están integrados en el archivo de script bash `test/integration-t
 
 Aquí podemos encontrar el script bash completo:
 
-```bash
+~~~bash
     #!/usr/bin/expect
 
     set skill_id [lindex $argv 0];
@@ -91,7 +91,7 @@ Aquí podemos encontrar el script bash completo:
     send -- "adios\r"
     expect "Hasta luego!"
 
-```
+~~~
 ### Informes
 
 No hay informes definidos en este job.
@@ -109,7 +109,7 @@ Este job ejecutará las siguientes tareas:
 2. Ejecutar el script `simple-dialog-checker`.
 3. Conservar nuevamente el código que reutilizaremos en el próximo job
 
-```yaml
+~~~yaml
 
   integration-test:
     executor: ask-executor
@@ -122,7 +122,7 @@ Este job ejecutará las siguientes tareas:
           paths:
             - project
 
-```
+~~~
 
 **NOTA:** Para realizar estas pruebas en CircleCI, debemos configurar la variable de entorno `SKILL_ID` con el ID de nuestra Alexa Skill.
 

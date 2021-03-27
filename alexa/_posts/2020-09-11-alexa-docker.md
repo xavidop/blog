@@ -90,10 +90,10 @@ Para obtener más información sobre las [variables de entorno de AWS](https://d
 
 Obtener la última versión del contenedor:
 
-```bash
+~~~bash
   # Get image
   docker pull xavidop/alexa-ask-aws-cli:2.0
-```
+~~~
 
 Hay dos formas de usar el cli `ask` para este contenedor que se describe a continuación.
 
@@ -101,7 +101,7 @@ Hay dos formas de usar el cli `ask` para este contenedor que se describe a conti
 
 Este es un ejemplo que muestra cómo ejecutar un comando `ask`. Después de ejecutar este comando, el contenedor se detendrá.
 
-```bash
+~~~bash
 docker run -it --rm \
   -v $(pwd)/ask-config:/home/node/.ask \
   -v $(pwd)/ask-config:/home/node/.aws \
@@ -109,13 +109,13 @@ docker run -it --rm \
   -v $(pwd)/hello-world:/home/node/app \
   xavidop/alexa-ask-aws-cli:latest \
   ask init -l
-```
+~~~
 
 ### Ejecutar los comandos ASK CLI de forma interactiva
 
 En este ejemplo, el contenedor comenzará directamente con la consola bash y luego podrás ejecutar allí todos los comandos ASK CLI que quieras.
 
-```bash
+~~~bash
 docker run -it --rm \
   -v $(pwd)/ask-config:/home/node/.ask \
   -v $(pwd)/ask-config:/home/node/.aws \
@@ -124,29 +124,29 @@ docker run -it --rm \
   xavidop/alexa-ask-aws-cli:latest \
   bash
 
-```
+~~~
 
 ## Build y push de la imagen
 
 PAra la ASK CLI v1:
-```bash
+~~~bash
 docker build --build-arg ASK_CLI_VERSION=1.7.23 -t xavidop/alexa-ask-aws-cli:1.0 .
 
 # Pushing to Docker Hub
 # Note: not required since I have a build hook linked to the repo
 docker login
 docker push xavidop/alexa-ask-aws-cli
-```
+~~~
 
 PAra la ASK CLI v2:
-```bash
+~~~bash
 docker build --build-arg ASK_CLI_VERSION=2.1.1 -t xavidop/alexa-ask-aws-cli:2.0 .
 
 # Pushing to Docker Hub
 # Note: not required since I have a build hook linked to the repo
 docker login
 docker push xavidop/alexa-ask-aws-cli:2.0
-```
+~~~
 
 ## Versiones
 

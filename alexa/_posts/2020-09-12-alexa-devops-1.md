@@ -66,12 +66,12 @@ Antes de explicar el pipeline, vale la pena señalar la parte común al pipeline
 
 En nuestro caso, utilizaremos un `executor` de Docker usando la imagen explicada anteriormente:
 
-```yaml
+~~~yaml
   executors:
     ask-executor:
       docker:
         - image: xavidop/alexa-ask-aws-cli:1.0
-```
+~~~
 
 Vamos a explicar job por job lo que está sucediendo en nuestr pipeline.
 En primer lugar, cada caja representada en la imagen de arriba es un job y se definirán debajo del nodo `job` en el archivo de configuración de CircleCI:
@@ -83,7 +83,7 @@ El job de checkout ejecutará las siguientes tareas:
 2. Dar permiso de ejecución al usuario `node` para poder ejecutar todos los hooks
 3. Persistir el código para reutilizarlo en el próximo job
 
-```yaml
+~~~yaml
   checkout:
     executor: ask-executor
     steps:
@@ -93,7 +93,7 @@ El job de checkout ejecutará las siguientes tareas:
           root: /home/node/
           paths:
             - project
-```
+~~~
 
 ### build
 
@@ -102,7 +102,7 @@ El job de build ejecutará las siguientes tareas:
 2. Ejecutar `npm install` para descargar todas las dependencias de Node.js
 3. Persistir el código para reutilizarlo en el próximo job
 
-```yaml
+~~~yaml
   build:
     executor: ask-executor
     steps:
@@ -115,7 +115,7 @@ El job de build ejecutará las siguientes tareas:
           paths:
             - project
 
-```
+~~~
 
 
 ### Pretests
@@ -157,7 +157,7 @@ El job de store-artifacts ejecutará las siguientes tareas:
 2. Limpiar la carpeta `node_modules`
 3. Almacenar el código completo de nuestra Skill de Alexa como un artefacto. Será accesible en CircleCI cuando queramos verlo.
 
-```yaml
+~~~yaml
   store-artifacts:
     executor: ask-executor
     steps:
@@ -168,7 +168,7 @@ El job de store-artifacts ejecutará las siguientes tareas:
       - store_artifacts:
           path: ./
 
-```
+~~~
 
 ### Wait for Approval
 
@@ -176,13 +176,13 @@ Hay algunas ocasiones en las que se prefiere mantener las aprobaciones manuales 
 
 Este job es un job diferente que solo existe en el nodo `workflows` en el archivo de configuración. No es necesario agregarlo como un `job`.
 
-```yaml
+~~~yaml
 
   - wait-for-decision:
       type: approval
       requires:
         - store-artifacts
-```
+~~~
 
 ### Submit
 
@@ -192,7 +192,7 @@ Estos jobs enviarán la Skill de Alexa a certificación. Consulta la explicació
 
 Al final del archivo de configuración CircleCi, definiremos nuestro pipeline como un workflow de CircleCI que ejecutará los jobs explicados anteriormente:
 
-```yaml
+~~~yaml
   workflows:
     skill-pipeline:
       jobs:
@@ -241,7 +241,7 @@ Al final del archivo de configuración CircleCi, definiremos nuestro pipeline co
             requires:
               - wait-for-decision
 
-```
+~~~
 
 El archivo de configuración CircleCI se encuentra en `.circleci/config.yml`.
 

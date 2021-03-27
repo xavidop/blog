@@ -69,7 +69,7 @@ Echemos un vistazo!
 
 Estos son los archivos principales del proyecto:
 
-```bash
+~~~bash
 
     ├───.ask/
     │       config
@@ -93,7 +93,7 @@ Estos son los archivos principales del proyecto:
     ├───models/
     └───skill.json
 
-```
+~~~
 
 * .ask: carpeta que contiene el archivo de configuración de ASK CLI. Este archivo de configuración permanecerá vacío hasta que ejecutemos el comando `ask deploy`
 * `.vscode/launch.json`: Preferencias de ejecución para ejecutar localmente tu Skill para testing local. Esta configuración ejecuta `lambda/custom/local-debugger.js`. Este script ejecuta un servidor en http://localhost:3001 para debuggear la Skill. No se ha transpilado a TypeScript porque no forma parte de nuestra lambda. Es una herramienta local.
@@ -128,7 +128,7 @@ El archivo TypeScript principal en nuestro proyecto lambda es `index.ts` situado
 La función `exports.handler` se ejecuta cada vez que AWS Lambda es invocado por el cloud de Alexa.
 En teoría, una función AWS Lambda es solo una función única. Esto significa que necesitamos definir la lógica para que una request a la función pueda enrutarse al código apropiado, de ahí los handlers.
 
-```typescript
+~~~typescript
   import * as Alexa from 'ask-sdk-core';
   import { Launch } from './intents/Launch';
   import { Help } from './intents/Help';
@@ -155,11 +155,11 @@ En teoría, una función AWS Lambda es solo una función única. Esto significa 
     .addRequestInterceptors(LocalizationRequestInterceptor)
     .lambda();
 
-```
+~~~
 
 Es importante echar un vistazo al fichero `Launch.ts`, importado como `Launch` arriba, que es el handler `LaunchRequestHandler` ubicado en la carpeta `intents` como un ejemplo de handler Alexa Skill escrito en TypeScript:
 
-```typescript
+~~~typescript
 
   import { RequestHandler, HandlerInput } from 'ask-sdk-core';
   import { RequestTypes, Strings } from '../utilities/constants';
@@ -181,7 +181,7 @@ Es importante echar un vistazo al fichero `Launch.ts`, importado como `Launch` a
     },
   };
 
-```
+~~~
 
 ## Construir la Skill con Visual Studio Code
 
@@ -190,7 +190,7 @@ Estos metadatos ayudan a identificar el proyecto y actúan como base para que lo
 
 Así es como se ve este archivo:
 
-```json
+~~~json
 
   {
     "name": "alexa-typescript-lambda-helloworld",
@@ -232,15 +232,15 @@ Así es como se ve este archivo:
   }
 
 
-```
+~~~
 
 Con TypeScript tenemos que compilar nuestro código para generar el código JavaScript. Para compilar nuestra Skill, podemos ejecutar el siguiente comando:
 
-```bash
+~~~bash
 
   npm run build
 
-```
+~~~
 
 Este comando ejecutará estas acciones:
 1. Elimina la carpeta `build` ubicada en `lambda/custom` con el comando `rimraf build`. Esta carpeta contiene el output de compilar el código TypeScript
@@ -255,7 +255,7 @@ Como puedes ver, este proceso en un entorno TypeScript es más complejo que en J
 
 El fichero `launch.json` situado en la carpeta `.vscode` tiene la configuración para Visual Studio Code que nos permite ejecutar nuestro lambda localmente:
 
-```json
+~~~json
 
   {
       "version": "0.2.0",
@@ -278,14 +278,14 @@ El fichero `launch.json` situado en la carpeta `.vscode` tiene la configuración
       ]
   }
 
-```
+~~~
 Este archivo de configuración ejecutará el siguiente comando:
 
-```bash
+~~~bash
 
   node --inspect-brk=28448 lambda\custom\local-debugger.js --portNumber 3001 --skillEntryFile lambda/custom/build/index.js --lambdaHandler handler
 
-```
+~~~
 
 Esta configuración utiliza el fichero `local-debugger.js`  que corre un [servidor TCP](https://nodejs.org/api/net.html) escuchando en http://localhost:3001
 
@@ -317,7 +317,7 @@ Después de ejecutar tu aplicación, tendrás un endpoint disponible en http://l
 
 Por ejemplo, puedes testear un `LaunchRequest`:
 
-```json
+~~~json
 
   {
     "version": "1.0",
@@ -358,7 +358,7 @@ Por ejemplo, puedes testear un `LaunchRequest`:
     }
   }
 
-```
+~~~
 
 ## Desplegar la Alexa Skill
 
@@ -366,7 +366,7 @@ Con el código listo, tenemos que implementarlo en AWS Lambda para que pueda con
 
 Antes de desplegar la Skill Alexa, Podemos ver que el fichero `config` en la carpeta `.ask` está vacio:
 
-```json
+~~~json
     {
       "deploy_settings": {
         "default": {
@@ -377,13 +377,13 @@ Antes de desplegar la Skill Alexa, Podemos ver que el fichero `config` en la car
       }
     }
 
-```
+~~~
 
 Desplegamos la Alexa Skill con la ASK CLI:
 
-```bash
+~~~bash
     ask deploy
-```
+~~~
 
 Como dice la documentación oficial:
 
@@ -396,7 +396,7 @@ Como dice la documentación oficial:
 
 Después de la ejecución del comando anterior, tendremos el archivo `config` debidamente llenado:
 
-```json
+~~~json
 
   {
     "deploy_settings": {
@@ -432,7 +432,7 @@ Después de la ejecución del comando anterior, tendremos el archivo `config` de
     }
   }
 
-```
+~~~
 
 **NOTA:** Después de reescribir nuestro código a TypeScript, necesitamos cambiar el `codeUri` de `lambda/custom` a `lambda/custom/build` debido a que nuestro código compilado de TypeScript a JavaScript va a la carpeta `build`.
 

@@ -59,11 +59,11 @@ Utilizaremos esta poderosa herramienta para crear, construir, desplegar y gestio
 
 Para crear la Alexa Skill, vamos a usar la ASK CLI previamente configurada. Primero de todo, debemos ejecutar este comando:
 
-```bash
+~~~bash
 
     ask new
 
-```
+~~~
 Este comando se ejecutará un proceso interactivo de creación paso a paso:
 
 1. Lo primero que nos preguntará la ASK CLI es el runtime de nuestra Skill. En nuestro caso, `Node.js v10`:
@@ -90,7 +90,7 @@ Nombre de la Skill
 
 Estos son los archivos principales del proyecto:
 
-```bash
+~~~bash
 
     ├───.ask
     │       config
@@ -114,7 +114,7 @@ Estos son los archivos principales del proyecto:
     │       es-ES.json
     └───skill.json
 
-```
+~~~
 
 * .ask: carpeta que contiene el archivo de configuración de ASK CLI. Este archivo de configuración permanecerá vacío hasta que ejecutemos el comando `ask deploy`
 * `.vscode/launch.json`: Preferencias de ejecución para ejecutar localmente tu Skill para testing local. Esta configuración ejecuta `lambda/custom/local-debugger.js`. Este script ejecuta un servidor en http://localhost:3001 para debuggear la Skill.
@@ -146,7 +146,7 @@ El archivo Javascript principal en nuestro proyecto lambda es `index.js` situado
 La función `exports.handler` se ejecuta cada vez que AWS Lambda es invocado por el cloud de Alexa.
 En teoría, una función AWS Lambda es solo una función única. Esto significa que necesitamos definir la lógica para que una request a la función pueda enrutarse al código apropiado, de ahí los handlers.
 
-```javascript
+~~~javascript
 
   /**
   * This handler acts as the entry point for your skill, routing all request and response
@@ -168,10 +168,10 @@ En teoría, una función AWS Lambda es solo una función única. Esto significa 
           LocalisationRequestInterceptor)
       .lambda();
 
-```
+~~~
 Es importante echar un vistazo al `LaunchRequestHandler` como un ejemplo de handler de Skills de Alexa escrito en Node.js:
 
-```javascript
+~~~javascript
 
   const LaunchRequestHandler = {
       //Method that returns true if this handler can execute the current request
@@ -189,7 +189,7 @@ Es importante echar un vistazo al `LaunchRequestHandler` como un ejemplo de hand
       }
   };
 
-```
+~~~
 
 ## Construir la Skill con Visual Studio Code
 
@@ -198,7 +198,7 @@ Estos metadatos ayudan a identificar el proyecto y actúan como base para que lo
 
 Así es como se ve este archivo:
 
-```json
+~~~json
 
   {
     "name": "alexa-nodejs-lambda-helloworld",
@@ -222,15 +222,15 @@ Así es como se ve este archivo:
     }
   }
 
-```
+~~~
 
 Con Javascript o Node.js, el término de compilación es un poco diferente. Para construir nuestra Skill, podemos ejecutar el siguiente comando:
 
-```bash
+~~~bash
 
   npm install
 
-```
+~~~
 
 Este comando instala los paquetes y sus dependecias.
 Si el paquete tiene el archivo package-lock, la instalación de dependencias será lelvada por él.
@@ -241,7 +241,7 @@ Podría ser la forma de construir nuestra Skill de Alexa.
 
 El fichero `launch.json` situado en la carpeta `.vscode` tiene la configuración para Visual Studio Code que nos permite ejecutar nuestro lambda localmente:
 
-```json
+~~~json
 
   {
     "version": "0.2.0",
@@ -264,14 +264,14 @@ El fichero `launch.json` situado en la carpeta `.vscode` tiene la configuración
     ]
 }
 
-```
+~~~
 Este archivo de configuración ejecutará el siguiente comando:
 
-```bash
+~~~bash
 
   node --inspect-brk=28448 lambda\custom\local-debugger.js --portNumber 3001 --skillEntryFile lambda/custom/src/index.js --lambdaHandler handler
 
-```
+~~~
 
 Esta configuración utiliza el fichero `local-debugger.js` que corre un [servidor TCP](https://nodejs.org/api/net.html) escuchando en http://localhost:3001
 
@@ -305,7 +305,7 @@ Después de ejecutar tu aplicación, tendrás un endpoint disponible en http://l
 
 Por ejemplo, puedes testear un `LaunchRequest`:
 
-```json
+~~~json
 
   {
     "version": "1.0",
@@ -346,7 +346,7 @@ Por ejemplo, puedes testear un `LaunchRequest`:
     }
   }
 
-```
+~~~
 
 ## Desplegar la Alexa Skill
 
@@ -354,7 +354,7 @@ Con el código listo, tenemos que implementarlo en AWS Lambda para que pueda con
 
 Antes de desplegar la Skill Alexa, Podemos ver que el fichero `config` en la carpeta `.ask` está vacio:
 
-```json
+~~~json
     {
       "deploy_settings": {
         "default": {
@@ -365,13 +365,13 @@ Antes de desplegar la Skill Alexa, Podemos ver que el fichero `config` en la car
       }
     }
 
-```
+~~~
 
 Desplegamos la Alexa Skill con la ASK CLI:
 
-```bash
+~~~bash
     ask deploy
-```
+~~~
 
 Como dice la documentación oficial:
 
@@ -384,7 +384,7 @@ Como dice la documentación oficial:
 
 Después de la ejecución del comando anterior, tendremos el archivo `config` debidamente llenado:
 
-```json
+~~~json
 
   {
     "deploy_settings": {
@@ -420,7 +420,7 @@ Después de la ejecución del comando anterior, tendremos el archivo `config` de
     }
   }
 
-```
+~~~
 
 ## Testear requests directamente desde el cloud de Alexa
 

@@ -79,7 +79,7 @@ En primer lugar, debemos de tener en cuneta que vamos a utilizar la API de Circl
 Cómo obtener el variables relacionadas con la ASK se explica en [este post](https://dzone.com/articles/docker-image-for-ask-and-aws-cli-1)
 
 Aquí tienes la sección de parámetros del pipeline de CircleCI:
-```yaml
+~~~yaml
   parameters:
     ASK_ACCESS_TOKEN:
         type: string
@@ -100,7 +100,7 @@ Aquí tienes la sección de parámetros del pipeline de CircleCI:
         type: string
         default: "master"
 
-```
+~~~
 
 ### Configurar el ejecutor
 
@@ -110,13 +110,13 @@ Este ejecutor también tiene más herramientas bash instaladas. Esta imagen Dock
 
 Podéis encontrar todas las versiones de ASK CLI disponibles [aquí](https://hub.docker.com/repository/docker/xavidop/alexa-ask-aws-cli/tags).
 
-```yaml
+~~~yaml
   executors:
     ask-executor:
         docker:
         - image: xavidop/alexa-ask-aws-cli:<< pipeline.parameters.ASK_VERSION >>
 
-```
+~~~
 
 ### Checkout
 
@@ -125,7 +125,7 @@ Lo segundo que debemos hacer es descargar el código de esta herramienta porque 
 Una vez descargado, agregaremos los permisos de ejecución para que esos scripts puedan ejecutarse correctamente.
 Finalmente, mantenemos todo el código descargado para poder reutilizarlo en los siguientes pasos.
 
-```yaml
+~~~yaml
   checkout:
     executor: ask-executor
     environment:
@@ -145,7 +145,7 @@ Finalmente, mantenemos todo el código descargado para poder reutilizarlo en los
           paths:
             - project
             - .ask
-```
+~~~
 
 ### Creación de una Alexa Hosted Skill
 
@@ -157,7 +157,7 @@ Estos scripts funcionan así: esperarán algunas cadenas (`strings`) conocidas y
 
 1. Para la versión de la **ASK CLI 1.x**:
    
-```bash
+~~~bash
 #!/usr/bin/expect
 
 set timeout 6000
@@ -170,11 +170,11 @@ send -- "\r"
 expect "Alexa hosted skill is created. Do you want to clone the skill"
 send -- "\r"
 expect "successfuly cloned."
-```
+~~~
 
 1. Para la versión de la **ASK CLI 2.x**:
    
-```bash
+~~~bash
 #!/usr/bin/expect
 
 set template [lindex $argv 0];
@@ -195,7 +195,7 @@ send -- "${template}\r"
 expect "Please type in your folder name"
 send -- "../template\r"
 expect "Hosted skill provisioning finished"
-```
+~~~
 
 Los scripts anteriores crearán una Skill usando el template por defecto, els HelloWorld:
 
@@ -207,7 +207,7 @@ Una cosa importante aquí es que en este paso vamos a establecer las variables d
 
 Aquí podéis encontrar el código completo de este job:
 
-```yaml
+~~~yaml
   create_hosted_skill:
     executor: ask-executor
     environment:
@@ -236,7 +236,7 @@ Aquí podéis encontrar el código completo de este job:
           paths:
             - project
             - .ask
-```
+~~~
 
 ### Descarga del template
 
@@ -263,7 +263,7 @@ En este paso también configuramos las variables de entorno.
 
 Aquí podéis encontrar el código completo de este job:
 
-```yaml
+~~~yaml
   download_template:
     executor: ask-executor
     environment:
@@ -338,7 +338,7 @@ Aquí podéis encontrar el código completo de este job:
           paths:
             - project
             - .ask
-```
+~~~
 
 ### Despliegue de la Alexa Skill con todos los cambios
 
@@ -348,7 +348,7 @@ Dependiendo de la versión de ASK CLI, ejecutaremos uno u otro comando:
 1. Para la versión **ASK CLI 1.x**:
    1. Ejecutaremos otro script `expect`. En este caso ejecutaremos el `deploy_hosted_skill_v1.sh`:
    
-   ```bash
+   ~~~bash
     #!/usr/bin/expect
 
     set timeout 6000
@@ -357,7 +357,7 @@ Dependiendo de la versión de ASK CLI, ejecutaremos uno u otro comando:
     expect "Do you want to proceed with the above deployments"
     send -- "\r"
     expect "Your skill code deployment has started"
-   ```
+   ~~~
 
 2. Para la versión **ASK CLI 2.x**:
    1. Simplemente ejecutaremos: `git push origin master`
@@ -366,7 +366,7 @@ En este paso también configuramos las variables de entorno.
 
 Aquí podéis encontrar el código completo de este job:
 
-```yaml
+~~~yaml
   deploy_hosted_skill:
     executor: ask-executor
     environment:
@@ -399,7 +399,7 @@ Aquí podéis encontrar el código completo de este job:
             fi
       - store_artifacts:
           path: ./
-```
+~~~
 
 Finalmente, nuestra HelloWorld Skill se transformará en el template de la Alexa Skill descargada:
 
@@ -411,7 +411,7 @@ Template desplegado
 
 Aquí podemos encontrar la especificación del pipeline con todos los jobs comentados anteriormente:
 
-```yaml
+~~~yaml
   workflows:
     skill-pipeline:
         jobs:
@@ -425,7 +425,7 @@ Aquí podemos encontrar la especificación del pipeline con todos los jobs comen
         - deploy_hosted_skill:
             requires:
             - download_template
-```
+~~~
 
 **NOTA:** todos los archivos de configuración de CircleCI se encuentran en la carpeta `.circleci`.
 
@@ -437,7 +437,7 @@ Es importante mencionar que ninguna credencial es almacenada. Las usaremos solo 
 
 Así es como se puede llamar al pipeline utilizando la API REST de CircleCI:
 
-```bash
+~~~bash
  curl --request POST \
       --url https://circleci.com/api/v2/project/<your-vcs>/<your-username>/<your-repo-name>/pipeline?circle-token=<your-circle-ci-token> \
       --header 'content-type: application/json' \
@@ -453,7 +453,7 @@ Así es como se puede llamar al pipeline utilizando la API REST de CircleCI:
         } 
     }
     EOF
-```
+~~~
 
 ### Ejemplo
 
@@ -467,7 +467,7 @@ Ejemplo de un templete de una Alexa Skill
 La llamada REST será así:
 1. Para la versión **ASK CLI 1.x**:
   
-```bash
+~~~bash
  curl --request POST \
       --url https://circleci.com/api/v2/project/github/xavidop/alexa-skill-autodeployer/pipeline?circle-token=a96e83d347a52c19d2b38dd981f3fc2fa0217f7e \
       --header 'content-type: application/json' \
@@ -483,11 +483,11 @@ La llamada REST será así:
         } 
     }
     EOF
-```
+~~~
 
 1. Para la versión **ASK CLI 2.x**:
    
-```bash
+~~~bash
  curl --request POST \
       --url https://circleci.com/api/v2/project/github/xavidop/alexa-skill-autodeployer/pipeline?circle-token=a96e83d347a52c19d2b38dd981f3fc2fa0217f7e \
       --header 'content-type: application/json' \
@@ -503,7 +503,7 @@ La llamada REST será así:
         } 
     }
     EOF
-```
+~~~
 
 
 ## Recursos

@@ -64,20 +64,20 @@ Una vez hayamos subido la Skill de Alexa en el job de `deploy`, es hora de saber
 Para conocer los conflictos usaremos el comando ASK CLI:
 
 1. Para ask cli v1:
-```bash
+~~~bash
     ask api get-conflicts -s ${skill_id} -l ${locale}
-```
+~~~
 
 2. Para ask cli v2:
-```bash
+~~~bash
     ask smapi get-conflicts-for-interaction-model -s ${skill_id} -l ${locale} -g development --vers ~current
-```
+~~~
 
 Esos comandos están integrados en el archivo de script bash `test/vui-test/interactive_model_checker.sh`.
 
 Aquí podemos encontrar el script bash completo:
 
-```bash
+~~~bash
     #!/bin/bash
     skill_id=$1
 
@@ -120,7 +120,7 @@ Aquí podemos encontrar el script bash completo:
         fi
 
     done
-```
+~~~
 
 La prueba detecta automáticamente los diferentes modelos de interacción de la Skill y comprueba sus conflictos.
 Este script tiene dos parámetros:
@@ -137,20 +137,20 @@ Cuando un utterance no invoca el intent correcto, podemos actualizar nuestros ut
 Para ejecutar resoluciones de utterances, usaremos el comando ASK CLI:
 
 1. Para ask cli v1:
-```bash
+~~~bash
     ask api nlu-profile -s ${skill_id} -l ${locale} --utterance "${utterance}"
-```
+~~~
 
 2. Para ask cli v2:
-```bash
+~~~bash
     ask smapi profile-nlu -s ${skill_id} -l ${locale} --utterance "${utterance}" -g development
-```
+~~~
 
 Estos comandos están integrados en el archivo de script bash `test/vui-test/utterance_resolution_checker.sh`.
 
 Aquí podemos encontrar el script bash completo:
 
-```bash
+~~~bash
     #!/bin/bash
     skill_id=$1
 
@@ -207,15 +207,15 @@ Aquí podemos encontrar el script bash completo:
         done < "utterance_resolution/${locale}"
 
     done
-```
+~~~
 
 Además, tenemos un conjunto de utterances y los intents esperados por idioma. Este conjunto de utterances para las pruebas están disponibles en `test/utterance_resolution`.
 En nuestro caso, esta Skill solo está disponible en español por lo que podemos encontrar en esa carpeta el archivo `es-ES`:
 
-```bash
+~~~bash
     hola|HelloWorldIntent
     ayuda|AMAZON.HelpIntent 
-```
+~~~
 
 Como podemos ver, el formato de este archivo es `Utterance|ExpectedIntent`. Podríamos verificar la resolución de los slots, pero yo no lo hice en este ejemplo.
 
@@ -239,26 +239,26 @@ Cuando tengamos las annotations creadas, ahora podemos verificar la resolución 
 Este es un proceso asincrónico. por lo que tenemos que comenzar la evaluación con un comando y luego obtener el resultado con otro cuando finalice la evaluación:
 
 1. Para ask cli v1:
-```bash
+~~~bash
     #start the evaluation
     id=ask api evaluate-nlu -a ${annotation} -s ${skill_id} -l ${locale}
     #get the results of the evaluation
     ask api get-nlu-evaluation -e ${id} -s ${skill_id}
-```
+~~~
 
 2. Para ask cli v2:
-```bash
+~~~bash
     #start the evaluation
     id=ask smapi create-nlu-evaluations --source-annotation-id ${annotation} -s ${skill_id} -l ${locale} -g development
     #get the results of the evaluation
     ask smapi get-nlu-evaluation --evaluation-id ${id} -s ${skill_id}
-```
+~~~
 
 Estos comandos están integrados en el archivo de script bash `test/vui-test/utterance_evaluation_checker.sh`.
 
 Aquí puede encontrar el script bash completo:
 
-```bash
+~~~bash
     #!/bin/bash
     skill_id=$1
 
@@ -334,14 +334,14 @@ Aquí puede encontrar el script bash completo:
 
     done
 
-```
+~~~
 
 Además, tenemos un conjunto de annotations según la configuración regional.
 Este conjunto de annotations para las pruebas está disponible en `test/utterance_evaluation`. En nuestro caso, esta Skill solo está disponible en español por lo que podemos encontrar en esa carpeta el archivo `es-ES`:
 
-```bash
+~~~bash
     bcdcd3d8-ed74-4751-bb9f-5d1a4d02259c
-```
+~~~
 
 Como podeomos ver, esta es el id de la annotation que hemos creado en la Alexa Developer Console. Si tenemos más de uno, simplemente lo añadimos en una nueva línea.
 La prueba detecta automáticamente los diferentes modelos de interacción de la Skill y ejecuta la evaluación de las annotations dadas.
@@ -370,14 +370,14 @@ Este job ejecutará las siguientes tareas:
 1. Restaurar el código que hemos descargado en el paso anterior en la carpeta `/home/node/project`
 2.  Ejecutar el script `interaction_model_checker`.
 
-```yaml
+~~~yaml
   check-utterance-conflicts:
     executor: ask-executor
     steps:
       - attach_workspace:
           at: /home/node/
       - run: cd test/vui-test/ && ./interaction_model_checker.sh $SKILL_ID v1
-```
+~~~
 
 ### 2. check-utterance-resolution
 
@@ -385,14 +385,14 @@ Este job ejecutará las siguientes tareas:
 1. Restaurar el código que hemos descargado en el paso anterior en la carpeta `/home/node/project`
 2. Ejecutar el script `utterance_resolution_checker`.
 
-```yaml
+~~~yaml
   check-utterance-resolution:
     executor: ask-executor
     steps:
       - attach_workspace:
           at: /home/node/
       - run: cd test/vui-test/ && ./utterance_resolution_checker.sh $SKILL_ID v1
-```
+~~~
 
 ### 3. check-utterance-evaluation
 
@@ -401,7 +401,7 @@ Este job ejecutará las siguientes tareas:
 2. Ejecutar el script `utterance_evaluation_checker`.
 3. Conservar nuevamente el código que reutilizaremos en el próximo job
 
-```yaml
+~~~yaml
   check-utterance-evaluation:
     executor: ask-executor
     steps:
@@ -412,7 +412,7 @@ Este job ejecutará las siguientes tareas:
           root: /home/node/
           paths:
             - project
-```
+~~~
 
 **NOTA:** Para realizar estas pruebas en CircleCI, debemos configurar la variable de entorno `SKILL_ID` con el ID de nuestra Alexa Skill.
 

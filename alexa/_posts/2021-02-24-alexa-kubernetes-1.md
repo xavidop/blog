@@ -49,16 +49,16 @@ El autor original, TJ Holowaychuk, lo describió como un servidor inspirado en S
 
 El primer paso que debemos hacer es instalar es la dependencia `express`. Esto nos permitirá configurar y ejecutar nuestro servidor web Express:
 
-```bash
+~~~bash
     npm install express
-```
+~~~
 
 Una vez que hemos instalado la dependencia de nuestro servidor web Express, necesitamos instalar el adaptador oficial `ask-sdk-express-adapter`.
 Este paquete nos ayudará a ejecutar la instancia de Alexa Skill desde el objeto `Alexa.SkillBuilders` en un servidor web Express creando un controlador de pteiciones para ejecutar todas las peticiones entrantes.
 
-```bash
+~~~bash
     npm install ask-sdk-express-adapter
-```
+~~~
 
 ## Configuración
 
@@ -67,7 +67,7 @@ Esto se debe a que la transformación de los backends de Alexa Skill que son AWS
 
 Este es un backend AWS Lambda típico de una Skill de Alexa:
 
-```javascript
+~~~javascript
 const Alexa = require('ask-sdk-core');
 
 exports.handler = Alexa.SkillBuilders.custom()
@@ -84,11 +84,11 @@ exports.handler = Alexa.SkillBuilders.custom()
   .addRequestInterceptors(
     LocalisationRequestInterceptor)
   .lambda();
-```
+~~~
 
 Y este es el backend del servidor web Express de una Skill de Alexa:
 
-```javascript
+~~~javascript
 const Alexa = require('ask-sdk-core');
 const express = require('express');
 const { ExpressAdapter } = require('ask-sdk-express-adapter');
@@ -114,7 +114,7 @@ const expressAdapter = new ExpressAdapter(skill, false, false);
 app.post('/', expressAdapter.getRequestHandlers());
 app.listen(3000);
 
-```
+~~~
 
 Como se puede ver arriba, en lugar de llamar al método `lambda()` y exportar ese objeto, llamaremos al método `create()` requerido para el adaptador Express.
 Después de eso, crearemos una instancia de Express.
@@ -135,7 +135,7 @@ Podéis encontrar todo el código en la carpeta `app`.
 
 El archivo `launch.json` en la carpeta `.vscode` tiene la configuración para Visual Studio Code que nos permite ejecutar nuestro Express Server en nuestro ordenador:
 
-```json
+~~~json
 
 {
     "version": "0.2.0",
@@ -149,7 +149,7 @@ El archivo `launch.json` en la carpeta `.vscode` tiene la configuración para Vi
     ]
 }
 
-```
+~~~
 
 Después de configurar nuestro archivo launch.json, es hora de hacer clic en el botón de play!:
 
@@ -167,7 +167,7 @@ Después de ejecutar nuestra aplicación, tendremos un endpoint disponible en ht
 
 Por ejemplo, podemos probar una `LaunchRequest`:
 
-```json
+~~~json
 
   {
     "version": "1.0",
@@ -208,7 +208,7 @@ Por ejemplo, podemos probar una `LaunchRequest`:
     }
   }
 
-```
+~~~
 
 ## Recursos
 * [Official Alexa Skills Kit Node.js SDK](https://www.npmjs.com/package/ask-sdk) - The Official Node.js SDK Documentation
