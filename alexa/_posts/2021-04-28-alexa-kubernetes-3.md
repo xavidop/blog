@@ -46,7 +46,7 @@ npm install --save ask-sdk-mongodb-persistence-adapter
 
 ## Uso y primeros pasos
 
-Podéis encontrar toda la documentación [aquí] https://ask-sdk-mongodb-persistence-adapter.netlify.app/).
+Podéis encontrar toda la documentación [aquí](https://ask-sdk-mongodb-persistence-adapter.netlify.app/).
 
 Cómo crear una instancia de `MongoDBPersistenceAdapter` y `PartitionKeyGenerator`:
 
