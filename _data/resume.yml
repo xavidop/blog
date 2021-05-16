@@ -110,6 +110,12 @@ education:
     endDate: "2017-08-01"
     gpa: "4.0"
 awards:
+  - title: "AWS Community Builder"
+    date: "2021-05-15"
+    awarder: "Amazon Web Services (AWS)"
+  - title: "DZone Newcommer of 2020"
+    date: "2021-01-10"
+    awarder: "DZone"
   - title: "Microsoft Azure Content Hero"
     date: "2020-05-01"
     awarder: "Microsoft"
