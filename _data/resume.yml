@@ -28,7 +28,7 @@ basics:
       url: "https://linkedin.com/in/xavierportillaedo/"
 work:
   - company: "Voiceflow Inc."
-    position: "Site Reliability Engineer"
+    position: "Infrastructure Engineer"
     website: "https://www.voiceflow.com/"
     startDate: "2021-01-01"
     endDate: ""
@@ -36,7 +36,7 @@ work:
       Voiceflow is helping the world have better conversations with technology
       Voiceflow is changing the way voice apps are built by creating a collaborative design platform for voice app development.
     highlights:
-      - "The SRE team is responsible for how code is deployed, configured, and monitored, as well as the availability, latency, change management, emergency response, and capacity management of services in production."
+      - "The Infra team is responsible for how code is deployed, configured, and monitored, as well as the availability, latency, change management, emergency response, and capacity management of services in production."
       - "Stack used: Typescript, Terraform, Golang, Docker, Kubernetes, Helm, Bashscript, AWS and Google Cloud Platform"
   - company: "Ericsson"
     position: "Software Arquitect, DevOps and Q&A Engineer"
@@ -110,6 +110,9 @@ education:
     endDate: "2017-08-01"
     gpa: "4.0"
 awards:
+  - title: "Alexa Champion"
+    date: "2021-07-15"
+    awarder: "Amazon Alexa"
   - title: "AWS Community Builder"
     date: "2021-05-15"
     awarder: "Amazon Web Services (AWS)"
