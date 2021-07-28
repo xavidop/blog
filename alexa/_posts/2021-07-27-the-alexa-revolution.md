@@ -48,7 +48,7 @@ Aquí tenéis todos los datos del libro:
 * **Fecha de publicación:** julio 2021
 * **Editorial:** auto editado
 
-**Lo podéis comprar aquí:** [Amazon Kindle](https://www.amazon.com/dp/B099BZMZ4D), [Apple Books](https://books.apple.com/us/book/id1578470243), [Google Books](https://books.google.es/books/about?id=Dzs6EAAAQBAJ), [Google Play](https://play.google.com/store/books/details?id=Dzs6EAAAQBAJ)
+**Lo podéis comprar aquí:** [Amazon Kindle](https://www.amazon.com/dp/B099BVNTT3), [Apple Books](https://books.apple.com/us/book/id1578470243), [Google Books](https://books.google.es/books/about?id=Dzs6EAAAQBAJ), [Google Play](https://play.google.com/store/books/details?id=Dzs6EAAAQBAJ)
 
 Me gustaría dar las gracias a todas aquellas personas que han contribuido a que esto fuera posible. !Muchas gracias!
 
