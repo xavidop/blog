@@ -62,6 +62,8 @@ menu:
     url:               /talks/
   - title:             Books
     url:               /books/
+  - title:             Podcasts
+    url:               /podcasts/
   - title:             Resume
     url:               /resume/
   - title:             About
