@@ -384,7 +384,7 @@ helm dep update helm/alexa-skill-chart/
 helm install alexa-skill helm/alexa-skill-chart/ --namespace alexa-skill
 ~~~
 
-If we want to remove oour Chart Installer, just run the following command:
+Si queremos desinstalarlo:
 ~~~bash
 ## Uninstall
 helm uninstall alexa-skill --namespace alexa-skill
