@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Alexa and Kubernetes. Desplegando una Alexa Skill en Azure Kubernetes Services (VIII)
+title: Alexa y Kubernetes. Desplegando una Alexa Skill en Azure Kubernetes Services (VIII)
 image: /assets/img/blog/post-headers/alexa-aks.jpg
 description: >
    Despliegue automático Alexa Skill en AKS con Terraform

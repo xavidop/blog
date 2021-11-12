@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Alexa and Kubernetes. Desplegando una Alexa Skill en AWS Elastic Kubernetes Services (VII)
+title: Alexa y Kubernetes. Desplegando una Alexa Skill en AWS Elastic Kubernetes Services (VII)
 image: /assets/img/blog/post-headers/alexa-eks.jpg
 description: >
    Despliegue automático Alexa Skill en EKS con Terraform
