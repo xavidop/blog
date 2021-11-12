@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Alexa and Kubernetes. Deploying the Alexa Skill on Google Kubernetes Engine (IX)
+title: Alexa and Kubernetes. Desplegando una Alexa Skill en Google Kubernetes Engine (IX)
 image: /assets/img/blog/post-headers/alexa-gke.jpg
 description: >
    Despliegue automático Alexa Skill en GKE con Terraform
