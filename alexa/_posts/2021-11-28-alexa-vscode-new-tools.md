@@ -3,7 +3,7 @@ layout: post
 title: Nuevas herramientas para Alexa Skills en VS code
 image: /assets/img/blog/post-headers/alexa-vscode-new-tools.jpg
 description: >
-   Nuevas tools disponibles para desarrollo local de VS Code
+   Nuevas tools disponibles para desarrollo local de Skills en VS Code
 comments: true
 author: xavi
 kate: hl markdown;
