@@ -5,15 +5,14 @@ title:  Podcast
 ---
 Here you can find my Podcasts:
 
-- [El Interior de Alexa](#el-interior-de-alexa)
+- [VozTech](#voztech)
 
-# El Interior de Alexa
+# VozTech
 
- ![image](/assets/img/podcasts/el-interior-de-alexa.jpeg)
+ ![image](/assets/img/podcasts/voztech.jpg)
 
-A vision of the world of Alexa from the inside out. In this podcast we will talk about the most relevant news, we will make reviews and above all, we will talk about programming. The link of all these topics will always be the same, Alexa.
+The go-to tech podcast on voice assistants. A vision of the world of voice assistants from the inside out. We will talk about the most relevant news, we will make reviews and above all, we will talk about how they are programming. The link between all these topics will always be the same, the voice assistants (Alexa, Google Assistant, Siri, etc.).
 
-It is also available in all streaming platforms such as Spotify, Amazon Music, Apple Podcasts, Google Podcasts, Ivoox, etc.
 
 <br/>
-<iframe src="https://anchor.fm/el-interior-de-alexa/embed" height="200px" width="500px" frameborder="0" scrolling="no"></iframe>
+<iframe src="https://anchor.fm/voztech/embed" height="200px" width="500px" frameborder="0" scrolling="no"></iframe>
