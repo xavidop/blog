@@ -152,6 +152,10 @@ skills:
     level: "Master"
     keywords:
       - "Skills"
+  - name: "Actions on Google"
+    level: "Master"
+    keywords:
+      - "AoG"
   - name: "Java"
     level: "Master"
     keywords:
@@ -167,6 +171,7 @@ skills:
       - "AWS"
       - "GCP"
       - "Terraform"
+      - "Golang"
   - name: "DevOps"
     level: "Master"
     keywords:
