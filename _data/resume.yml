@@ -74,21 +74,6 @@ work:
       - "Build complex software solutions"
       - "Stack used: Java, Maven, Spring"
 volunteer:
-  - organization: "DevopsDays Madrid Conference & Madrid Devops Meetup"
-    position: "Organizer"
-    website: "https://devopsdays.org/madrid"
-    startDate: "2019-03-01"
-    endDate: ""
-    summary: "DevOpsDays is a worldwide series of community run technical conferences 
-    covering topics of software development, IT infrastructure operations, and the intersection between them."
-    highlights:
-      - "The first DevOpsDays in Spain"
-  - organization: "Alexa Community Spain"
-    position: "Organizer"
-    website: "https://twitter.com/alexadevsspain"
-    startDate: "2020-03-01"
-    endDate: ""
-    summary: "Community of Alexa developers in Spain which aim focus is sharing knowledge about Amazon Alexa platform."
   - organization: "Google Developer Group Madrid"
     position: "Organizer"
     website: "https://gdg.community.dev/gdg-madrid/"
@@ -98,28 +83,42 @@ volunteer:
     You’ll also meet local developers virtually or in-person with similar interests in technology. 
     The community prides itself on being an inclusive environment where everyone and anyone 
     interested in tech - from beginner developers to experienced professionals are welcome to join."
-    highlights:
-      - "The first DevOpsDays in Spain"
   - organization: "DZone Inc"
-    position: "Most Valuable Blogger and Core member"
+    position: "Core member"
     website: "https://dzone.com/users/4278252/xavidop.html"
     startDate: "2020-03-01"
     endDate: ""
     summary: "DZone.com is one of the world’s largest online communities and leading publisher of knowledge resources for software developers. 
     Every day, hundreds of thousands of developers come to DZone.com to read about the latest technology trends and learn about new technologies, methodologies, and best practices through shared knowledge."
+  - organization: "Alexa Community Spain"
+    position: "Organizer"
+    website: "https://twitter.com/alexadevsspain"
+    startDate: "2020-03-01"
+    endDate: ""
+    summary: "Community of Alexa developers in Spain which aim focus is sharing knowledge about Amazon Alexa platform."
+  - organization: "DevopsDays Madrid Conference & Madrid Devops Meetup"
+    position: "Organizer"
+    website: "https://devopsdays.org/madrid"
+    startDate: "2019-03-01"
+    endDate: ""
+    summary: "DevOpsDays is a worldwide series of community run technical conferences 
+    covering topics of software development, IT infrastructure operations, and the intersection between them."
+    highlights:
+      - "The first DevOpsDays in Spain"
+
 education:
   - institution: "Polytechnic University of Valencia"
     area: "Computer Science and Engineering"
     studyType: "Bachelor"
     startDate: "2010-09-01"
     endDate: "2014-09-01"
-    gpa: "4.0"
+    gpa: "3.5"
   - institution: "Polytechnic University of Valencia"
     area: "Mobile Application Development"
     studyType: "Master"
     startDate: "2016-09-01"
     endDate: "2017-08-01"
-    gpa: "4.0"
+    gpa: "3.7"
 awards:
   - title: "Alexa Champion"
     date: "2021-07-15"

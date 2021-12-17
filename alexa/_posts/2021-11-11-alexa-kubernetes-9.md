@@ -7,9 +7,10 @@ description: >
 comments: true
 author: xavi
 kate: hl markdown;
-categories: [alexa]
+categories: [alexa, gcp]
 tags:
   - alexa
+  - gcp
 keywords:
   - alexa
   - lambda

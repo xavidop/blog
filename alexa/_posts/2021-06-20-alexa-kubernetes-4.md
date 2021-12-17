@@ -7,9 +7,10 @@ description: >
 comments: true
 author: xavi
 kate: hl markdown;
-categories: [alexa]
+categories: [alexa, kubernetes]
 tags:
   - alexa
+  - kubernetes
 keywords:
   - alexa
   - lambda

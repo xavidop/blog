@@ -7,10 +7,9 @@ description: >
 comments: true
 author: xavi
 kate: hl markdown;
-categories: [alexa, spring]
+categories: [alexa]
 tags:
   - alexa
-  - spring
 keywords:
   - alexa
   - springboot

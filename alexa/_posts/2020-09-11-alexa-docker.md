@@ -7,7 +7,7 @@ description: >
 comments: true
 author: xavi
 kate: hl markdown;
-categories: [alexa, devops, docker]
+categories: [alexa]
 tags:
   - alexa
 keywords:

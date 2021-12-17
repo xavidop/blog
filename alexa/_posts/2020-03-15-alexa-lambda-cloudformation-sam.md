@@ -7,7 +7,7 @@ description: >
 comments: true
 author: xavi
 kate: hl markdown;
-categories: [alexa]
+categories: [alexa, aws]
 tags:
   - alexa
 keywords:

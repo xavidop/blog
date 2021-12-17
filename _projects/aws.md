@@ -1,11 +1,11 @@
 ---
 layout: project
-title: 'Docker'
-image: /assets/img/categories/docker.jpg
-screenshot: /assets/img/categories/docker.jpg
-caption: Docker for everyone
+title: 'Amazon Web Services (AWS)'
+image: /assets/img/categories/aws.png
+screenshot: /assets/img/categories/aws.png
+caption: AWS posts for noobs
 description: >
- Docker is a set of platform as a service (PaaS) products that use OS-level virtualization to deliver software in packages called containers. Containers are isolated from one another and bundle their own software, libraries and configuration files; they can communicate with each other through well-defined channels. All containers are run by a single operating system kernel and therefore use fewer resources than virtual machines.
+ Amazon Web Services (AWS) is the world’s most comprehensive and broadly adopted cloud platform, offering over 200 fully featured services from data centers globally. Millions of customers—including the fastest-growing startups, largest enterprises, and leading government agencies—are using AWS to lower costs, become more agile, and innovate faster.
 ---
 
 {% assign posts = site.categories[page.slug] | default:site.tags[page.slug] | default:site.posts %}

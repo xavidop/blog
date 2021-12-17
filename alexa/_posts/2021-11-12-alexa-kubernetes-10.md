@@ -1,15 +1,19 @@
 ---
 layout: post
-title: Alexa y Kubernetes
+title: Alexa y Kubernetes. Recap.
 image: /assets/img/blog/post-headers/alexa-kubernetes.jpg
 description: >
    Guía paso a paso para construir desplegar Alexa Skill en Kubernetes
 comments: true
 author: xavi
 kate: hl markdown;
-categories: [alexa]
+categories: [alexa, azure, gcp, aws, kubernetes]
 tags:
   - alexa
+  - azure
+  - gcp
+  - aws
+  - kubernetes
 keywords:
   - alexa
   - lambda
@@ -73,41 +77,41 @@ En cada paso encontraréis todos los requisitos previos necesarios para ese paso
 
 ## 1. Alexa Skill como servidor web
 
-Cómo crear una Skill de Alexa como una aplicación NodeJS usando Express. Tenéis la explicación completa [aquí](docs/WEBSERVER.md).
+Cómo crear una Skill de Alexa como una aplicación NodeJS usando Express. Tenéis la explicación completa [aquí](/alexa/2021-02-24-alexa-kubernetes-1/).
 
 ## 2. Acoplamiento de la Skill de Alexa
 
-Dockerizar nuestro backend de nuestra Alexa Skill que se transformó en una aplicación NodeJS Express. Tenéis la explicación completa [aquí](docs/DOCKER.md).
+Dockerizar nuestro backend de nuestra Alexa Skill que se transformó en una aplicación NodeJS Express. Tenéis la explicación completa [aquí](/alexa/2021-03-20-alexa-kubernetes-2/).
 
 ## 3. Adaptador de persistencia MongoDB
 
-Uso del nuevo adaptador de persistencia para MongoDB. Tenéis la explicación completa [aquí](https://github.com/xavidop/ask-sdk-mongodb-persistence-adapter).
+Uso del nuevo adaptador de persistencia para MongoDB. Tenéis la explicación completa [aquí](/alexa/2021-04-28-alexa-kubernetes-3/).
 
 ## 4. Objetos de Kubernetes de la Skill de Alexa
 
-Crear todos los objetos de Kubernetes necesarios para implementar nuestra Skill de Alexa en un clúster de Kubernetes. Tenéis la explicación completa [aquí](docs/KUBERNETES.md).
+Crear todos los objetos de Kubernetes necesarios para implementar nuestra Skill de Alexa en un clúster de Kubernetes. Tenéis la explicación completa [aquí](/alexa/kubernetes/2021-06-20-alexa-kubernetes-4/).
 
 ## 5. Helm Chart de la Skill de Alexa
 
-Creando el Hel Chart con nuestra Alexa Skill + MongoDB. Tenéis la explicación completa [aquí](docs/HELM.md).
+Creando el Hel Chart con nuestra Alexa Skill + MongoDB. Tenéis la explicación completa [aquí](/alexa/kubernetes/2021-11-11-alexa-kubernetes-5/).
 
 ## 6. Desarrollo y despliegue local con DevSpace
 
-Cómo desarrollar en un entorno de Kubernetes. Tenéis la explicación completa [aquí](docs/LOCAL_DEVELOPMENT_DEPLOYMENT.md).
+Cómo desarrollar en un entorno de Kubernetes. Tenéis la explicación completa [aquí](/alexa/kubernetes/2021-11-11-alexa-kubernetes-6/).
 
 ## 7. Terraform.
 
 ### 7.1. Despliegue de una Alexa Skill en AWS Elastic Kubernetes Services
 
-Cómo desplegar nuestra Skill de Alexa en EKS. Tenéis la explicación completa [aquí](docs/TERRAFORM_EKS.md).
+Cómo desplegar nuestra Skill de Alexa en EKS. Tenéis la explicación completa [aquí](/alexa/aws/2021-11-11-alexa-kubernetes-7/).
 
 ### 7.2. Despliegue de una Skill de Alexa en Azure Kubernetes Services
 
-Cómo deplegar nuestra Skill de Alexa en AKS. Tenéis la explicación completa [aquí](docs/TERRAFORM_AKS.md).
+Cómo deplegar nuestra Skill de Alexa en AKS. Tenéis la explicación completa [aquí](/alexa/azure/2021-11-11-alexa-kubernetes-8/).
 
 ### 7.3. Despliegue de una Alexa Skill en Google Kubernetes Engine
 
-Cómo desplegar nuestra Skill de Alexa en GKE. Tenéis la explicación completa [aquí](docs/TERRAFORM_GKE.md).
+Cómo desplegar nuestra Skill de Alexa en GKE. Tenéis la explicación completa [aquí](/alexa/gcp/2021-11-11-alexa-kubernetes-9/).
 
 Espero que este proyecto de ejemplo te sea de utilidad.
 

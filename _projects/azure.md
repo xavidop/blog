@@ -1,11 +1,11 @@
 ---
 layout: project
-title: 'DevOps'
-image: /assets/img/categories/devops.jpg
-screenshot: /assets/img/categories/devops.jpg
-caption: Useful DevOps posts
+title: 'Microsoft Azure'
+image: /assets/img/categories/azure.png
+screenshot: /assets/img/categories/azure.png
+caption: Azure for everyone
 description: >
- DevOps is a "culture" which have a set of practices that combines software development (Dev) and information-technology operations (Ops) which aims to shorten the systems development life cycle and provide continuous delivery with high software quality.
+ Azure is a cloud computing platform and an online portal that allows you to access and manage cloud services and resources provided by Microsoft. These services and resources include storing your data and transforming it, depending on your requirements.
 ---
 
 {% assign posts = site.categories[page.slug] | default:site.tags[page.slug] | default:site.posts %}

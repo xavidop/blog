@@ -3,12 +3,12 @@
 layout: list
 
 # The title of the tag's page.
-title: DevOps
+title: Actions on Google
 
 # The name of the tag, used in a post's front matter (e.g. tags: [<slug>]).
-slug: devops
+slug: aog
 
 # (Optional) Write a short (~150 characters) description of this featured tag.
 description: >
-  DevOps is the union of people, process, and products to enable continuous delivery of value to our end users.
+  Google Assistant is a virtual digital assistant developed by Google for its Nest devices. 
 ---
