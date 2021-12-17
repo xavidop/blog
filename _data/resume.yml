@@ -155,7 +155,8 @@ skills:
   - name: "Actions on Google"
     level: "Master"
     keywords:
-      - "AoG"
+      - "Google Actions"
+      - "App Actions"
   - name: "Java"
     level: "Master"
     keywords:
