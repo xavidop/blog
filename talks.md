@@ -9,6 +9,6 @@ Enjoy!
 
 <div class="sixteen-nine">
   <iframe id="ytplayer" type="text/html" style="width:100%;height:100%;" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen
-  src="https://www.youtube.com/embed/?listType=playlist&list=PLN3SlEcvS7XFNmxvV64hN2B6_seu9MSnm">
+  src="https://www.youtube.com/embed/L-EM27-mBmk">
 </div>
 

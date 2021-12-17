@@ -15,4 +15,4 @@ The go-to tech podcast on voice assistants. A vision of the world of voice assis
 
 
 <br/>
-<iframe src="https://anchor.fm/voztech/embed" height="200px" width="500px" frameborder="0" scrolling="no"></iframe>
+<iframe src="https://anchor.fm/voztech/embed" height="200px" width="100%" frameborder="0" scrolling="no"></iframe>
