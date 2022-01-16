@@ -38,7 +38,7 @@ En este artículo, aprenderemos cómo desarrollar nuestra Google Action localmen
 
 ## Requisitios Previos
 
-Here you have the technologies used in this project
+Aquí tienes las tecnologías utilizadas en este proyecto
 1. Google Action Developer Account - [How to get it](https://console.actions.google.com/)
 2. Google Cloud Account - [Sign up here for free](https://cloud.google.com/)
 3. Firebase Account - [Sign up here for free](https://firebase.google.com/)
@@ -51,7 +51,7 @@ Here you have the technologies used in this project
 10. ngrok
 
 La CLI de Google Actions (gactions CLI) es una herramienta que nos permite administrar nuestras Google Actions y sus recursos relacionados, como las Firebase Cloud Functions.
-Usaremos esta herramienta para crear, construir, desplegar y administrar nuestro ejemplo de Hello World en una Google Action. ¡Empecemos!
+Usaremos esta herramienta para crear, desplegar y administrar nuestro ejemplo de Hello World en una Google Action. ¡Empecemos!
 
 También usaremos Firebase CLI para invocar nuestra Firebase Cloud Function de forma local.
 
