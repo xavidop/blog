@@ -4,7 +4,6 @@ title: Crea Google Custom Types desde Alexa Custom Slots
 description: >
   Una CLI simple que transforma los Alexa Custom Slots en Google Custom Types
 image: /assets/img/blog/post-headers/google-types-importer.jpg
-noindex: true
 comments: true
 author: xavi
 kate: hl markdown;
