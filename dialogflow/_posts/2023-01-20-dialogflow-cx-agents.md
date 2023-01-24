@@ -53,13 +53,13 @@ Once you have created an agent, you can start building conversations! Things tha
 4. Modify your NLU by creating intents and entity types
 5. Test your agent
 
-![Full-width image](/assets/img/blog/tutorials/dialogflow-agents/console.png){:.lead data-width="800" data-height="100"}
+![Full-width image](/assets/img/blog/tutorials/dialogflow-agents/agent.png){:.lead data-width="800" data-height="100"}
 Dialogflow CX Agent
 {:.figure}
 
-## Dialoglfow CX CLI
+## Dialogflow CX CLI
 
-The [Dialoglfow CX CLI](https://cxcli.xavidop.me/) or `cxcli` is a Command Line Interface Tool that you can use to interact with your Dialogflow CX projects in a terminal. It is an open-source project created by [Xavier Portilla Edo](https://xavidop.me/). With the `cxcli` you can interact easily with your Dialogflow CX agents.
+The [Dialogflow CX CLI](https://cxcli.xavidop.me/) or `cxcli` is a Command Line Interface Tool that you can use to interact with your Dialogflow CX projects in a terminal. It is an open-source project created by [Xavier Portilla Edo](https://xavidop.me/). With the `cxcli` you can interact easily with your Dialogflow CX agents.
 
 All the commands that you have available in the `cxcli` to interact with your agents are located down the `cxcli agent` command.
 
@@ -127,7 +127,7 @@ If you want to learn more about Dialogflow CX agents, check the [official docume
 ## Conclusion 
 
 This was a basic tutorial to learn what is a Dialogflow CX Agent.
-As you have seen in this example, creating an agent and interacting with it either with the console or the `cxcli` is very easily.
+As you have seen in this example, creating an agent and interacting with it either with the console or the `cxcli` is very easy.
 
 I hope this tutorial will be useful to you.
 
