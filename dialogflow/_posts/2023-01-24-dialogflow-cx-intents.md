@@ -120,7 +120,7 @@ test_intent
 
 ### Delete
 
-Also, an intent can be [deleted](https://cxcli.xavidop.me/intents/delete). The usage of this command is pretty much similar to the one used for create an intent:
+Also, an intent can be [deleted](https://cxcli.xavidop.me/intents/delete). The usage of this command is pretty much similar to the one used for creating an intent:
 
 ```sh
 cxcli intent delete [intent-name] [parameters]
@@ -143,7 +143,7 @@ INFO Intent deleted
 
 If you want to check the full usage of the `cxcli intent` command, please refer to this [page](https://cxcli.xavidop.me/cmd/cxcli_intent).
 
-If you want to learn more about Dialogflow CX agents, check the [official documentation](https://cloud.google.com/dialogflow/cx/docs/concept/intent).
+If you want to learn more about Dialogflow CX intents, check the [official documentation](https://cloud.google.com/dialogflow/cx/docs/concept/intent).
 
 ## Conclusion 
 
