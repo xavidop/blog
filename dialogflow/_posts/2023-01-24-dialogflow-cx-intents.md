@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Dialgflow CX Intents (English)
+title: Dialogflow CX Intents (English)
 description: >
   An introduction about dialogflow CX NLU and its intents
 image: /assets/img/blog/post-headers/dialogflow-intents.jpg

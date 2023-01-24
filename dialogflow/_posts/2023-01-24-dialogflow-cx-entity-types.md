@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Dialgflow CX Entity Types (English)
+title: Dialogflow CX Entity Types (English)
 description: >
   What are entity types in Dialogflow CX?
 image: /assets/img/blog/post-headers/dialogflow-entity-types.jpg
