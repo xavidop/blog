@@ -77,7 +77,7 @@ These are the Entity Types that you can use in your intents:
 1. Custom entities: entity types created by the developer.
 2. System entities: the ones available in dialogflow CX (number, dates, colours, etc.).
 3. Session entities: these are dynamic entities that can be extended during the users' sessions.
-4. Regexp entities: entities that are a regular expression.
+4. Regexp entities: entities that are regular expressions.
 
 Whenever you create, modify or delete an entity type it is important to re-train your Dialogflow CX flows. This will re-train your NLU. By doing this your bot will "understand you" including your latest changes.
 
