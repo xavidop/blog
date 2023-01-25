@@ -1,6 +1,6 @@
 ---
 layout: post
-title: How to properly set your Dialogflow CX Agents (English)
+title: How to properly test your Dialogflow CX Agents (English)
 description: >
   In this article you will learn how to properly test your Dialogflow CX Agents
 image: /assets/img/blog/post-headers/dialogflow-tests.jpg
