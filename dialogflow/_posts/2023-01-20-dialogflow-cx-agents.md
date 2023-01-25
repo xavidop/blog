@@ -4,7 +4,6 @@ title: Dialogflow CX Agents (English)
 description: >
   An introduction about dialogflow CX agents and how to interact with them using the console and the CXCLI
 image: /assets/img/blog/post-headers/dialogflow-agents.jpg
-noindex: true
 comments: true
 author: xavi
 kate: hl markdown;
