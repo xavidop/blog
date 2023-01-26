@@ -21,7 +21,8 @@ xavi:
   # Comment/uncommet to show/hide. Rearrange to change the order in which they appear.
   social:
     twitter:         xavidop
-    twitch:          xavidop
+    #twitch:          xavidop
+    youtube:         UCHKPJg8TjYnhokWPEOdVHVA
     github:          xavidop
     #download:       <url>
     email:           xavierportillaedo@gmail.com
@@ -33,7 +34,6 @@ xavi:
     # facebook:        <username>
     # google:          <number>
     # vk:              <username>
-    # youtube:         <string_string_string>
     # vimeo:           <username>
     # vine:            <username>
     # spotify:         <user>/<number>

@@ -52,9 +52,9 @@ author:
 
 # Add links to the sidebar.
 menu:
-  - title:             Posts in spanish
+  - title:             Posts
     url:               /index.html
-  - title:             Posts in english
+  - title:             Posts in DZone
     url:               https://dzone.com/users/4278252/xavidop.html
   - title:             Categories
     url:               /projects/
