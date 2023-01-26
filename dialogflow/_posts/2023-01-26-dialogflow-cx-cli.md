@@ -2,7 +2,7 @@
 layout: post
 title: "Dialogflow CX CLI: The missing CLI to interact with your agents (English)"
 description: >
-  An introduction to he most powerful Dialogflow CX CLI ever made
+  An introduction to the most powerful Dialogflow CX CLI ever made
 image: /assets/img/blog/post-headers/dialogflow-cx-cli.jpg
 comments: true
 author: xavi
