@@ -73,10 +73,10 @@ These are the main files of the project:
 * `cmd`: The folder that contains all we need to spin up a local server for debugging.
   * `main.go`: file that contains a `main()` method and runs a local server listening in port `8080`.
 * `function.go`: the Google Cloud Function main entry point.
-* `go.mod`: this file is core to the Golang ecosystem and is a basic part of understanding and working with golang.
+* `go.mod`: this file is core to the Golang ecosystem and is a basic part of understanding and working with Golang.
 * `go.sum`: this file lists down the checksum of direct and indirect dependency required along with the version
 
-## Google Cloud function in golang
+## Google Cloud function in Golang
 
 The Dialogflow CX SDK for Golang makes it easier for you to build highly engaging dialogflow CX conversations by allowing you to spend more time implementing features and less time writing boilerplate code.
 
@@ -375,7 +375,7 @@ The Dialogflow CX Console will send an HTTPS request to the ngrok endpoint (http
 ## Conclusion 
 
 This was a basic tutorial to learn Dialogflow CX webhooks using Golang.
-As you have seen in this example, the Dialoglfow CX SDK for Golang and the Dialogflow CX Tools like gcloud and `cxcli` CLIs can help us a lot and also they give us the possibility to create Agents and conversations easily. This example was done using Golang, but you can use it as an inspiration for your webhooks that has been built using your favorite programming language.
+As you have seen in this example, the Dialoglfow CX SDK for Golang and the Dialogflow CX Tools like gcloud and `cxcli` CLIs can help us a lot and also they give us the possibility to create Agents and conversations easily. This example was done using Golang, but you can use it as an inspiration for your webhooks that has been built using your favourite programming language.
 
 I hope this example project is useful to you.
 
