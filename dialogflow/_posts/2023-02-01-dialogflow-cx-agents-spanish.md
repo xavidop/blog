@@ -29,7 +29,7 @@ lang: en
 Estas son las tecnologías utilizadas en este proyecto 
 1. Google Cloud Account - [Regístrate aquí de forma gratuita](https://cloud.google.com/)
 2. Dialogflow API enabled - [Cómo habilitarla](https://cloud.google.com/dialogflow/cx/docs/reference)
-3. Dialogflow CX CLI - [nstala y configura Dialogflow CX CLI](https://cxcli.xavidop.me/)
+3. Dialogflow CX CLI - [Instala y configura Dialogflow CX CLI](https://cxcli.xavidop.me/)
 
 ## ¿De qué se trata? 
 
