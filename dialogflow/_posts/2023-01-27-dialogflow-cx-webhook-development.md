@@ -1,22 +1,26 @@
 ---
 layout: post
-title: "A guide about Dialogflow CX Webhook development (English)"
+title: A guide about Dialogflow CX Webhook development (English)
 description: >
-  An introduction to how to develop your Dialogflow CX webhooks, from the Dialogflow CX console to your laptop!
+  An introduction to how to develop your Dialogflow CX webhooks, from the
+  Dialogflow CX console to your laptop!
 image: /assets/img/blog/post-headers/dialogflow-cx-webhook-development.jpg
 comments: true
 author: xavi
 kate: hl markdown;
-categories: [dialogflow]
+categories:
+  - dialogflow
 tags:
   - dialogflow
 keywords:
   - dialogflow
   - dialogflowcx
+  - dialogflow cx
   - cxcli
   - conversationalai
 
 lang: en
+lastmod: 2023-02-03T11:18:46.190Z
 ---
 {:.no_toc}
 1. this unordered seed list will be replaced by toc as unordered list

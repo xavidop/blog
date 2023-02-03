@@ -2,21 +2,25 @@
 layout: post
 title: Dialogflow CX Agents (English)
 description: >
-  An introduction about dialogflow CX agents and how to interact with them using the console and the CXCLI
+  An introduction about dialogflow CX agents and how to interact with them using
+  the console and the CXCLI
 image: /assets/img/blog/post-headers/dialogflow-agents.jpg
 comments: true
 author: xavi
 kate: hl markdown;
-categories: [dialogflow]
+categories:
+  - dialogflow
 tags:
   - dialogflow
 keywords:
   - dialogflow
   - dialogflowcx
+  - dialogflow cx
   - cxcli
   - conversationalai
 
 lang: en
+lastmod: 2023-02-03T11:18:14.214Z
 ---
 {:.no_toc}
 1. this unordered seed list will be replaced by toc as unordered list

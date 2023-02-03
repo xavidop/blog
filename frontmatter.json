@@ -1,0 +1,120 @@
+{
+  "$schema": "https://frontmatter.codes/frontmatter.schema.json",
+  "frontMatter.content.autoUpdateDate": false,
+  "frontMatter.taxonomy.contentTypes": [
+    {
+      "name": "default",
+      "pageBundle": false,
+      "fields": [
+        {
+          "title": "layout",
+          "name": "layout",
+          "type": "string"
+        },
+        {
+          "title": "title",
+          "name": "title",
+          "type": "string"
+        },
+        {
+          "title": "description",
+          "name": "description",
+          "type": "string"
+        },
+        {
+          "title": "image",
+          "name": "image",
+          "type": "string"
+        },
+        {
+          "title": "comments",
+          "name": "comments",
+          "type": "datetime"
+        },
+        {
+          "title": "author",
+          "name": "author",
+          "type": "string"
+        },
+        {
+          "title": "kate",
+          "name": "kate",
+          "type": "string"
+        },
+        {
+          "title": "categories",
+          "name": "categories",
+          "type": "categories"
+        },
+        {
+          "title": "tags",
+          "name": "tags",
+          "type": "tags"
+        },
+        {
+          "title": "keywords",
+          "name": "keywords",
+          "type": "choice",
+          "choices": [
+            "dialogflow",
+            "dialogflowcx",
+            "cxcli",
+            "conversationalai"
+          ]
+        },
+        {
+          "title": "lang",
+          "name": "lang",
+          "type": "string"
+        }
+      ]
+    }
+  ],
+  "frontMatter.content.pageFolders": [
+    {
+      "path": "[[workspace]]/_featured_categories",
+      "title": "_featured_categories"
+    },
+    {
+      "path": "[[workspace]]/_projects",
+      "title": "_projects"
+    },
+    {
+      "path": "[[workspace]]/aog/_posts",
+      "title": "_posts"
+    },
+    {
+      "path": "[[workspace]]/gcp/_posts",
+      "title": "_posts"
+    },
+    {
+      "path": "[[workspace]]/dialogflow/_posts",
+      "title": "_posts"
+    },
+    {
+      "path": "[[workspace]]/alexa/_posts"
+    }
+  ],
+  "frontMatter.taxonomy.tags": [
+    "alexa",
+    "aog",
+    "aws",
+    "azure",
+    "dialogflow",
+    "gcp",
+    "kubernetes",
+    "podcast",
+    "spring"
+  ],
+  "frontMatter.taxonomy.categories": [
+    "alexa",
+    "aog",
+    "aws",
+    "azure",
+    "dialogflow",
+    "gcp",
+    "kubernetes"
+  ],
+  "frontMatter.framework.id": "jekyll",
+  "frontMatter.content.publicFolder": "assets"
+}

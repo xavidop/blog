@@ -1,22 +1,25 @@
 ---
 layout: post
 title: How to properly test your Dialogflow CX Agents (English)
-description: >
+description: |
   In this article you will learn how to properly test your Dialogflow CX Agents
 image: /assets/img/blog/post-headers/dialogflow-tests.jpg
 comments: true
 author: xavi
 kate: hl markdown;
-categories: [dialogflow]
+categories:
+  - dialogflow
 tags:
   - dialogflow
 keywords:
   - dialogflow
   - dialogflowcx
+  - dialogflow cx
   - cxcli
   - conversationalai
 
 lang: en
+lastmod: 2023-02-03T11:18:38.444Z
 ---
 {:.no_toc}
 1. this unordered seed list will be replaced by toc as unordered list

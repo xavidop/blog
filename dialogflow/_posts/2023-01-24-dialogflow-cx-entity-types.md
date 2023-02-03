@@ -1,22 +1,25 @@
 ---
 layout: post
 title: Dialogflow CX Entity Types (English)
-description: >
+description: |
   What are entity types in Dialogflow CX?
 image: /assets/img/blog/post-headers/dialogflow-entity-types.jpg
 comments: true
 author: xavi
 kate: hl markdown;
-categories: [dialogflow]
+categories:
+  - dialogflow
 tags:
   - dialogflow
 keywords:
   - dialogflow
   - dialogflowcx
+  - dialogflow cx
   - cxcli
   - conversationalai
 
 lang: en
+lastmod: 2023-02-03T11:18:32.155Z
 ---
 {:.no_toc}
 1. this unordered seed list will be replaced by toc as unordered list

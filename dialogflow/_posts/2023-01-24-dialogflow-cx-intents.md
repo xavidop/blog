@@ -1,22 +1,25 @@
 ---
 layout: post
 title: Dialogflow CX Intents (English)
-description: >
+description: |
   An introduction about dialogflow CX NLU and its intents
 image: /assets/img/blog/post-headers/dialogflow-intents.jpg
 comments: true
 author: xavi
 kate: hl markdown;
-categories: [dialogflow]
+categories:
+  - dialogflow
 tags:
   - dialogflow
 keywords:
   - dialogflow
   - dialogflowcx
+  - dialogflow cx
   - cxcli
   - conversationalai
 
 lang: en
+lastmod: 2023-02-03T11:21:43.760Z
 ---
 {:.no_toc}
 1. this unordered seed list will be replaced by toc as unordered list

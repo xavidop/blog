@@ -2,21 +2,26 @@
 layout: post
 title: Intents en Dialogflow CX
 description: >
-  Este tutorial te enseñará a crear intents de manera sencilla, así como a mejorar tu NLU en Dialogflow CX, ya sea a través de la consola o de la CX CLI. 
+  Este tutorial te enseñará a crear intents de manera sencilla, así como a
+  mejorar tu NLU en Dialogflow CX, ya sea a través de la consola o de la CX
+  CLI. 
 image: /assets/img/blog/post-headers/dialogflow-intents.jpg
 comments: true
 author: xavi
 kate: hl markdown;
-categories: [dialogflow]
+categories:
+  - dialogflow
 tags:
   - dialogflow
 keywords:
   - dialogflow
   - dialogflowcx
+  - dialogflow cx
   - cxcli
   - conversationalai
 
 lang: en
+lastmod: 2023-02-03T11:19:42.654Z
 ---
 {:.no_toc}
 1. this unordered seed list will be replaced by toc as unordered list
