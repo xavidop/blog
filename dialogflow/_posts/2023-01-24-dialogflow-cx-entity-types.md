@@ -15,11 +15,12 @@ keywords:
   - dialogflow
   - dialogflowcx
   - dialogflow cx
+  - entity type
   - cxcli
   - conversationalai
 
 lang: en
-lastmod: 2023-02-03T11:18:32.155Z
+lastmod: 2023-02-07T08:37:05.507Z
 ---
 {:.no_toc}
 1. this unordered seed list will be replaced by toc as unordered list

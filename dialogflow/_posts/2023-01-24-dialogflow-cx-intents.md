@@ -13,13 +13,14 @@ tags:
   - dialogflow
 keywords:
   - dialogflow
+  - intent
   - dialogflowcx
   - dialogflow cx
   - cxcli
   - conversationalai
 
 lang: en
-lastmod: 2023-02-03T11:21:43.760Z
+lastmod: 2023-02-07T08:37:01.000Z
 ---
 {:.no_toc}
 1. this unordered seed list will be replaced by toc as unordered list

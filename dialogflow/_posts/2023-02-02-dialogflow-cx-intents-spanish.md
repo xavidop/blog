@@ -16,12 +16,13 @@ tags:
 keywords:
   - dialogflow
   - dialogflowcx
+  - intent
   - dialogflow cx
   - cxcli
   - conversationalai
 
 lang: en
-lastmod: 2023-02-03T11:19:42.654Z
+lastmod: 2023-02-07T08:36:30.667Z
 ---
 {:.no_toc}
 1. this unordered seed list will be replaced by toc as unordered list
@@ -65,7 +66,7 @@ Una buena práctica puede consistir en probar las frases de entrenamiento con lo
 
 ## Dialogflow Console
 
-Dialogflow Console es una interfaz web donde puedes diseñar tus conversaciones creando agentes y, dentro de un agente, crear flows, intents, entity types, etc. En la consola de Dialogflow es posible crear intents e interactuar fácilmente con ellos. Para ello, basta con acceder a la: [https://dialogflow.cloud.google.com/cx](https://dialogflow.cloud.google.com/cx). Este es su aspecto:
+Dialogflow Console es una interfaz web donde puedes diseñar tus conversaciones creando agentes y, dentro de un agente, crear flows, intents, entity types, etc. En la consola de Dialogflow es posible crear intents e interactuar fácilmente con ellos. Para ello, basta con acceder a la URL: [https://dialogflow.cloud.google.com/cx](https://dialogflow.cloud.google.com/cx). Este es su aspecto:
 
 ![Full-width image](/assets/img/blog/tutorials/dialogflow-agents/console.png){:.lead data-width="800" data-height="100"}
 Dialogflow CX Console
@@ -86,7 +87,7 @@ Siempre que crees, modifiques o elimines un intent, es importante que vuelvas a 
 
 ## Dialogflow CX CLI
 
-La [Dialogflow CX CLI](https://cxcli.xavidop.me/) o `cxcli` ies una herramienta de línea de comandos que puedes utilizar para interactuar con tus proyectos en Dialogflow CX en un terminal. Es un proyecto de código abierto creado por [Xavier Portilla Edo](https://xavidop.me/). Con la `cxcli` ypuedes interactuar fácilmente con tus intents en Dialogflow CX.
+La [Dialogflow CX CLI](https://cxcli.xavidop.me/) o `cxcli` ies una herramienta de línea de comandos que puedes utilizar para interactuar con tus proyectos en Dialogflow CX en un terminal. Es un proyecto de código abierto creado por [Xavier Portilla Edo](https://xavidop.me/). Con la `cxcli` y puedes interactuar fácilmente con tus intents en Dialogflow CX.
 
 Todos los comandos disponibles en la `cxcli` para interactuar con tus intents se encuentran en el subcomando `cxcli intent`.
 

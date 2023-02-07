@@ -14,13 +14,16 @@ tags:
   - dialogflow
 keywords:
   - dialogflow
+  - webhook
+  - go
+  - golang
   - dialogflowcx
   - dialogflow cx
   - cxcli
   - conversationalai
 
 lang: en
-lastmod: 2023-02-03T11:18:46.190Z
+lastmod: 2023-02-07T08:36:55.032Z
 ---
 {:.no_toc}
 1. this unordered seed list will be replaced by toc as unordered list
