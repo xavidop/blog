@@ -19,7 +19,7 @@ keywords:
   - conversationalai
 
 lang: en
-lastmod: 2023-02-03T11:18:38.444Z
+lastmod: 2023-02-14T07:35:37.785Z
 ---
 {:.no_toc}
 1. this unordered seed list will be replaced by toc as unordered list
@@ -46,7 +46,7 @@ These tests can be executed manually or automated in a continuous integration sy
 
 ### Simulator
 
-Dialogflow Console is a web interface where you can design your conversations by creating agents and within an agent, creating flows, intents, entity types, etc. On the Dialogflow Console, you can create and interact easily with your intent. To do that you just need to go to the Dialogflow CX Console: [https://dialogflow.cloud.google.com/cx](https://dialogflow.cloud.google.com/cx). This is what it looks like:
+Dialogflow Console is a web interface where you can design your conversations by creating agents and within an agent, creating flows, intents, entity types, etc. On the Dialogflow Console, you can create and interact easily with your tests. To do that you just need to go to the Dialogflow CX Console: [https://dialogflow.cloud.google.com/cx](https://dialogflow.cloud.google.com/cx). This is what it looks like:
 
 ![Full-width image](/assets/img/blog/tutorials/dialogflow-agents/console.png){:.lead data-width="800" data-height="100"}
 Dialogflow CX Console
