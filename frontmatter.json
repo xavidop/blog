@@ -107,26 +107,6 @@
       "path": "[[workspace]]/alexa/_posts"
     }
   ],
-  "frontMatter.taxonomy.tags": [
-    "alexa",
-    "aog",
-    "aws",
-    "azure",
-    "dialogflow",
-    "gcp",
-    "kubernetes",
-    "podcast",
-    "spring"
-  ],
-  "frontMatter.taxonomy.categories": [
-    "alexa",
-    "aog",
-    "aws",
-    "azure",
-    "dialogflow",
-    "gcp",
-    "kubernetes"
-  ],
   "frontMatter.framework.id": "jekyll",
   "frontMatter.content.publicFolder": "assets"
 }
