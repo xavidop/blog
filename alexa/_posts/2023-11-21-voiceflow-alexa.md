@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Enlgish. Integrate Alexa with Voiceflow
+title: [Enlgish] Integrate Alexa with Voiceflow
 image: /assets/img/blog/post-headers/alexa-voiceflow.jpeg
 description: |
   Integrate Alexa with Voiceflow
@@ -23,7 +23,6 @@ keywords:
   - howto
   - skill
 lang: es
-lastmod: 2023-11-21T09:17:14.884Z
 ---
 {:.no_toc}
 1. this unordered seed list will be replaced by toc as unordered list
