@@ -1,6 +1,6 @@
 ---
 layout: post
-title: [Enlgish] Integrate Alexa with Voiceflow
+title: Enlgish. Integrate Alexa with Voiceflow
 image: /assets/img/blog/post-headers/alexa-voiceflow.jpeg
 description: |
   Integrate Alexa with Voiceflow
