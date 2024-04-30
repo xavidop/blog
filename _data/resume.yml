@@ -68,9 +68,9 @@ work:
       - "Build the entire software Architecture.
       We are focused on the improvement of the way we collect the data from the POD in order to analyze it"
       - "Stack used: Github Actions, Java, Javascipt, Kafka, Spark, NodeJS, Electron, Docker, C++, Mule "
-  - company: "Everis"
+  - company: "NTT Data - Everis"
     position: "Software Analyst"
-    website: "https://www.everis.com/global/en"
+    website: "https://www.nttdata.com/global/en/"
     startDate: "2014-01-01"
     endDate: "2016-12-31"
     summary: >
