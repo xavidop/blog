@@ -39,11 +39,24 @@ work:
     startDate: "2021-01-01"
     endDate: ""
     summary: >
-      Voiceflow is helping the world have better conversations with technology
+      Voiceflow is a Canadian Startup based in Toronto that helps the world by having better conversations with technology
       Voiceflow is changing the way voice apps are built by creating a collaborative design platform for voice app development.
     highlights:
       - "The Infra team is responsible for how code is deployed, configured, and monitored, as well as the availability, latency, change management, emergency response, and capacity management of services in production. This team also manages the security and compliance of the entire company as well as the Data Warehouse and Business Intelligence"
-      - "Stack used: Github Actions, CircleCI, Typescript, Terraform, Golang, Docker, Ansible, Kubernetes, Helm, Bash script, Azure, AWS, Google Cloud Platform, ISO27001, SOC2, GDPR, HIPAA, DBT, Sigma"
+      - "Stack used: Github Actions, CircleCI, Typescript, Terraform, Golang, Docker, Ansible, Kubernetes, Helm, Bash script, SonarCloud, Azure, AWS, Google Cloud Platform, ISO27001, SOC2, GDPR, HIPAA, DBT, Sigma"
+  - company: "Keepcoding Inc."
+    position: "Teacher in the Cloud and DevOps bootcamp"
+    website: "https://keepcoding.io/nuestros-bootcamps/full-stack-devops-bootcamp/"
+    startDate: "2023-10-01"
+    endDate: ""
+    summary: >
+      Keepcoding is a Spanish company that offers bootcamps in different technologies.
+      The Cloud and DevOps bootcamp is a 12-week program that covers the most important topics in the cloud and DevOps world.
+      I am responsible for teaching the students the most important topics in the DevOps and CICD world.
+    highlights:
+      - "Teaching the students the most important topics in the cloud and DevOps world"
+      - "Stack used: Github Actions, CircleCI, Jenkins, Kubernetes, Ansible, Bash script, Tekton, ArgoCD, Argo Workflows, Argo Events, SonarCloud"
+   
   - company: "Ericsson"
     position: "Software Architect, DevOps and Q&A Engineer"
     website: "https://www.ericsson.com/en"
@@ -78,7 +91,7 @@ work:
       Everis is a large family with 24,500 professionals across Europe, USA and Latin America.
     highlights:
       - "Build complex software solutions"
-      - "Stack used: Java, Maven, Spring"
+      - "Stack used: Java, Maven, Spring, SonarCloud"
 volunteer:
   - organization: "Google Developer Group Madrid"
     position: "Organizer"
