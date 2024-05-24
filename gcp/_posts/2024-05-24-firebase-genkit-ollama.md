@@ -2,7 +2,7 @@
 layout: post
 title: Firebase GenKit Ollama (English)
 description: >
-  A simple Spring boot project using Vision AI from Google Cloud Platform
+  Firebase project that uses the Gen AI Kit with Gemma using Ollama
 image: /assets/img/blog/post-headers/firebase-genkit-ollama.png
 noindex: true
 comments: true
