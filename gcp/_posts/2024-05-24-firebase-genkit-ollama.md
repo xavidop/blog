@@ -90,7 +90,7 @@ configureGenkit({
 });
 ```
 
-Then, we define the function, in the Gen AI Kit they call it Flows. A Flow is function with some additional characteristics: they are strongly typed, streamable, locally and remotely callable, and fully observable. Firebase Genkit provides CLI and Developer UI tooling for working with flows (running, debugging, etc):
+Then, we define the function, in the Gen AI Kit they call it Flows. A Flow is a function with some additional characteristics: they are strongly typed, streamable, locally and remotely callable, and fully observable. Firebase Genkit provides CLI and Developer UI tooling for working with flows (running, debugging, etc):
 
 ```typescript
 export const translatorFlow = onFlow(
