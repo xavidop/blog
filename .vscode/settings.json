@@ -3,5 +3,6 @@
     "[markdown]": {
     },
     "frontMatter.framework.startCommand": "JEKYLL_ENV=production bundle exec jekyll serve --incremental",
-    "frontMatter.preview.host": "http://127.0.0.1:4000/"
+    "frontMatter.preview.host": "http://127.0.0.1:4000/",
+    "circleci.persistedProjectSelection": []
 }
