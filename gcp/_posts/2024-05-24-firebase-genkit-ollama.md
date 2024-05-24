@@ -50,7 +50,7 @@ This project uses the following Node.js Packages:
 3. Run `firebase login` to login to your Firebase account
 4. Install genkit-cli by running `npm install -g genkit`
 
-This repo is suposed to use with NodeJS version 20.
+This repo is supposed to be used with NodeJS version 20.
 
 ### Run the Firebase emulator
 
