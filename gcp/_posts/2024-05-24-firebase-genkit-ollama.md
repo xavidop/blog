@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Firebase GenKit Ollama (English)
+title: Firebase GenKit with Gemma using Ollama (English)
 description: >
   Firebase project that uses the Gen AI Kit with Gemma using Ollama
 image: /assets/img/blog/post-headers/firebase-genkit-ollama.png
