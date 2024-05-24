@@ -45,7 +45,7 @@ This project uses the following Node.js Packages:
 
 ## Setup
 
-1. Clone this repository
+1. Clone this repository: [GitHub repository](https://github.com/xavidop/firebase-genkit-ollama).
 2. Run `npm install` to install the dependencies in the functions folder
 3. Run `firebase login` to login to your Firebase account
 4. Install genkit-cli by running `npm install -g genkit`
@@ -54,7 +54,7 @@ This repo is supposed to be used with NodeJS version 20.
 
 ### Run the Firebase emulator
 
-To run the function locally, run `GENKIT_ENV=dev firebase emulators:start --inspect-functions` and then run the following command in the terminal:
+To run the function locally, run `GENKIT_ENV=dev firebase emulators:start --inspect-functions`.
 
 The emulator will be available at `http://localhost:4000`
 
