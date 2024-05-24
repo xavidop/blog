@@ -72,7 +72,7 @@ You will need to install Ollama by running `brew install ollama` and then run `o
 
 ## Code explanation
 
-The code is in the `functions/index.ts` file. The function is called `translatorFlow` and it uses the Genkit SDK to translate the text to Spanish.
+The code is in the `functions/index.ts` file. The function is called `translatorFlow` and it uses the Genkit SDK to translate any given text to Spanish.
 
 First, we have to configure the Genkit SDK with the Ollama plugin:
 
@@ -147,7 +147,7 @@ For example:
 {"result":"Hola\n\nThe translation of \"hi\" to Spanish is \"Hola\"."}
 ```
 
-You can also use Postman or any other tool to make a POST request to the function:
+You can also use Postman or any other tool to make a GET request to the function:
 
 ![Full-width image](/assets/img/blog/tutorials/firebase-genkit-ollama/postman.png){:.lead data-width="800" data-height="100"}
 Postman Request
