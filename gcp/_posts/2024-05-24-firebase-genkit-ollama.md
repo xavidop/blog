@@ -68,7 +68,7 @@ Firebase Genkit UI
 
 ### Run Gemma with Ollama
 
-You will need to install Ollama by running `brew install ollama` and then run `ollama run gemma` to start the Ollama server.
+You will need to install Ollama by running `brew install ollama` and then run `ollama run gemma` to start the Ollama server running the Gemma LLM.
 
 ## Code explanation
 
