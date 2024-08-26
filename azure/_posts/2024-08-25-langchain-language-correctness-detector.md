@@ -194,10 +194,12 @@ This project can be used with different language models to detect language corre
 
 With OpenAI's GPT-4 model, the system can detect grammatical errors, sentiment, and aggressiveness in the text.
 
+Input:
 ```json
 { language: "Spanish", text: "Yo soy enfadado" }
 ```
 
+Output:
 ```json
 {
   result: {
