@@ -50,7 +50,7 @@ work:
     startDate: "2021-06-01"
     endDate: ""
     summary: >
-      "Princeton University is a world-renowned institution with significant contributions to both linguistics and artificial intelligence. It developed WordNet, a foundational tool in computational linguistics, and leads interdisciplinary research in natural language processing (NLP). Princeton also focuses on the ethical implications of AI, shaping global advancements in machine learning and responsible AI deployment."
+      Princeton University is a world-renowned institution with significant contributions to both linguistics and artificial intelligence. It developed WordNet, a foundational tool in computational linguistics, and leads interdisciplinary research in natural language processing (NLP). Princeton also focuses on the ethical implications of AI, shaping global advancements in machine learning and responsible AI deployment.
     highlights:
       - "Working on a research project titled 'Transforming L2 Fluency: Instructional AI, Generative AI, and Sentiment Analysis in Conversational Bots.' The study examines how AI-powered bots enhance Spanish learners' oral fluency, pronunciation, and intonation through scenario-based assessments and real-time feedback. Sentiment analysis is also used to monitor engagement and motivation during interactions."
       - "Stack used: Langchain, OpenAI, GPT-3, RAG, LLMs, Voiceflow, Typescript, Text-to-Speech, Speech-to-Text, NLP, NLU, Avatar, Chatbot, Conversational AI"
