@@ -44,6 +44,17 @@ work:
     highlights:
       - "The Infra team is responsible for how code is deployed, configured, and monitored, as well as the availability, latency, change management, emergency response, and capacity management of services in production. This team also manages the security and compliance of the entire company as well as the Data Warehouse and Business Intelligence"
       - "Stack used: Github Actions, CircleCI, Typescript, Terraform, Golang, Docker, Ansible, Kubernetes, Helm, Bash script, SonarCloud, Azure, AWS, Google Cloud Platform, ISO27001, SOC2, GDPR, HIPAA, DBT, Sigma"
+  - company: "Princenton Unversity"
+    position: "External Researcher"
+    website: "https://www.princeton.edu/"
+    startDate: "2021-06-01"
+    endDate: ""
+    summary: >
+      "Princeton University is a world-renowned institution with significant contributions to both linguistics and artificial intelligence. It developed WordNet, a foundational tool in computational linguistics, and leads interdisciplinary research in natural language processing (NLP). Princeton also focuses on the ethical implications of AI, shaping global advancements in machine learning and responsible AI deployment."
+    highlights:
+      - "Working on a research project titled 'Transforming L2 Fluency: Instructional AI, Generative AI, and Sentiment Analysis in Conversational Bots.' The study examines how AI-powered bots enhance Spanish learners' oral fluency, pronunciation, and intonation through scenario-based assessments and real-time feedback. Sentiment analysis is also used to monitor engagement and motivation during interactions."
+      - "Stack used: Langchain, OpenAI, GPT-3, RAG, LLMs, Voiceflow, Typescript, Text-to-Speech, Speech-to-Text, NLP, NLU, Avatar, Chatbot, Conversational AI"
+ 
   - company: "Keepcoding Inc."
     position: "Teacher in the Cloud and DevOps bootcamp"
     website: "https://keepcoding.io/nuestros-bootcamps/full-stack-devops-bootcamp/"
@@ -139,6 +150,9 @@ education:
     endDate: "2017-08-01"
     gpa: "3.7"
 awards:
+  - title: "Microsoft Most Valuable Professional in ML"
+    date: "2024-06-01"
+    awarder: "Google"
   - title: "Google Developer Expert in ML"
     date: "2023-09-01"
     awarder: "Google"
