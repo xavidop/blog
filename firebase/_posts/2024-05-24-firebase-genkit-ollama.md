@@ -8,9 +8,10 @@ noindex: true
 comments: true
 author: xavi
 kate: hl markdown;
-categories: [gcp]
+categories: [gcp, firebase]
 tags:
   - firebase
+  - gcp
 keywords:
   - firebase
   - ollama

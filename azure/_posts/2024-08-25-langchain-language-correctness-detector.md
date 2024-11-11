@@ -8,7 +8,7 @@ noindex: true
 comments: true
 author: xavi
 kate: hl markdown;
-categories: [gcp]
+categories: [azure]
 tags:
   - azure
   - gcp
