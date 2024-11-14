@@ -41,8 +41,7 @@ This project uses the following technologies:
 This project uses the following Node.js Packages:
 1. `@genkit-ai/firebase`: Genkit Firebase SDK to be able to use Genkit in Firebase Functions
 2. `genkitx-ollama`: Genkit Ollama plugin to be able to use Ollama in Genkit
-3. `@genkit-ai/ai`, `@genkit-ai/core` and `@genkit-ai/flow`: Genkit AI Core SDK
-4. `@genkit-ai/dotprompt`: Plugin to use DotPrompt in Genkit
+3. `genkit`: Genkit AI Core SDK
 
 ## Setup
 
@@ -53,19 +52,20 @@ This project uses the following Node.js Packages:
 
 This repo is supposed to be used with NodeJS version 20.
 
-### Run the Firebase emulator
-
-To run the function locally, run `GENKIT_ENV=dev firebase emulators:start --inspect-functions`.
-
-The emulator will be available at `http://localhost:4000`
 
 ### Open Genkit UI
 
-Go to the functions folder and run `genkit start --attach http://localhost:3100 --port 4001` to open the Genkit UI. The UI will be available at `http://localhost:4001`.
+Go to the functions folder and run `npm run genkit:start` to open the Genkit UI. The UI will be available at `http://localhost:4000`.
 
 ![Full-width image](/assets/img/blog/tutorials/firebase-genkit-ollama/genaikitui.png){:.lead data-width="800" data-height="100"}
 Firebase Genkit UI
 {:.figure}
+
+### Run the Firebase emulator
+
+To run the function locally, run `firebase emulators:start --inspect-functions`.
+
+The emulator will be available at `http://localhost:4001`
 
 ### Run Gemma with Ollama
 
@@ -78,23 +78,22 @@ The code is in the `functions/index.ts` file. The function is called `translator
 First, we have to configure the Genkit SDK with the Ollama plugin:
 
 ```typescript
-configureGenkit({
+const ai = genkit({
   plugins: [
-    firebase(),
     ollama({
       models: [{ name: 'gemma' }],
       serverAddress: 'http://127.0.0.1:11434', // default ollama local address
     }),
-  ],
-  logLevel: "debug",
-  enableTracingAndMetrics: true,
+  ]
 });
+logger.setLogLevel('debug');
 ```
 
 Then, we define the function, in the Gen AI Kit they call it Flows. A Flow is a function with some additional characteristics: they are strongly typed, streamable, locally and remotely callable, and fully observable. Firebase Genkit provides CLI and Developer UI tooling for working with flows (running, debugging, etc):
 
 ```typescript
 export const translatorFlow = onFlow(
+  ai,
   {
     name: "translatorFlow",
     inputSchema: z.object({ text: z.string() }),
@@ -105,7 +104,7 @@ export const translatorFlow = onFlow(
     const prompt =
       `Translate this ${toTranslate.text} to Spanish. Autodetect the language.`;
 
-    const llmResponse = await generate({
+    const llmResponse = await ai.generate({
       model: 'ollama/gemma',
       prompt: prompt,
       config: {
@@ -113,7 +112,7 @@ export const translatorFlow = onFlow(
       },
     });
 
-    return llmResponse.text();
+    return llmResponse.text;
   }
 );
 ```

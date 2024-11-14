@@ -43,9 +43,8 @@ This project uses the following technologies:
 
 This project uses the following Node.js Packages:
 1. `@genkit-ai/firebase`: Genkit Firebase SDK to be able to use Genkit in Firebase Functions
-2. `genkitx-github`: Genkit GitHub plugin to be able to use GitHub Models in Genkit
-3. `@genkit-ai/ai`, `@genkit-ai/core` and `@genkit-ai/flow`: Genkit AI Core SDK
-4. `@genkit-ai/dotprompt`: Plugin to use DotPrompt in Genkit
+2. `genkitx-ollama`: Genkit Ollama plugin to be able to use Ollama in Genkit
+3. `genkit`: Genkit AI Core SDK
 
 ## Setup
 
@@ -56,20 +55,19 @@ This project uses the following Node.js Packages:
 
 This repo is supposed to be used with NodeJS version 20.
 
-### Run the Firebase emulator
-
-To run the function locally, run `GENKIT_ENV=dev firebase emulators:start --inspect-functions`.
-
-The emulator will be available at `http://localhost:4000`
-
 ### Open Genkit UI
 
-Go to the functions folder and run `genkit start --attach http://localhost:3100 --port 4001` to open the Genkit UI. The UI will be available at `http://localhost:4001`.
+Go to the functions folder and run `npm run genkit:start` to open the Genkit UI. The UI will be available at `http://localhost:4000`.
 
 ![Full-width image](/assets/img/blog/tutorials/firebase-genkit-ollama/genaikitui.png){:.lead data-width="800" data-height="100"}
 Firebase Genkit UI
 {:.figure}
 
+### Run the Firebase emulator
+
+To run the function locally, run `firebase emulators:start --inspect-functions`.
+
+The emulator will be available at `http://localhost:4001`
 
 ## Configuration
 
@@ -94,14 +92,15 @@ npm run build
 ```
 
 ## Code Explanation
-* Configuration: The `configureGenkit` function is called to set up the Genkit environment with plugins for Firebase, GitHub, and Dotprompt. It also sets the log level to "debug" and enables tracing and metrics.
+* Configuration: The `genkit` function is called to set up the Genkit environment with plugins for Firebase, GitHub, and Dotprompt. It also sets the log level to "debug" and enables tracing and metrics.
 
 ```typescript
-configureGenkit({
-  plugins: [firebase(), github({}), dotprompt()],
-  logLevel: "debug",
-  enableTracingAndMetrics: true,
+const ai = genkit({
+  plugins: [github()],
+  promptDir: 'prompts',
+  model: openAIGpt4o
 });
+logger.setLogLevel('debug');
 ```
 
 * Flow Definition: The nluFlow is defined using the onFlow function.
@@ -115,6 +114,7 @@ configureGenkit({
 
 ```typescript
 export const nluFlow = onFlow(
+  ai,
   {
     name: "nluFlow",
     inputSchema: z.object({text: z.string()}),
@@ -122,7 +122,7 @@ export const nluFlow = onFlow(
     authPolicy: noAuth(), // Not requiring authentication.
   },
   async (toDetect) => {
-    const nluOutput = defineSchema(
+    const nluOutput = ai.defineSchema(
       "nluOutput",
       z.object({
         intent: z.string(),
@@ -130,20 +130,22 @@ export const nluFlow = onFlow(
       }),
     );
 
-    const nluPrompt = promptRef("nlu");
+    const nluPrompt = ai.prompt<
+                        z.ZodTypeAny, // Input schema
+                        typeof nluOutput, // Output schema
+                        z.ZodTypeAny // Custom options schema
+                      >("nlu");
 
     const intents = readFileSync('nlu/intents.yml','utf8');
     const entities = readFileSync('nlu/entities.yml','utf8');
 
-    const result = await nluPrompt.generate<typeof nluOutput>({
-      input: {
+    const result = await nluPrompt({
         intents: intents,
         entities: entities,
         user_input: toDetect.text,
-      },
     });
 
-    return result.output();
+    return JSON.stringify(result.output);
   },
 );
 ```
