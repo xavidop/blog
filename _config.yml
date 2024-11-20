@@ -60,6 +60,8 @@ menu:
     url:               /projects/
   - title:             Talks
     url:               /talks/
+  - title:             Courses
+    url:               https://courses.xavidop.me
   - title:             Books
     url:               /books/
   - title:             Podcasts
