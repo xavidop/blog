@@ -144,7 +144,7 @@ To deploy the function, run `firebase deploy --only functions`. You will need to
 
 ## Resources
 
-- [Firebase Genkit](https://firebase.google.com/products/genkit)
+- [Firebase Genkit](https://genkit.dev/)
 - [Ollama](https://ollama.com/)
 - [Firebase Functions](https://firebase.google.com/docs/functions)
 

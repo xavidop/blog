@@ -281,7 +281,7 @@ To deploy the function, run `firebase deploy --only functions`.
 
 ## Resources
 
-- [Firebase Genkit](https://firebase.google.com/products/genkit)
+- [Firebase Genkit](https://genkit.dev/)
 - [GitHub Models](https://github.com/marketplace/models)
 - [Firebase Functions](https://firebase.google.com/docs/functions)
 
