@@ -5,8 +5,28 @@ title:  Books
 ---
 Here you can find the Books I wrote:
 
+- [Mastering Genkit: Go Edition](#mastering-genkit-go-edition)
 - [The Alexa Revolution](#the-alexa-revolution)
 - [La Revolución de Alexa](#la-revolución-de-alexa)
+
+# Mastering Genkit: Go Edition
+
+ ![image](/assets/img/books/mastering_genkit_go_edition.jpg)
+
+* **Authors:** Xavier Portilla Edo, Nozomi Koborinai
+* **Technical Reviewer:** Iman Rahmati
+* **Graphic Designer:** Ana Sarrion
+* **ISBN:** 9798532810174
+* **Released:** November 2025
+* **Publisher:** Self-published
+* **Buy:** [Amazon Kindle](https://www.amazon.com/dp/B0G4HKJRPB)
+
+Unlock the full potential of Genkit and Go as you explore the journey from first steps to advanced AI systems. This book takes you from setting up your development environment to building production-ready applications, covering essential topics like Retrieval-Augmented Generation (RAG), AI agents, evaluation strategies, and scalable deployments.
+
+Through Genkit’s flow-based architecture, you’ll learn how to integrate leading AI models, design robust pipelines, and implement real-world use cases. Each chapter combines theoretical insights with hands-on examples to help you develop the skills needed to create reliable, production-grade AI applications.
+
+Designed for both practitioners expanding their expertise and newcomers experimenting with AI, this resource offers proven methods and practical tools for creating robust, scalable systems.
+
 
 # The Alexa Revolution
 
