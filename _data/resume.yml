@@ -33,6 +33,18 @@ basics:
       username: "xavidop.me"
       url: "https://www.xavidop.me"
 work:
+  - company: "Google"
+    position: "Core @ Genkit Framework"
+    website: "https://genkit.dev/"
+    startDate: "2026-01-01"
+    endDate: ""
+    summary: >
+      Part of the Genkit core team, Google’s most widely used backend framework for building production-ready Generative AI applications.
+    highlights:
+      - Designing and building integrations & plugins across cloud providers and model ecosystems
+      - Developer advocacy, helping teams adopt Genkit through talks, workshops, content, and real-world examples
+      - Shaping the future of the framework, with a strong emphasis on clean APIs, extensibility, and developer experience
+ 
   - company: "Voiceflow Inc."
     position: "Head of Cloud Infrastructure"
     website: "https://www.voiceflow.com/"
@@ -47,8 +59,8 @@ work:
   - company: "Princenton Unversity"
     position: "External Researcher"
     website: "https://www.princeton.edu/"
-    startDate: "2021-06-01"
-    endDate: ""
+    startDate: "2024-06-01"
+    endDate: "2025-12-01"
     summary: >
       Princeton University is a world-renowned institution with significant contributions to both linguistics and artificial intelligence. It developed WordNet, a foundational tool in computational linguistics, and leads interdisciplinary research in natural language processing (NLP). Princeton also focuses on the ethical implications of AI, shaping global advancements in machine learning and responsible AI deployment.
     highlights:
