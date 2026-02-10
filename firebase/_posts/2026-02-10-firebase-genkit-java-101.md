@@ -124,6 +124,10 @@ genkit start -- mvn compile exec:java
 
 That's it. Two commands. Your AI-powered Java server is running on `http://localhost:8080`, and the **Genkit Dev UI** is available at `http://localhost:4000`.
 
+![Full-width image](/assets/img/blog/tutorials/genkit-java-getting-started/devui.png){:.lead data-width="800" data-height="100"}
+genkit UI
+{:.figure}
+
 ### 3. Or Run Directly (Without Dev UI)
 
 ```bash
