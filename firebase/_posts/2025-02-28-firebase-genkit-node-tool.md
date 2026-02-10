@@ -237,9 +237,9 @@ Apache 2.0
 
 ## Resources
 
-- [Firebase Genkit](https://genkit.dev/)
+- [genkit](https://genkit.dev/)
 - [GitHub Models](https://github.com/marketplace/models)
-- [Firebase Express Plugin](https://firebase.google.com/docs/genkit/deploy-node)
+- [Firebase Express Plugin](https://genkit.dev/docs/frameworks/express/)
 
 ## Conclusion
 

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Firebase GenKit with Gemma using Ollama (English)
+title: genkit with Gemma using Ollama (English)
 description: >
   Firebase project that uses the Gen AI Kit with Gemma using Ollama
 image: /assets/img/blog/post-headers/firebase-genkit-ollama.png
@@ -35,7 +35,7 @@ This is a simple example of a Firebase function that uses Genkit and Ollama to t
 
 This project uses the following technologies:
 1. Firebase Functions
-2. Firebase Genkit
+2. genkit
 3. Ollama
 
 This project uses the following Node.js Packages:
@@ -57,7 +57,7 @@ This repo is supposed to be used with NodeJS version 20.
 Go to the functions folder and run `npm run genkit:start` to open the Genkit UI. The UI will be available at `http://localhost:4000`.
 
 ![Full-width image](/assets/img/blog/tutorials/firebase-genkit-ollama/genaikitui.png){:.lead data-width="800" data-height="100"}
-Firebase Genkit UI
+genkit UI
 {:.figure}
 
 ### Run the Firebase emulator
@@ -88,7 +88,7 @@ const ai = genkit({
 logger.setLogLevel('debug');
 ```
 
-Then, we define the function, in the Gen AI Kit they call it Flows. A Flow is a function with some additional characteristics: they are strongly typed, streamable, locally and remotely callable, and fully observable. Firebase Genkit provides CLI and Developer UI tooling for working with flows (running, debugging, etc):
+Then, we define the function, in the Gen AI Kit they call it Flows. A Flow is a function with some additional characteristics: they are strongly typed, streamable, locally and remotely callable, and fully observable. genkit provides CLI and Developer UI tooling for working with flows (running, debugging, etc):
 
 ```typescript
 export const translatorFlow = ai.defineFlow(
@@ -144,7 +144,7 @@ To deploy the function, run `firebase deploy --only functions`. You will need to
 
 ## Resources
 
-- [Firebase Genkit](https://genkit.dev/)
+- [genkit](https://genkit.dev/)
 - [Ollama](https://ollama.com/)
 - [Firebase Functions](https://firebase.google.com/docs/functions)
 

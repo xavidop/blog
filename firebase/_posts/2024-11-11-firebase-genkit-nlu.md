@@ -1,6 +1,6 @@
 ---
 layout: post
-title: NLU powered by LLMs using Firebase GenKit with GitHub Models (English)
+title: NLU powered by LLMs using genkit with GitHub Models (English)
 description: >
   The NLU powered by LLMs that just works
 image: /assets/img/blog/post-headers/firebase-genkit-nlu.png
@@ -32,13 +32,13 @@ lang: en
 
 ## Introduction
 
-This project implements a Natural Language Understanding (NLU) flow using Firebase Genkit AI and Firebase Functions. The NLU flow detects intents and extracts entities from a given text input.
+This project implements a Natural Language Understanding (NLU) flow using genkit AI and Firebase Functions. The NLU flow detects intents and extracts entities from a given text input.
 
 this project uses GitHub Models using the Genkit GitHub models plugin.
 
 This project uses the following technologies:
 1. Firebase Functions
-2. Firebase Genkit
+2. genkit
 3. GitHub Models
 
 This project uses the following Node.js Packages:
@@ -60,7 +60,7 @@ This repo is supposed to be used with NodeJS version 20.
 Go to the functions folder and run `npm run genkit:start` to open the Genkit UI. The UI will be available at `http://localhost:4000`.
 
 ![Full-width image](/assets/img/blog/tutorials/firebase-genkit-ollama/genaikitui.png){:.lead data-width="800" data-height="100"}
-Firebase Genkit UI
+genkit UI
 {:.figure}
 
 ### Run the Firebase emulator
@@ -281,7 +281,7 @@ To deploy the function, run `firebase deploy --only functions`.
 
 ## Resources
 
-- [Firebase Genkit](https://genkit.dev/)
+- [genkit](https://genkit.dev/)
 - [GitHub Models](https://github.com/marketplace/models)
 - [Firebase Functions](https://firebase.google.com/docs/functions)
 
