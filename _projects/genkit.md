@@ -1,11 +1,11 @@
 ---
 layout: project
-title: 'Firebase'
-image: /assets/img/categories/firebase.png
-screenshot: /assets/img/categories/firebase.png
-caption: Firebase easily explained
+title: 'genkit'
+image: /assets/img/categories/genkit.png
+screenshot: /assets/img/categories/genkit.png
+caption: genkit easily explained
 description: >
- Firebase is a platform developed by Google for creating mobile and web applications. It was originally an independent company founded in 2011. In 2014, Google acquired the platform and it is now their flagship offering for app development.
+ genkit is a framework for building Generative AI applications. It provides tools and libraries to help developers create, deploy, and manage AI models and applications efficiently.
 ---
 
 {% assign posts = site.categories[page.slug] | default:site.tags[page.slug] | default:site.posts %}

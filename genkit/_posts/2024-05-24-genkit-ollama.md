@@ -1,6 +1,6 @@
 ---
 layout: post
-title: genkit with Gemma using Ollama (English)
+title: Genkit with Gemma using Ollama (English)
 description: >
   Firebase project that uses the Gen AI Kit with Gemma using Ollama
 image: /assets/img/blog/post-headers/firebase-genkit-ollama.png
@@ -8,15 +8,15 @@ noindex: true
 comments: true
 author: xavi
 kate: hl markdown;
-categories: [gcp, firebase]
+categories: [gcp, genkit]
 tags:
   - firebase
+  - genkit
   - gcp
 keywords:
   - firebase
   - ollama
   - genkit
-  - firebase-genkit
   - generative-ai
   - googlecloud
   - gcp

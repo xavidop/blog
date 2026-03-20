@@ -8,16 +8,16 @@ noindex: true
 comments: true
 author: xavi
 kate: hl markdown;
-categories: [gcp, firebase]
+categories: [gcp, genkit]
 tags:
   - firebase
+  - genkit
   - gcp
 keywords:
   - firebase
   - github-models
   - github
   - genkit
-  - firebase-genkit
   - generative-ai
   - googlecloud
   - gcp
