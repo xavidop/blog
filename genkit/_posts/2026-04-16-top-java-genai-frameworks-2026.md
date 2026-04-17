@@ -539,7 +539,7 @@ Genkit Java and LangChain4j are built to be provider-neutral: they support every
 ## Which Framework Should You Choose?
 
 **Choose Genkit Java if:**
-- You want the best local development and debugging experience in Java, the Dev UI is genuinely transformative.
+- You want to iterate on your AI fast and get feedback with less back and forth — Genkit was built from the ground up for powerful local tooling and observability, and the Dev UI is genuinely transformative.
 - You need multiple abstraction levels (vanilla calls, typed flows, and agents) in one SDK.
 - Provider neutrality matters: you need to swap or mix Gemini, Claude, OpenAI, and Bedrock.
 - Your team also writes TypeScript and wants a consistent framework story across both stacks.
