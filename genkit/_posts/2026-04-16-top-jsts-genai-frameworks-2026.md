@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Top Gen AI Frameworks for 2026: A Hands-On Comparison"
+title: "Top JavaScript/TypeScript Gen AI Frameworks for 2026: A Hands-On Comparison"
 description: >
   A practical, in-depth comparison of the top Generative AI frameworks in 2026: Genkit, Vercel AI SDK, Mastra, LangChain, and Google ADK, from someone who has built with all of them.
 image: /assets/img/blog/post-headers/top-genai-frameworks-2026.png
@@ -48,7 +48,7 @@ A quick note on scope: all five frameworks are in active development and moving 
 
 Genkit was announced by Google at Google I/O 2024 as an open-source framework designed to bring production-ready AI tooling to full-stack developers, regardless of their cloud provider. At the time, the JavaScript/TypeScript ecosystem lacked a coherent story for building AI-powered features with the kind of developer ergonomics you'd expect from, say, a Next.js app. Firebase's team set out to fix that, building Genkit not as a proprietary Firebase product but as a cloud-agnostic SDK with first-class support for plugins.
 
-By mid-2024, Genkit had already attracted a community plugin ecosystem covering AWS Bedrock, Azure OpenAI, Ollama, Cohere, and a growing list of vector stores. The framework reached its 1.0 milestone in late 2024 and shipped major expansions in 2025, most notably adding Python (preview), Go (preview), and Dart (preview) SDKs alongside the primary TypeScript runtime. This multi-language vision is central to Genkit's story: it aspires to be the framework you reach for no matter what stack you're running. As of 2026, the Dart SDK has matured notably, making Genkit one of the very few AI frameworks with meaningful **Flutter** support, giving mobile developers a first-class path into generative AI that no other framework on this list can match. It is also important to note that Genkit has a unofficial Java SDK, maintained by the community, which has been used in production but is not officially supported by the Genkit team.
+By mid-2024, Genkit had already attracted a community plugin ecosystem covering AWS Bedrock, Azure OpenAI, Ollama, Cohere, and a growing list of vector stores. The framework reached its 1.0 milestone in late 2024 and shipped major expansions in 2025, most notably adding Python (preview), Go, and Dart (preview) SDKs alongside the primary TypeScript runtime. This multi-language vision is central to Genkit's story: it aspires to be the framework you reach for no matter what stack you're running. As of 2026, the Dart SDK has matured notably, making Genkit one of the very few AI frameworks with meaningful **Flutter** support, giving mobile developers a first-class path into generative AI that no other framework on this list can match. It is also important to note that Genkit has a unofficial Java SDK, maintained by the community, which has been used in production but is not officially supported by the Genkit team.
 
 The team's declared direction is to deepen Genkit's role as a full-stack AI layer: strong observability primitives baked into the runtime, composable workflow abstractions (flows), and an expanding model plugin ecosystem. The ambition is not just to be a bridge to a single model provider but to be the connective tissue that lets you swap providers, mix modalities, and trace every hop in your pipeline, all from one coherent API. Of course, Adding more campabilities to its DEV UI is also a major focus, with the goal of making it the best local development experience for AI applications, regardless of where they deploy.
 
@@ -56,7 +56,7 @@ The team's declared direction is to deepen Genkit's role as a full-stack AI laye
 
 Genkit occupies a unique position among the frameworks in this comparison: it is the only one that provides **multiple levels of abstraction** in a single, coherent API. You can call a model directly (vanilla generation), compose steps into a typed flow, or wire up a fully autonomous agent, and you can mix all three in the same application. Most other frameworks force you to choose a lane.
 
-**Supported languages:** TypeScript/JavaScript (primary, stable), Python (preview), Go (preview), Dart/Flutter (preview)
+**Supported languages:** TypeScript/JavaScript (primary, stable), Python (preview), Go, Dart/Flutter (preview)
 
 ```typescript
 import { genkit } from 'genkit';
@@ -66,7 +66,7 @@ const ai = genkit({ plugins: [googleAI()] });
 
 // Vanilla generation — no abstraction needed
 const { text } = await ai.generate({
-  model: googleAI.model('gemini-2.0-flash'),
+  model: googleAI.model('gemini-flash-latest'),
   prompt: 'What is the capital of France?',
 });
 console.log(text);
@@ -90,7 +90,7 @@ const summarizeFlow = ai.defineFlow(
   },
   async ({ url }) => {
     const { output } = await ai.generate({
-      model: googleAI.model('gemini-2.0-flash'),
+      model: googleAI.model('gemini-flash-latest'),
       prompt: `Summarize the article at ${url} and list the key points.`,
       output: {
         schema: z.object({ summary: z.string(), keyPoints: z.array(z.string()) }),
@@ -103,7 +103,7 @@ const summarizeFlow = ai.defineFlow(
 
 #### Agent Abstractions
 
-For agents, Genkit provides `defineAgent`, tool calling via `defineTool`, and conversation memory, all integrated with the same tracing and observability infrastructure that flows use. The agent model is deliberate: it gives you control over how much autonomy you hand over to the model.
+For agents, Genkit uses `definePrompt` with tools and a system prompt to define specialized agents, along with tool calling via `defineTool` and conversation memory, all integrated with the same tracing and observability infrastructure that flows use. The agent model is deliberate: it gives you control over how much autonomy you hand over to the model.
 
 ```typescript
 import { genkit, z } from 'genkit';
@@ -124,16 +124,19 @@ const weatherTool = ai.defineTool(
   }
 );
 
-const travelAgent = ai.defineAgent(
+const travelAgent = ai.definePrompt(
   {
     name: 'travelAdvisor',
-    model: googleAI.model('gemini-2.0-flash'),
+    description: 'Travel Advisor can help with trip planning and weather-based advice',
+    model: googleAI.model('gemini-flash-latest'),
     tools: [weatherTool],
     system: 'You are a helpful travel advisor. Use available tools to give accurate advice.',
   }
 );
 
-const response = await travelAgent.run('Should I pack a jacket for my trip to Lisbon?');
+// Start a chat session with the agent
+const chat = ai.chat(travelAgent);
+const response = await chat.send('Should I pack a jacket for my trip to Lisbon?');
 console.log(response.text);
 ```
 
@@ -185,7 +188,7 @@ const { text: gptResponse } = await ai.generate({
 
 | ✅ Pros | ❌ Cons |
 |---|---|
-| Best-in-class Dev UI with local tracing and flow visualization | Dart/Python/Go SDKs still in preview |
+| Best-in-class Dev UI with local tracing and flow visualization | Dart/Python SDKs still in preview |
 | Multiple abstraction levels: vanilla, flows, and agents | Smaller community than LangChain |
 | Truly provider-neutral with broad plugin ecosystem | Some advanced patterns require deeper framework knowledge |
 | Strong Flutter/Dart support for mobile AI | |
@@ -564,7 +567,7 @@ Genkit is the only framework that gives you all three levels in one SDK: **vanil
 
 | Framework | Primary | Additional |
 |---|---|---|
-| **Genkit** | TypeScript | Python (preview), Go (preview), Dart/Flutter (preview), Java (Unofficial) |
+| **Genkit** | TypeScript | Python (preview), Go, Dart/Flutter (preview), Java (Unofficial) |
 | **Vercel AI SDK** | TypeScript | Node.js runtimes, Edge |
 | **Mastra** | TypeScript | JS runtimes only |
 | **LangChain** | Python | TypeScript (near-parity, Python idioms) |

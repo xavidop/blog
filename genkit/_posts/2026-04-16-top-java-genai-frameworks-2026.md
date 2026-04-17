@@ -67,7 +67,7 @@ Genkit genkit = Genkit.builder()
     .build();
 
 String text = genkit.generate(GenerateOptions.builder()
-    .model("googleai/gemini-3.0-flash")
+    .model("googleai/gemini-flash-latest")
     .prompt("Explain the CAP theorem in two sentences.")
     .build()).getText();
 
@@ -103,7 +103,7 @@ genkit.defineFlow(
         .build(),
     (ctx, request) -> {
         var response = genkit.generate(GenerateOptions.builder()
-            .model("googleai/gemini-2.0-flash")
+            .model("googleai/gemini-flash-latest")
             .prompt("Translate '%s' to %s. Return JSON with 'translation' and 'detectedLanguage'."
                 .formatted(request.text(), request.targetLanguage()))
             .outputClass(TranslateResponse.class)
@@ -132,7 +132,7 @@ var weatherTool = genkit.defineTool(
 
 // Use the tool inside a flow or agent
 var result = genkit.generate(GenerateOptions.builder()
-    .model("googleai/gemini-2.0-flash")
+    .model("googleai/gemini-flash-latest")
     .prompt("What's the weather like in Tokyo?")
     .tools(List.of(weatherTool))
     .build());
@@ -426,7 +426,7 @@ import com.google.genai.types.Content;
 
 var researchAgent = LlmAgent.builder()
     .name("researcher")
-    .model("gemini-3.0-flash")
+    .model("gemini-flash-latest")
     .instruction("You help users research topics thoroughly and accurately.")
     .tools(List.of(new GoogleSearchTool()))
     .build();
@@ -458,19 +458,19 @@ import com.google.adk.agents.SequentialAgent;
 
 var researcher = LlmAgent.builder()
     .name("researcher")
-    .model("gemini-3.0-flash")
+    .model("gemini-flash-latest")
     .instruction("Research the given topic and provide key facts.")
     .build();
 
 var writer = LlmAgent.builder()
     .name("writer")
-    .model("gemini-pro-latest")
+    .model("gemini-flash-latest")
     .instruction("Write a clear, well-structured article from the research provided.")
     .build();
 
 var editor = LlmAgent.builder()
     .name("editor")
-    .model("gemini-3.0-flash")
+    .model("gemini-flash-latest")
     .instruction("Polish and format the article for publication.")
     .build();
 
