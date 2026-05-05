@@ -69,6 +69,34 @@ Yes, the heavy lifting happens on the model provider's GPUs. But your service st
 
 > None of this means Python is wrong for **research**. It means Python is the wrong default for the **service** that exposes that research to your users.
 
+## Go Is the Best Language for Agentic Coders
+
+There is one more reason to pick Go in 2026 that did not really exist two years ago: **agentic coders**. Tools like Claude Code, Cursor's agent mode, GitHub Copilot's agent, Gemini Code Assist, Codex, Aider, and the growing ecosystem of autonomous coding agents are now a real part of how software gets written. And it turns out that **Go is the language they thrive in**.
+
+Why? It comes down to three properties of the language that align almost perfectly with how an LLM-based agent reasons about code:
+
+### Strong, static typing closes the feedback loop
+
+Agentic coders work in a tight loop: write code, compile, read the error, fix, repeat. Go's compiler is fast, strict, and brutally honest. When an agent generates a wrong call, the compiler tells it exactly what is wrong and where, in seconds. In Python, the same mistake might only surface at runtime, three layers deep, with a stack trace that requires the agent to spend tokens reasoning about dynamic behavior. Strong typing turns "guess and pray" into "verify and continue".
+
+### There is usually one obvious way to do something
+
+Python has at least four HTTP clients, three async paradigms, two type systems, and an opinion war about every major design decision. An agent has to choose, and choices cost tokens and increase the chance of going off the rails. Go is famously opinionated: one formatter (`gofmt`), one module system, one idiomatic way to handle errors, one standard layout. Less surface area means less ambiguity, which means **less token consumption and more correct code per iteration**.
+
+### Tooling is built for machines, not just humans
+
+`go build`, `go test`, `go vet`, `gopls`, and `staticcheck` produce structured, parseable output. Agents can read it directly without heuristics. Combine that with `go doc` and the standard library being uniformly documented, and you give an agent a self-describing environment it can navigate without hallucinating.
+
+### And then Genkit Go takes it one level further
+
+Genkit Go leans into the same properties:
+
+- Flow inputs and outputs are **Go structs**, the schema is the type. An agent generating a new flow knows exactly what shape the data has, because the compiler will reject anything else.
+- The API surface is small and consistent: `genkit.Init`, `genkit.DefineFlow`, `genkit.DefineTool`, `genkit.GenerateData`, `genkit.Handler`. There is one obvious way to define a flow, one obvious way to expose it, one obvious way to call a model.
+- Tool definitions are typed end-to-end, so an agent writing a new tool gets compile-time guarantees that its signature matches what the runtime expects.
+
+The net effect is that an agentic coder pointed at a Genkit Go codebase will produce **more correct code, in fewer iterations, with fewer tokens** than the same agent pointed at an equivalent Python codebase. In a world where you are increasingly going to be the reviewer of agent-generated code rather than the author, that compounds fast.
+
 ## Why Genkit Go Specifically
 
 If you accept the premise that Go is the better runtime for Gen AI services, the next question is: which framework? You can absolutely call the Gemini, OpenAI, or Anthropic SDKs directly from Go. But you will quickly end up rebuilding the same primitives every Genkit user already has for free.
