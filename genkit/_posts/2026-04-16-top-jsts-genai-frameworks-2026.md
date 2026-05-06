@@ -2,7 +2,7 @@
 layout: post
 title: "Top JavaScript/TypeScript Gen AI Frameworks for 2026: A Hands-On Comparison"
 description: >
-  A practical, in-depth comparison of the top Generative AI frameworks in 2026: Genkit, Vercel AI SDK, Mastra, LangChain, and Google ADK, from someone who has built with all of them.
+  A practical, in-depth comparison of the top Generative AI frameworks in 2026: Genkit, Vercel AI SDK, Mastra, LangChain, and Google ADK, from someone who has built with all of them. (English)
 image: /assets/img/blog/post-headers/top-genai-frameworks-2026.png
 noindex: false
 comments: true

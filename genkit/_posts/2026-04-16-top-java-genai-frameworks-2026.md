@@ -2,7 +2,7 @@
 layout: post
 title: "Top Gen AI Frameworks for Java in 2026: A Hands-On Comparison"
 description: >
-  A practical, in-depth comparison of the top Generative AI frameworks for Java in 2026: Genkit Java, Spring AI, LangChain4j, and Google ADK
+  A practical, in-depth comparison of the top Generative AI frameworks for Java in 2026: Genkit Java, Spring AI, LangChain4j, and Google ADK (English)
 image: /assets/img/blog/post-headers/top-java-genai-frameworks-2026.png
 noindex: false
 comments: true
