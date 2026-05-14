@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "Genkit Middleware v2: Intercept, Extend and Harden your Gen AI Pipelines (English)"
+title: "Genkit Middleware: Intercept, Extend and Harden your Gen AI Pipelines (English)"
 description: >
-  A deep dive into the new Genkit v2 middleware system for JavaScript/TypeScript: built-in middleware (filesystem, skills, toolApproval, retry, fallback), how to build your own with `generateMiddleware`, and the new `model`/`tool`/`generate` interception hooks.
-image: /assets/img/blog/post-headers/genkit-middleware-v2.png
+  A deep dive into the new Genkit middleware system for JavaScript/TypeScript: built-in middleware (filesystem, skills, toolApproval, retry, fallback), how to build your own with `generateMiddleware`, and the new `model`/`tool`/`generate` interception hooks.
+image: /assets/img/blog/post-headers/genkit-middleware.png
 noindex: false
 comments: true
 author: xavi
@@ -18,7 +18,7 @@ tags:
 keywords:
   - genkit
   - genkit-middleware
-  - middleware-v2
+  - middleware
   - generateMiddleware
   - filesystem
   - skills
@@ -38,7 +38,7 @@ lang: en
 
 If you have been building anything non-trivial with Genkit, you have probably bumped into the same set of cross-cutting concerns over and over again: retrying transient model errors, falling back to a cheaper model when quota explodes, gating tool execution behind human approval, injecting filesystem access for coding agents, logging every request and response for observability...
 
-Until now, you ended up either wrapping `ai.generate()` calls by hand or writing ad-hoc helpers that ended up duplicated across flows. The new **Genkit Middleware v2** changes that. It introduces a first-class, composable middleware layer for the `generate()` pipeline, with hooks for the **model**, the **tool execution** and the **high-level generation loop**, plus a small but very useful set of official middlewares published in the brand new `@genkit-ai/middleware` package.
+Until now, you ended up either wrapping `ai.generate()` calls by hand or writing ad-hoc helpers that ended up duplicated across flows. The new **Genkit Middleware** changes that. It introduces a first-class, composable middleware layer for the `generate()` pipeline, with hooks for the **model**, the **tool execution** and the **high-level generation loop**, plus a small but very useful set of official middlewares published in the brand new `@genkit-ai/middleware` package.
 
 This article is a practical tour of what the new middleware system gives you, the built-in middlewares you can drop in today, and how to write your own with `generateMiddleware`.
 
@@ -46,7 +46,7 @@ This article is a practical tour of what the new middleware system gives you, th
 
 > A quick reminder: although this article focuses on the JS/TS middleware API, **Genkit is a multi-language framework**. The official SDKs cover **JavaScript/TypeScript** (primary, stable), **Go**, **Python** (preview) and **Dart/Flutter** (preview), and there is a community-maintained **Java** SDK used in production. The middleware concepts described here are JS/TS-specific today, but the underlying `generate()` pipeline exists across all SDKs and the same patterns are landing on the other runtimes.
 
-## What is middleware in Genkit v2
+## What is middleware in Genkit
 
 Conceptually, Genkit middleware behaves like the middleware you already know from Express or Koa, only applied to the LLM lifecycle instead of HTTP requests:
 
@@ -290,9 +290,9 @@ const response = await ai.generate({
 
 The order matters: outer middlewares see the result of the inner ones. Put logging on the outside if you want it to record the final state after retries and fallbacks; put it on the inside if you want to see every individual model attempt.
 
-## The importance of middleware V2 for production agents
+## The importance of middleware for production agents
 
-Genkit Middleware v2 is one of those features that does not look flashy in a changelog but quietly fixes a lot of real-world friction. It pushes Genkit closer to a "batteries-included" framework for production agents:
+Genkit Middleware is one of those features that does not look flashy in a changelog but quietly fixes a lot of real-world friction. It pushes Genkit closer to a "batteries-included" framework for production agents:
 
 - Cross-cutting concerns are no longer copy-pasted across flows.
 - Safety-critical behavior (approvals, sandboxes, fallbacks) is declarative.
@@ -303,7 +303,7 @@ If you maintain any non-trivial Genkit application, the upgrade is a no-brainer.
 
 ## Conclusion
 
-Middleware v2 turns Genkit's `generate()` from "a function you call" into "a pipeline you compose". The official `@genkit-ai/middleware` package covers the most common production needs (filesystem access, skills, tool approval, retries, fallbacks), and `generateMiddleware` makes writing your own a 20-line affair instead of a refactor.
+Middleware turns Genkit's `generate()` from "a function you call" into "a pipeline you compose". The official `@genkit-ai/middleware` package covers the most common production needs (filesystem access, skills, tool approval, retries, fallbacks), and `generateMiddleware` makes writing your own a 20-line affair instead of a refactor.
 
 For the next steps, take a look at:
 

@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Vercel AI SDK Middleware vs Genkit v2 Middleware: a Hands-On Comparison (English)"
+title: "Vercel AI SDK Middleware vs Genkit Middleware: a Hands-On Comparison (English)"
 description: >
-  A side-by-side comparison of the two leading middleware systems in the JS/TS Gen AI ecosystem: Vercel AI SDK's `wrapLanguageModel` and Genkit v2's `generateMiddleware`. APIs, mental model, built-ins, composition, observability and when to pick each.
+  A side-by-side comparison of the two leading middleware systems in the JS/TS Gen AI ecosystem: Vercel AI SDK's `wrapLanguageModel` and Genkit's `generateMiddleware`. APIs, mental model, built-ins, composition, observability and when to pick each.
 image: /assets/img/blog/post-headers/genkit-vs-vercel-middleware.png
 noindex: false
 comments: true
@@ -39,7 +39,7 @@ Two of the most popular Gen AI frameworks in JavaScript/TypeScript, **Vercel AI 
 On the surface they look very similar. In practice, they sit at different abstraction levels and embody different philosophies. This article puts them side by side using their official docs as the source of truth:
 
 - [Vercel AI SDK — Language Model Middleware](https://ai-sdk.dev/docs/ai-sdk-core/middleware)
-- [Genkit — Middleware (v2)](https://genkit.dev/docs/js/middleware/)
+- [Genkit — Middleware](https://genkit.dev/docs/js/middleware/)
 
 I'll walk through the API surface, the built-ins, how composition works, how you write your own, and finish with a concrete decision matrix.
 
@@ -47,7 +47,7 @@ I'll walk through the API surface, the built-ins, how composition works, how you
 
 ## TL;DR
 
-| Topic | Vercel AI SDK | Genkit v2 |
+| Topic | Vercel AI SDK | Genkit |
 |---|---|---|
 | Primitive | `wrapLanguageModel({ model, middleware })` returns a wrapped model | `use: [...]` array on each `generate()` call |
 | Granularity | Wraps the **language model** (`doGenerate` / `doStream`) | Wraps the **model**, **tool execution**, and **generation loop** |
@@ -82,7 +82,7 @@ const result = streamText({
 
 This is very clean: the middleware travels with the model and is transparent to the rest of your code.
 
-### Genkit v2: opt in per call
+### Genkit: opt in per call
 
 Genkit takes the opposite stance. Instead of wrapping the model, you pass middlewares as part of each `generate()` call via the `use:` array, and you can intercept three different phases of the pipeline: the **model**, the **tools**, and the high-level **generate** loop.
 
@@ -144,7 +144,7 @@ export const yourLogMiddleware: LanguageModelV3Middleware = {
 };
 ```
 
-### Genkit v2
+### Genkit
 
 Three hooks too, but cutting along **execution phase** instead of stream vs non-stream:
 
@@ -191,7 +191,7 @@ Centered on adapting the model contract to real-world quirks:
 
 The theme is clear: **smooth over differences between providers**. Vercel runs an SDK that has to talk to dozens of model providers, so its middleware library reflects that.
 
-### Genkit v2
+### Genkit
 
 Centered on production patterns and agentic behavior:
 
@@ -221,7 +221,7 @@ const wrappedLanguageModel = wrapLanguageModel({
 
 Composition is **static**. The wrapped model is a long-lived value. Great for "configure once at startup" scenarios.
 
-### Genkit v2
+### Genkit
 
 You pass an array to `use:` on every call. Order is the same onion model: outer middlewares wrap inner ones.
 
@@ -266,7 +266,7 @@ await generateText({
 });
 ```
 
-**Genkit v2** is more direct: middleware is invoked as a factory, so you pass config when you instantiate it for that call:
+**Genkit** is more direct: middleware is invoked as a factory, so you pass config when you instantiate it for that call:
 
 ```typescript
 use: [loggerMiddleware({ verbose: true, requestId: 'abc-123' })],
@@ -286,7 +286,7 @@ This is where the two systems diverge most.
 
 In **Vercel AI SDK**, tools live above the middleware layer. The `LanguageModelV3Middleware` spec sits at the model level; agentic loops are handled by higher-level abstractions like `generateText`, `streamText` and the agent APIs (`experimental_prepareStep`, etc.).
 
-In **Genkit v2**, the `tool` and `generate` hooks make tool execution and the agent loop first-class targets for middleware. This is what enables clean implementations of:
+In **Genkit**, the `tool` and `generate` hooks make tool execution and the agent loop first-class targets for middleware. This is what enables clean implementations of:
 
 - Tool approval (`toolApproval`)
 - Tool sandboxing (`filesystem`)
@@ -313,7 +313,7 @@ I would reach for **Vercel AI SDK middleware** when:
 - I am already deep in the Vercel ecosystem (Next.js, AI Gateway, Vercel Observability).
 - Streaming-aware behavior with per-chunk transforms is a hard requirement.
 
-I would reach for **Genkit v2 middleware** when:
+I would reach for **Genkit middleware** when:
 
 - I am building agents with tool calling, and I need tool approval, sandboxing or skill injection.
 - I want production-grade `retry` and `fallback` behavior out of the box.
@@ -325,10 +325,10 @@ And honestly, in many real systems you might use both: Vercel AI SDK on the fron
 
 ## Conclusion
 
-Vercel AI SDK middleware and Genkit v2 middleware are two well-thought-out answers to the same question, asked from different vantage points.
+Vercel AI SDK middleware and Genkit middleware are two well-thought-out answers to the same question, asked from different vantage points.
 
 - Vercel AI SDK treats middleware as a **provider abstraction layer**: you adapt and normalize what providers give you.
-- Genkit v2 treats middleware as a **production-pipeline composition layer**: you orchestrate models, tools and agentic loops with reusable building blocks.
+- Genkit treats middleware as a **production-pipeline composition layer**: you orchestrate models, tools and agentic loops with reusable building blocks.
 
 Pick the one that matches the shape of your problem, and don't be afraid to mix them. The best part of 2026 in JS/TS Gen AI is that both are mature, both are open source, and both let you write your own middleware in a handful of lines.
 
