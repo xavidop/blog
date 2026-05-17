@@ -177,20 +177,20 @@ You can run as many Worker processes as you want against the same task queue. Te
 
 ### 3. Execute a flow as a Temporal Workflow
 
-From any client (an HTTP handler, a CLI, a cron job, another workflow), use `executeFlowWorkflow` to start a workflow and `await` its result:
+From any client (an HTTP handler, a CLI, a cron job, another workflow), use `executeTemporalFlow` to start a workflow and `await` its result:
 
 ```ts
 // client.ts
-import { executeFlowWorkflow } from 'genkitx-temporal';
+import { executeTemporalFlow } from 'genkitx-temporal';
 import { jokeFlow } from './flows';
 
-const result = await executeFlowWorkflow(jokeFlow, 'cats', {
+const result = await executeTemporalFlow(jokeFlow, 'cats', {
   taskQueue: 'my-queue',
 });
 console.log(result);
 ```
 
-If you don't want to block on the result, use `startFlowWorkflow` instead. It returns the raw Temporal `WorkflowHandle`, which lets you query, signal, or cancel the running workflow later. This is the building block for human-in-the-loop scenarios, scheduled flows, fan-out/fan-in patterns, and so on.
+If you don't want to block on the result, use `startTemporalFlow` instead. It returns the raw Temporal `WorkflowHandle`, which lets you query, signal, or cancel the running workflow later. This is the building block for human-in-the-loop scenarios, scheduled flows, fan-out/fan-in patterns, and so on.
 
 ### Configuration
 
@@ -231,8 +231,8 @@ The full public surface is tiny:
 - `temporal(options?)` — the Genkit plugin.
 - `defineTemporalFlow(ai, config, fn)` — define a flow and register it for Temporal execution.
 - `startTemporalWorker(options?)` — start a Worker process.
-- `executeFlowWorkflow(flow, input, options?)` — run a flow inside a Workflow and await the result.
-- `startFlowWorkflow(flow, input, options?)` — same, but returns the `WorkflowHandle` for fire-and-forget / signalling.
+- `executeTemporalFlow(flow, input, options?)` — run a flow inside a Workflow and await the result.
+- `startTemporalFlow(flow, input, options?)` — same, but returns the `WorkflowHandle` for fire-and-forget / signalling.
 - `runGenkitFlowActivity` — the underlying activity, re-exported so you can combine it with your own activities.
 - `registerTemporalFlow(name, flow)` — manually register a flow that was defined elsewhere (useful when wrapping flows you don't own).
 
@@ -264,7 +264,7 @@ The thing I like the most about this plugin is that it composes cleanly with eve
 - **Prompts and Dotprompt.** Versioned `.prompt` files, prompt registries and structured outputs all work unchanged. The flow body is plain Genkit.
 - **Plugins and model providers.** Any Genkit plugin (Google AI, Vertex AI, OpenAI, Anthropic, Ollama, local models, vector stores, etc.) plugs in as usual; the Temporal layer doesn't care which provider is on the other side of the call.
 - **Telemetry and tracing.** Genkit's OpenTelemetry traces continue to be emitted from inside the activity, so they show up in whatever observability backend you already use, alongside Temporal's own event history.
-- **Deployment surfaces.** Flows can still be exposed as HTTP endpoints, Cloud Functions, Firebase callable functions or Express handlers; `executeFlowWorkflow` is just one more entry point, and you can mix and match (e.g. quick chat requests over HTTP, long agent runs through Temporal).
+- **Deployment surfaces.** Flows can still be exposed as HTTP endpoints, Cloud Functions, Firebase callable functions or Express handlers; `executeTemporalFlow` is just one more entry point, and you can mix and match (e.g. quick chat requests over HTTP, long agent runs through Temporal).
 - **Multi-language story.** Genkit is available in JS/TS, Go, Python (preview), Dart/Flutter (preview) and through a community Java SDK. This particular plugin targets JS/TS, but the architectural pattern — define your AI logic in Genkit, run it as a Temporal Workflow — is reusable across runtimes thanks to Temporal's polyglot SDKs.
 
 ## Conclusion
