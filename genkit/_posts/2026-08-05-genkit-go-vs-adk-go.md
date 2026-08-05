@@ -371,7 +371,7 @@ The Genkit version of the same backend is the HTTP glue, a capability declaratio
 
 ```go
 func callOpenAI(ctx context.Context, req *ai.ModelRequest, cb func(context.Context, *ai.ModelResponseChunk) error) (*ai.ModelResponse, error) {
-    body := oaRequest{Model: "gpt-4o-mini"}
+    body := oaRequest{Model: "gpt-5-mini"}
     for _, m := range req.Messages {
         role := string(m.Role) // "system" | "user" | "model"
         if role == "model" {
@@ -386,7 +386,7 @@ func callOpenAI(ctx context.Context, req *ai.ModelRequest, cb func(context.Conte
     }, nil
 }
 
-gpt := genkit.DefineModel(g, "myco/gpt-4o-mini", &ai.ModelOptions{
+gpt := genkit.DefineModel(g, "myco/gpt-5-mini", &ai.ModelOptions{
     Supports: &ai.ModelSupports{Multiturn: true, SystemRole: true},
 }, callOpenAI)
 
