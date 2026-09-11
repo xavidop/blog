@@ -58,6 +58,8 @@ menu:
     url:               https://dzone.com/users/4278252/xavidop.html
   - title:             Categories
     url:               /projects/
+  - title:             Open Source
+    url:               /open-source/
   - title:             Talks
     url:               /talks/
   - title:             Courses

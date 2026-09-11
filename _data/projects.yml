@@ -1,0 +1,170 @@
+# Curated list of my open-source projects, grouped by category.
+# Shown on /open-source/. Star counts are a snapshot, last checked 2026-09-11.
+
+- category: AI and Genkit
+  blurb: >
+    Plugins, operators and tooling for Genkit, the framework I use for
+    almost everything generative these days.
+  projects:
+    - name: genkitx-github
+      url: https://github.com/xavidop/genkitx-github
+      homepage: https://xavidop.github.io/genkitx-github/
+      desc: Community plugin that brings GitHub Models into Genkit, including Llama, Mistral, Cohere, AI21 and OpenAI models.
+      lang: TypeScript
+      stars: 45
+    - name: genkit-java
+      url: https://github.com/genkit-ai/genkit-java
+      homepage: https://genkit-ai.github.io/genkit-java/
+      desc: The port of Genkit to Java that I started, now living under the genkit-ai org. Flows, tools, generation and the dev UI on the JVM.
+      lang: Java
+      stars: 24
+    - name: aws-bedrock-js-plugin
+      url: https://github.com/genkit-ai/aws-bedrock-js-plugin
+      homepage: https://genkit-ai.github.io/aws-bedrock-js-plugin/
+      desc: Official Genkit plugin for AWS Bedrock in JavaScript and TypeScript.
+      lang: TypeScript
+      stars: 13
+    - name: aws-bedrock-go-plugin
+      url: https://github.com/genkit-ai/aws-bedrock-go-plugin
+      homepage: https://pkg.go.dev/github.com/xavidop/genkit-aws-bedrock-go
+      desc: Official Genkit Go plugin for AWS Bedrock.
+      lang: Go
+      stars: 13
+    - name: genkit-operator
+      url: https://github.com/xavidop/genkit-operator
+      homepage: https://xavidop.github.io/genkit-operator/
+      desc: Kubernetes operator that deploys Genkit apps declaratively.
+      lang: Go
+      stars: 7
+    - name: genkitx-voiceflow
+      url: https://github.com/xavidop/genkitx-voiceflow
+      homepage: https://xavidop.github.io/genkitx-voiceflow/
+      desc: Community plugin to use Voiceflow from Genkit as a retriever and model.
+      lang: TypeScript
+      stars: 6
+    - name: genkitx-temporal
+      url: https://github.com/xavidop/genkitx-temporal
+      homepage: https://xavidop.github.io/genkitx-temporal/
+      desc: Deploy Genkit flows as durable Temporal workers.
+      lang: TypeScript
+      stars: 4
+    - name: azure-foundry-js-plugin
+      url: https://github.com/genkit-ai/azure-foundry-js-plugin
+      homepage: https://genkit-ai.github.io/azure-foundry-js-plugin/
+      desc: Official Genkit plugin for Azure AI Foundry and the Azure OpenAI APIs, in JavaScript and TypeScript.
+      lang: TypeScript
+      stars: 3
+    - name: azure-foundry-go-plugin
+      url: https://github.com/genkit-ai/azure-foundry-go-plugin
+      homepage: https://pkg.go.dev/github.com/xavidop/genkit-azure-foundry-go
+      desc: Official Genkit Go plugin for Azure AI Foundry.
+      lang: Go
+      stars: 3
+    - name: genkitx-weaviate
+      url: https://github.com/xavidop/genkitx-weaviate
+      homepage: https://xavidop.github.io/genkitx-weaviate/
+      desc: Weaviate retriever and indexer plugin for Genkit.
+      lang: TypeScript
+      stars: 1
+
+- category: Go libraries and CLIs
+  blurb: >
+    The Go work: libraries I maintain and command line tools that started
+    because I needed them at work.
+  projects:
+    - name: dialogflow-cx-cli
+      url: https://github.com/xavidop/dialogflow-cx-cli
+      homepage: https://cxcli.xavidop.me
+      desc: The missing Dialogflow CX CLI. Manage, test and automate your CX agents from the terminal.
+      lang: Go
+      stars: 49
+    - name: mamori
+      url: https://github.com/xavidop/mamori
+      homepage: https://mamorigo.dev
+      desc: Typed, watchable config and secrets for Go. Loads from 30+ providers into validated structs and reconciles at runtime without a restart.
+      lang: Go
+      stars: 17
+    - name: voiceflow-cli
+      url: https://github.com/xavidop/voiceflow-cli
+      homepage: https://voiceflow.xavidop.me/
+      desc: CLI for Voiceflow projects, including automated testing of your assistants.
+      lang: Go
+      stars: 9
+    - name: senro
+      url: https://github.com/xavidop/senro
+      homepage: https://xavidop.github.io/senro/
+      desc: A pipeline engine defined in Go. Run pipelines locally, in containers, on Kubernetes or over SSH, and attach to them live while they run.
+      lang: Go
+      stars: 4
+    - name: dialogflow-cx-webhook-go
+      url: https://github.com/xavidop/dialogflow-cx-webhook-go
+      desc: Dialogflow CX webhook using protobuf types, with local debugging.
+      lang: Go
+      stars: 4
+    - name: google-action-type-importer
+      url: https://github.com/xavidop/google-action-type-importer
+      desc: CLI that imports slot types from Alexa Skills into Google Actions.
+      lang: Go
+      stars: 3
+
+- category: Products and apps
+  blurb: >
+    Full products rather than libraries, mostly built to find out how far
+    the AI tooling actually goes.
+  projects:
+    - name: cardex
+      url: https://github.com/xavidop/cardex
+      desc: All-in-one AI platform for the Pokemon Trading Card Game.
+      lang: TypeScript
+      stars: 32
+    - name: diamond
+      url: https://github.com/xavidop/diamond
+      homepage: https://diamond.xavidop.me/
+      desc: MLB stats in your terminal and your browser. A Go CLI, a web app and DiamondGPT, all on the public MLB Stats API.
+      lang: Go and TypeScript
+      stars: 3
+    - name: plato
+      url: https://github.com/xavidop/plato
+      desc: Baby cooking companion assistant.
+      lang: Python
+      stars: 1
+    - name: gsa
+      url: https://github.com/xavidop/gsa
+      desc: AI-powered trading card grading and collection management platform.
+      lang: TypeScript
+      stars: 0
+
+- category: Templates, tooling and DevOps
+  blurb: >
+    Things that exist so the next project starts faster.
+  projects:
+    - name: codelab-template
+      url: https://github.com/xavidop/codelab-template
+      homepage: https://xavidop.github.io/codelab-template/
+      desc: Template for building your own codelabs.
+      lang: Template
+      stars: 10
+    - name: book-template
+      url: https://github.com/xavidop/book-template
+      homepage: https://xavidop.github.io/book-template/
+      desc: Turns markdown into epub, pdf, mobi, Leanpub and a website. I wrote my books with it.
+      lang: JavaScript
+      stars: 9
+
+- category: Voice and conversational
+  blurb: >
+    The back catalogue. Alexa, Google Assistant and Dialogflow templates
+    that a lot of people learned on, and that I still get questions about.
+  projects:
+    - name: ask-sdk-mongodb-persistence-adapter
+      url: https://github.com/xavidop/ask-sdk-mongodb-persistence-adapter
+      homepage: https://www.npmjs.com/package/ask-sdk-mongodb-persistence-adapter
+      desc: MongoDB persistence adapter for the Alexa Skills Kit SDK.
+      lang: TypeScript
+      stars: 5
+    - name: dialogflow-cx-messenger-ts
+      url: https://github.com/xavidop/dialogflow-cx-messenger-ts
+      homepage: https://xavidop.github.io/dialogflow-cx-messenger-ts/
+      desc: TypeScript types for the Dialogflow CX Messenger integration.
+      lang: TypeScript
+      stars: 3
