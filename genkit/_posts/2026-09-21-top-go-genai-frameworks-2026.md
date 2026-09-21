@@ -52,9 +52,9 @@ Versions used: Genkit Go v1.13.1, Eino v0.9.20, Google ADK Go v2.4.0, tRPC-Agent
 
 ### History and Direction
 
-Genkit was announced by Google at I/O 2024 as a TypeScript-first framework. The Go SDK arrived only three months later, with v0.1.0 in August 2024, and unlike the Java SDK, which is a community effort, **Genkit Go is an official, first-party SDK** maintained by the same Firebase team that ships the TypeScript runtime. It reached 1.0 in September 2025 and sits at v1.13.1 as of September 2026, on a cadence of roughly one minor release per month.
+Genkit was announced by Google at I/O 2024 as a TypeScript-first framework. The Go SDK arrived only three months later, with v0.1.0 in August 2024, and unlike the Java SDK, which is a community effort, **Genkit Go is an official, first-party SDK** maintained by the same google team that ships the TypeScript runtime. It reached 1.0 in September 2025 and sits at v1.13.1 as of September 2026, on a cadence of roughly one minor release per month.
 
-The direction is parity with TypeScript plus Go-native ergonomics: generics instead of Zod schemas, `context.Context` everywhere, plain `net/http` handlers for flows, and an agents package, still marked experimental, with session stores, multi-agent delegation, artifacts, and a `Skills` middleware. The monorepo (`firebase/genkit`) has 6.4k stars and 80 commits in the last 30 days across all SDKs.
+The direction is parity with TypeScript plus Go-native ergonomics: generics instead of Zod schemas, `context.Context` everywhere, plain `net/http` handlers for flows, and an agents package, still marked experimental, with session stores, multi-agent delegation, artifacts, and a `Skills` middleware. The monorepo (`genkit-ai/genkit`) has 6.4k stars and 80 commits in the last 30 days across all SDKs.
 
 If you want the long-form introduction, start with [Stop Using Python for Your Gen AI Apps, Use Go and Genkit Instead](/genkit/2026-05-04-stop-using-python-genai-use-genkit-go/).
 
@@ -68,9 +68,9 @@ Genkit Go gives you **three levels of abstraction in a single SDK**: direct mode
 
 ```go
 import (
-    "github.com/firebase/genkit/go/ai"
-    "github.com/firebase/genkit/go/genkit"
-    "github.com/firebase/genkit/go/plugins/googlegenai"
+    "github.com/genkit-ai/genkit/go/ai"
+    "github.com/genkit-ai/genkit/go/genkit"
+    "github.com/genkit-ai/genkit/go/plugins/googlegenai"
 )
 
 g := genkit.Init(ctx,
@@ -158,9 +158,9 @@ When you need memory across turns, the experimental agents package adds sessions
 
 ```go
 import (
-    aix "github.com/firebase/genkit/go/ai/exp"
-    "github.com/firebase/genkit/go/ai/exp/localstore"
-    genkitx "github.com/firebase/genkit/go/genkit/exp"
+    aix "github.com/genkit-ai/genkit/go/ai/exp"
+    "github.com/genkit-ai/genkit/go/ai/exp/localstore"
+    genkitx "github.com/genkit-ai/genkit/go/genkit/exp"
 )
 
 advisor := genkitx.DefineAgent(g, "travelAdvisor",
@@ -184,7 +184,7 @@ Multi-agent delegation, cross-vendor fallback, and tool approval are covered in 
 
 #### The Dev UI: Same Power as TypeScript
 
-The **same Genkit Developer UI** that TypeScript developers use works with Go, with no code changes. Install the CLI (Node.js) and start your Go program through it:
+The **same Genkit Developer UI** that TypeScript developers use works with Go, with no code changes. Install the CLI and start your Go program through it:
 
 ```bash
 npm install -g genkit
@@ -216,7 +216,7 @@ Official plugins in the Go module: **Google AI (Gemini)**, **Vertex AI**, **Anth
 | Best-in-class Dev UI with local trace explorer | Agents package still marked experimental |
 | Multi-level abstractions: vanilla, flows, agents | Fewer vector stores than LangChainGo |
 | Middleware: retry, fallback, tool approval | Go 1.25+ required |
-| Official Google SDK, monthly releases | Dev UI needs Node.js installed |
+| Official Google SDK, monthly releases | |
 | Typed output from Go structs, no parsing | |
 | Same framework in TS, Python, Dart, Java | |
 
@@ -850,7 +850,7 @@ If you are on LangChainGo today, the move is not urgent, but it is inevitable: p
 
 | Framework | DX Highlights | Shortcomings |
 |---|---|---|
-| **Genkit Go** | Dev UI with trace explorer. Typed output from structs. Flows are one line from HTTP. | Agents still experimental; Node.js for the CLI |
+| **Genkit Go** | Dev UI with trace explorer. Typed output from structs. Flows are one line from HTTP. | Agents still experimental |
 | **Eino** | Typed graphs, automatic streaming, callbacks everywhere. | Verbose config structs; 0.x churn |
 | **ADK Go** | Iterator-based event loop, generic tools, embedded web UI. | Agent-only; Go 1.26.6 |
 | **tRPC-Agent-Go** | GraphAgent, ADK mental model, resilience built in. | OpenAI-shaped events; option overload |
