@@ -2,14 +2,14 @@
 # If you don't have a JSON Resume you can just edit this YAML file instead.
 # See also: <https://jsonresume.org/>.
 basics:
-  name: "Xavier Portilla Edo"
+  name: "Xavier Portilla"
   label: "Software Engineer"
   picture: "/assets/icons/icon.png"
   email: "xavierportillaedo@gmail.com"
   phone: "(+34) 628 921 252"
-  summary: >
+  summary: |-
     Cloud and DevOps leader specializing in building high-performing teams and transforming startup infrastructure into scalable, enterprise-ready platforms.
-
+    
     Startup mentor, Google Developer Expert, Microsoft MVP and GitHub Star, active speaker, writer and community organizer.
   location:
     address: ""
