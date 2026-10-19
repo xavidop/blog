@@ -256,6 +256,7 @@ def clean_body(root, site, p):
         text = re.sub(r'\]\((/[^)\s]*)\)', lambda m: f']({site}{m.group(1)})', text)                 # md links/images
         return re.sub(r'(src|href)="(/[^"]*)"', lambda m: f'{m.group(1)}="{site}{m.group(2)}"', text)  # raw HTML
     body = map_prose(body, absolutize)
+    body = map_prose(body, lambda t: re.sub(r'\)\{:\.lead[^}]*\}', ')', t))  # Hydejack full-width image attrs
     outside_code = FENCED_BLOCK.sub('', body)
     if re.search(r'\{:[^}]*\}', outside_code):
         fail(f'{p.name}: leftover kramdown attribute ({re.search(r"{:[^}]*}", outside_code).group(0)}); handle it first')
