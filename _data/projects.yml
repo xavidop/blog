@@ -123,6 +123,11 @@
       desc: MLB stats in your terminal and your browser. A Go CLI, a web app and DiamondGPT, all on the public MLB Stats API.
       lang: Go and TypeScript
       stars: 3
+    - name: dash
+      url: https://github.com/xavidop/dash
+      desc: Ambient smart display for a wall tablet, in the spirit of a Nest Hub. Weather, calendar, news, markets, live sports boards, Spotify with lyrics, cooking mode, and a "Hey Dash" voice assistant on the Gemini Live API.
+      lang: TypeScript
+      stars: 2
     - name: plato
       url: https://github.com/xavidop/plato
       desc: Baby cooking companion assistant.
