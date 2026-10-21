@@ -2,7 +2,7 @@
 layout: post
 title: "Genkit Flows on Kubernetes, Routed by a Decision Model: senro + jev in Go (English)"
 description: >
-  Run every step of an AI pipeline as a Genkit flow inside a Kubernetes pod, and let jev, a decision model reached through Genkit's System One plugin, decide which steps run next. senro's Kubernetes executor does the pods, the workspaces and the secrets; a 200 ms typed decision does the routing and the guardrail. A practical guide with a local kind cluster, real Gemini and jev calls, and every output pasted from the run.
+  Run every step of an AI pipeline as a Genkit flow inside a Kubernetes pod, and let jev, a decision model reached through Genkit's System One plugin, decide which steps run next. Gemini writes, jev decides, senro runs the pods. A practical guide with a local kind cluster and every output pasted from a real run.
 image: /assets/img/blog/post-headers/genkit-k8s-senro-jev.png
 noindex: false
 comments: true
@@ -125,7 +125,7 @@ kubectl apply -f k8s/rbac.yaml
 
 The RBAC is the exact set senro needs and nothing more: in the namespace, `create`, `get` and `delete` on pods, `get` on `pods/log`, `create` **and `get`** on `pods/exec`, and `create`, `patch`, `delete` on secrets. At cluster scope, `list` and `get` on nodes, which is how senro reads the platform it has to compile for.
 
-The `get` on `pods/exec` is the one to remember. Workspaces, the pipeline binary and `senro shell` all cross over the exec subresource, and senro speaks the WebSocket exec protocol (`v5.channel.k8s.io`, Kubernetes 1.29 or newer), which is a `GET` on that subresource. A Role with only `create`, the verb the SPDY protocol uses, fails every step with a 403 that surfaces as `reading workspace "case" to send it to pod ...: EOF`.
+The `get` on `pods/exec` is the one to remember: senro uses the WebSocket exec protocol, which is a `GET` on that subresource, and a Role with only `create` fails every step that carries a workspace.
 
 ```yaml
 apiVersion: rbac.authorization.k8s.io/v1
@@ -276,7 +276,7 @@ f.Triage = genkit.DefineFlow(g, "triageTicket", func(ctx context.Context, t Tick
 
 ### Gemini drafts, jev reviews
 
-The draft flow is an ordinary `GenerateData[Reply]` call with the playbook and the ticket in the prompt. One difference from the triage flow: the ticket goes to Gemini as JSON **text**, not as a data part. `ai.NewDataPart` is how a decision model takes an object state; the Gemini plugin refuses it in a user message with `could not convert media part to genai part: missing file data`.
+The draft flow is an ordinary `GenerateData[Reply]` call with the playbook and the ticket in the prompt. One difference from the triage flow: the ticket goes to Gemini as JSON **text**. A data part is how a decision model takes an object state; a chat model takes a prompt.
 
 ```go
 f.Draft = genkit.DefineFlow(g, "draftReply", func(ctx context.Context, in DraftInput) (Reply, error) {
@@ -375,22 +375,9 @@ func flows(ctx senro.Ctx) (*Flows, error) {
 	})
 	return engine, engineErr
 }
-
-// ctx.Secret hands back a file path, never the value.
-func readSecret(ctx senro.Ctx, name string) (string, error) {
-	path := ctx.Secret(name)
-	if path == "" {
-		return "", nil
-	}
-	b, err := os.ReadFile(path)
-	if err != nil {
-		return "", fmt.Errorf("reading secret %s: %w", name, err)
-	}
-	return strings.TrimSpace(string(b)), nil
-}
 ```
 
-Two details matter here. `senro.Ctx` embeds `context.Context`, so it goes straight into `genkit.Init` and into `flow.Run`. And `ctx.Secret(name)` is a **path**: in the pod it points at a `0400` file under `/run/senro/secrets`, projected from a short-lived, immutable Kubernetes `Secret` with an owner reference to the pod. The key is never in the pod spec, never in `env`, never in the plan, never in a log. That is also why the plugin fields are set explicitly: the Gemini plugin would otherwise read `GEMINI_API_KEY` from the environment, and in the pod that variable holds the file's path.
+`readSecret` reads the file that `ctx.Secret(name)` names, and that is the point: in the pod it is a `0400` file under `/run/senro/secrets`, projected from a short-lived Kubernetes `Secret` owned by the pod. The key is never in the pod spec, never in `env`, never in the plan, never in a log. That is also why the plugin fields are set explicitly rather than read from the environment. And `senro.Ctx` embeds `context.Context`, so it goes straight into `genkit.Init` and `flow.Run`.
 
 ![Full-width image](/assets/img/blog/genkit-k8s-jev/secrets-path.png){:.lead data-width="800" data-height="100"}
 
@@ -408,23 +395,6 @@ func init() {
 	senro.RegisterFunc("ai/collect", Collect)
 	senro.RegisterFunc("ai/seed", Seed)
 	senro.RegisterFunc("ai/send", Send)
-}
-
-func Ingest(ctx senro.Ctx, p IngestParams) error {
-	f, err := flows(ctx)
-	if err != nil {
-		return err
-	}
-	raw, err := os.ReadFile(wsPath(ctx, p.File))
-	if err != nil {
-		return err
-	}
-	t, err := f.Ingest.Run(ctx, string(raw))
-	if err != nil {
-		return err
-	}
-	fmt.Fprintf(ctx.Stdout(), "ticket from %s: %s\n", t.Customer, t.Summary)
-	return writeJSON(ctx, "ticket.json", t)
 }
 
 func TriageStep(ctx senro.Ctx, _ NoParams) error {
@@ -457,9 +427,9 @@ func Verify(ctx senro.Ctx, p PlaybookParams) error {
 }
 ```
 
-`Verify` returning an error is the guardrail. A func step that returns an error is a `failed` step, and senro settles every dependent of a failed step as `skipped_upstream_failed`.
+`Verify` returning an error is the guardrail: a func step that returns an error is a `failed` step, and every dependent of a failed step settles as `skipped_upstream_failed`.
 
-The last thing a pod needs from `main` is one line before flag parsing, so that senro's re-entry does not hit your flags:
+One more line in `main`, before flag parsing, so that senro's re-entry into the binary does not hit your flags:
 
 ```go
 func main() {
@@ -501,8 +471,6 @@ Three rules of this executor show up in those six lines:
 - **Requests and limits apply to the step's container only.** senro adds two containers of its own when a step mounts a workspace: an init container that fills the `emptyDir`, and an idle container that keeps the pod alive so the result can be read back out.
 
 ![Full-width image](/assets/img/blog/genkit-k8s-jev/pod-anatomy.png){:.lead data-width="800" data-height="100"}
-
-Every workspace byte crosses the apiserver twice per attempt, in and out. For a few JSON files that is nothing. For a gigabyte of inputs, fetch them inside the pod under `NoSnapshot()` instead.
 
 ## Step 5: run one, the triage
 
@@ -550,7 +518,7 @@ func triagePipeline(ticketPath, outDir string) *senro.Pipeline {
 }
 ```
 
-Each step names only the secret it needs: the Gemini step never sees the TypeSafe key and the jev step never sees the Gemini key. `Timeout` is not decoration on a remote func step; the function has a process of its own in the pod, and the deadline is what ends it if the coordinator dies. The two pod steps are `Pure()` with explicit `Inputs` and `Outputs`, which `Build()` insists on: a `Pure()` step with no `Inputs` is refused, because its cache key could never change when its sources do. `seed` and `collect` run on the coordinator with the workspace mounted, and `collect` copies the two files to disk, which is how the verdict crosses into the second run.
+Each step names only the secret it needs: the Gemini step never sees the TypeSafe key and the jev step never sees the Gemini key. `Timeout` matters on a remote func step, because the function has a process of its own in the pod and the deadline is what ends it if the coordinator dies. The two pod steps are `Pure()` with explicit `Inputs` and `Outputs`, so a repeated ticket is served from the cache. `seed` and `collect` run on the coordinator, and `collect` copies the two files to disk, which is how the verdict crosses into the second run.
 
 The keys are declared once, as a struct mamori resolves from the environment:
 
@@ -579,9 +547,9 @@ run := func(p *senro.Pipeline, extra ...senro.Option) error {
 err = run(triagePipeline(ticket, out))
 ```
 
-`WithFuncBuild(".")` names the package senro cross-compiles for the pods. On a macOS coordinator every func step in a pod needs it, because the pod is Linux. `WithAttach` is what lets `senro run` and `senro attach` render the run live; without it the run still works, it just cannot be watched.
+`WithFuncBuild(".")` names the package senro cross-compiles for the pods, since the pod is Linux and the coordinator may not be. `WithAttach` lets `senro run` and `senro attach` watch the run.
 
-Run it against the first sample ticket, a double charge with a deadline. The senro CLI builds the package, runs it and attaches; on a TTY you get the terminal UI, and with `--ui=plain` the same events as lines:
+Run it against the first sample ticket, a double charge with a deadline. On a TTY you get senro's terminal UI; with `--ui=plain` you get the same events as lines:
 
 ```bash
 senro run . --ui=plain -- -ticket tickets/double-charge.txt
@@ -591,11 +559,9 @@ senro run . --ui=plain -- -ticket tickets/double-charge.txt
 seed started
 seed succeeded
 ingest started
-ingest stderr | 2026/10/20 22:14:40 INFO Genkit initialized env=prod plugins=[googleai] duration=2ms
 ingest stdout | ticket from Marta Ruiz: Card charged twice for invoice INV-2291
 ingest succeeded
 triage started
-triage stderr | 2026/10/20 22:14:48 INFO Genkit initialized env=prod plugins=[typesafe] duration=1ms
 triage stdout | jev-1.13.0 decided: department=billing (confidence 1.00) urgent=true frustration="Annoyed" escalate=false
 triage succeeded
 collect started
@@ -605,7 +571,7 @@ collect succeeded
 run succeeded
 ```
 
-That is a Gemini call and a jev call, each in its own pod, each initialising Genkit with exactly one plugin, with its own log under `runs/<id>/`. The `ingest` step took about seven seconds and the `triage` step about three, pod creation, the 34 MB pipeline binary crossing the apiserver and the model call included. `jev-latest` resolved to `jev-1.13.0`, and the decision says so. The verdict lands in `out/decision.json`:
+A Gemini call and a jev call, each in its own pod, each with its own log under `runs/<id>/`. The whole run took eleven seconds. `jev-latest` resolved to `jev-1.13.0`, and the decision says so. The verdict lands in `out/decision.json`:
 
 ```json
 {
@@ -747,7 +713,7 @@ invoice INV-2291 from March 3rd will be refunded to your original payment
 method within 5 to 10 business days. Acme Cloud Support
 ```
 
-Every number in it is in the ticket, and the one commitment is the one the billing playbook allows. jev's `overpromises` at 0.44 is the reviewer noticing that "within 5 to 10 business days" is a commitment, and the playbook is what keeps it under the threshold.
+Every number in it is in the ticket, and the one commitment is the one the billing playbook allows.
 
 ## Step 7: the guardrail says no
 
@@ -824,7 +790,7 @@ technical/send skipped_upstream_failed
 run failed
 ```
 
-The draft Gemini wrote promised "a full refund of the year, an account credit, and a complete fix within the hour" and verified calls "across your five endpoints", none of which is in the ticket. jev put `overpromises` at 0.98 and `invents` at 0.94, the flow returned an error, senro filed `technical/verify` as `failed` and `technical/send` as `skipped_upstream_failed`, and the run is `failed`. Nothing reached the customer, and the reason is in `verdict.json` next to the draft:
+The draft promised "a full refund of the year, an account credit, and a complete fix within the hour". jev put `overpromises` at 0.98 and `invents` at 0.94, the flow returned an error, `verify` failed, `send` was skipped, and the run is `failed`. Nothing reached the customer, and the reason is in `verdict.json` next to the draft:
 
 ```json
 {
@@ -847,21 +813,7 @@ That is the second place jev determines the next step. The first was between the
 
 ## Step 8: watch it, and run it again
 
-Every run leaves a record, and the CLI reads it back:
-
-```bash
-senro runs -n 4
-```
-
-```
-RUN ID                      PIPELINE  STATUS     STARTED              DURATION
-20261020T221449-7a7f7bd960  resolve   succeeded  2026-10-21 00:14:49  14s
-20261020T221435-c6a8ed3850  triage    succeeded  2026-10-21 00:14:38  11s
-20261020T221243-8040620785  resolve   failed     2026-10-21 00:12:43  17s
-20261020T221229-d56d7f7f3a  triage    succeeded  2026-10-21 00:12:29  11s
-```
-
-Every pod senro creates is labelled, so if a coordinator dies mid-run you can still find and clean up what it left:
+`senro runs` lists every run with its status and duration, and `senro attach --run <id>` replays one. Every pod senro creates is labelled, so if a coordinator dies mid-run you can still find and clean up what it left:
 
 ```bash
 kubectl -n support get pods,secrets -l senro.dev/managed=true
@@ -879,7 +831,7 @@ collect succeeded
 run succeeded
 ```
 
-`cached` is a step state, not a label: no pod, no model call, no tokens. The recorded outputs were restored from the content store and `collect` read the same two files.
+`cached` is a step state, not a label: no pod, no model call, no tokens.
 
 ## What the combination gives you
 
