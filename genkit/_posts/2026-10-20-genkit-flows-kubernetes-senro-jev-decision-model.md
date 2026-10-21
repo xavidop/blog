@@ -288,7 +288,9 @@ f.Draft = genkit.DefineFlow(g, "draftReply", func(ctx context.Context, in DraftI
 		ai.WithPrompt("Playbook:\n%s\n\n%s\n\nTicket:\n%s", in.Playbook, urgency, asJSON(in.Ticket)))
 	// ...
 })
-``` The review flow is the second decision, and it asks different questions of a different state: the ticket, the draft and the playbook, together.
+```
+
+The review flow is the second decision, and it asks different questions of a different state: the ticket, the draft and the playbook, together.
 
 ```go
 type Overpromise struct{}
