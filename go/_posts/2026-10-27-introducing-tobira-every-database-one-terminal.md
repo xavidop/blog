@@ -254,7 +254,7 @@ With the `ai:` section in place, `tobira ask` has three modes. The default propo
 tobira --config config.yaml ask shop "which customers spent the most, with their order count" --collection orders
 ```
 
-````text
+~~~text
 ```sqlite
 SELECT c.id, c.name, COUNT(o.id) AS order_count, SUM(o.total_cents) AS total_spent_cents FROM customers c JOIN orders o ON c.id = o.customer_id GROUP BY c.id, c.name ORDER BY total_spent_cents DESC
 ```
@@ -262,7 +262,7 @@ SELECT c.id, c.name, COUNT(o.id) AS order_count, SUM(o.total_cents) AS total_spe
 This query aggregates orders by customer, calculating the total amount spent (in cents) and the total number of orders placed. It then sorts the customers in descending order by total spend so the top-spending customers appear first.
 
 googleai/gemini-3.8-flash · 483 in / 118 out · 5.4s
-````
+~~~
 
 `--run` proposes and then runs the proposal read-only, exactly as `tobira query --read-only` would:
 
@@ -531,5 +531,5 @@ tobira is MIT licensed and lives at [github.com/xavidop/tobira](https://github.c
 - [MCP server: tools, resources and client setup](https://xavidop.github.io/tobira/docs/mcp/)
 - [Write a driver, and the plugin protocol](https://xavidop.github.io/tobira/docs/write-a-driver/)
 - [The tobira agent skill](https://github.com/xavidop/tobira/tree/main/skills/tobira)
-- [mamori](https://github.com/xavidop/mamori), the library that resolves tobira's secret references, and [its launch post]({% post_url 2026-07-21-introducing-mamori-config-secrets-go %})
+- [mamori](https://github.com/xavidop/mamori), the library that resolves tobira's secret references, and [its launch post]({% post_url go/2026-07-21-introducing-mamori-config-secrets-go %})
 - [Model Context Protocol](https://modelcontextprotocol.io/) and [Genkit Go](https://genkit.dev)
