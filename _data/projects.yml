@@ -72,6 +72,12 @@
     The Go work: libraries I maintain and command line tools that started
     because I needed them at work.
   projects:
+    - name: tobira
+      url: https://github.com/xavidop/tobira
+      homepage: https://xavidop.github.io/tobira/
+      desc: Every database, one terminal. A CLI and TUI for 31 SQL, document, key-value, time-series, graph and vector databases, with a read-only guard, an AI assistant and an MCP server for coding agents.
+      lang: Go
+      stars: 2
     - name: dialogflow-cx-cli
       url: https://github.com/xavidop/dialogflow-cx-cli
       homepage: https://cxcli.xavidop.me
