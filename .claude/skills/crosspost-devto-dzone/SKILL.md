@@ -70,7 +70,8 @@ python3 $SK/scripts/crosspost.py build --overrides <scratchpad>/overrides.json
 ```
 
 Writes `.playwright-mcp/crosspost/<name>.json`, `img/<name>.jpg` and `manifest.json` (that folder is where the
-Playwright MCP server is allowed to read from). The build strips the frontmatter and Hydejack TOC seed, resolves
+Playwright MCP server is allowed to read from). The build strips the frontmatter and Hydejack TOC seed, drops the
+`{% raw %}` / `{% endraw %}` guards that posts put around code holding `{{ }}`, resolves
 `{% post_url %}` and root-relative links to absolute xavidop.me URLs, re-fences code blocks that contain ```
 (dev.to breaks on them), renders DZone HTML with pandoc in DZone's code-block format, and makes a JPEG cover under
 350 KB. It refuses to build when a short description or tags break the rules, and prints warnings for anything

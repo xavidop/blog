@@ -251,6 +251,9 @@ def map_prose(md, fn):
 def clean_body(root, site, p):
     body = re.sub(r'^\{:\.no_toc\}\n1\. this unordered seed list.*\n\{:toc\}\n', '', p.body, flags=re.M)
     body = re.sub(r'\{%\s*post_url\s+(\S+)\s*%\}', lambda m: resolve_post_url(root, site, m.group(1)), body)
+    # Jekyll-only guards around code that holds {{ }} (YAML templates, Go templates). The platforms do not need
+    # them: dev.to escapes Liquid inside code itself, DZone has no Liquid.
+    body = map_prose(body, lambda t: re.sub(r'^\{%-?\s*(?:end)?raw\s*-?%\}[ \t]*\n', '', t, flags=re.M))
 
     def absolutize(text):
         text = re.sub(r'\]\((/[^)\s]*)\)', lambda m: f']({site}{m.group(1)})', text)                 # md links/images
