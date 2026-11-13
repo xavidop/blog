@@ -99,7 +99,7 @@ At the end, you will reuse hikyaku as an LLM proxy that picks a model for each c
 
 ## What You Need
 
-- **hikyaku 1.5.0** or newer.
+- **hikyaku 1.6.1** or newer.
 - `curl` and `openssl`.
 - For the AI router: a **TypeSafe API key** in `TYPESAFE_API_KEY`. It gives access to `jev`, a decision model.
 - For the LLM proxy in step 8: a Gemini key and an Anthropic key.
@@ -762,7 +762,7 @@ Two more commands belong in the same pipeline. `hikyaku lint` warns about risky 
 And `hikyaku graph --dead-letter` draws the spec as a Mermaid flowchart, which GitHub renders in a pull request:
 
 {% raw %}
-```text
+```mermaid
 flowchart LR
   s0(["webhooks<br/>http"])
   r1{{"triage<br/>ai → rules → static"}}

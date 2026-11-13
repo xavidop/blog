@@ -1,0 +1,64 @@
+<!--
+Mermaid diagrams. A fenced code block with the language `mermaid` is drawn as a diagram:
+
+    ```mermaid
+    flowchart LR
+      a --> b
+    ```
+
+The library is only downloaded on pages that have such a block. Hydejack swaps pages without a
+full reload, so the blocks are looked for again after every `hy-push-state-load`, and the
+diagrams are drawn again when the visitor switches between light and dark mode.
+-->
+<style>
+  .mermaid-diagram { margin: 1.5rem 0; text-align: center; overflow-x: auto; }
+  .mermaid-diagram svg { max-width: 100%; height: auto; }
+</style>
+<script type="module">
+  const MERMAID = 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+  let lib;
+
+  const isDark = () => document.body.classList.contains('dark-mode');
+
+  async function draw(nodes) {
+    if (!nodes.length) return;
+    lib = lib || import(MERMAID).then((m) => m.default);
+    const mermaid = await lib;
+    mermaid.initialize({ startOnLoad: false, securityLevel: 'strict', theme: isDark() ? 'dark' : 'default' });
+    nodes.forEach((n) => {
+      n.removeAttribute('data-processed');
+      n.textContent = n.dataset.source;
+      n.dataset.theme = isDark() ? 'dark' : 'default';
+    });
+    try {
+      await mermaid.run({ nodes });
+    } catch (err) {
+      console.error('mermaid:', err);
+    }
+  }
+
+  // Turn every rendered ```mermaid block into a container that mermaid can draw into.
+  function convert() {
+    const made = [];
+    document.querySelectorAll('.language-mermaid code, code.language-mermaid').forEach((code) => {
+      const block = code.closest('.language-mermaid.highlighter-rouge') || code.closest('pre') || code;
+      const div = document.createElement('div');
+      div.className = 'mermaid mermaid-diagram';
+      div.dataset.source = code.textContent.trim();
+      block.replaceWith(div);
+      made.push(div);
+    });
+    return made;
+  }
+
+  const drawNew = () => draw(convert());
+  const redrawAll = () => {
+    const stale = [...document.querySelectorAll('.mermaid-diagram')].filter((n) => n.dataset.theme !== (isDark() ? 'dark' : 'default'));
+    draw(stale);
+  };
+
+  drawNew();
+  const pushState = document.getElementById('_pushState');
+  if (pushState) pushState.addEventListener('hy-push-state-load', drawNew);
+  new MutationObserver(redrawAll).observe(document.body, { attributes: true, attributeFilter: ['class'] });
+</script>

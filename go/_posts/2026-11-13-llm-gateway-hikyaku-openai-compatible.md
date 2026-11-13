@@ -88,7 +88,7 @@ A gateway over three providers:
 
 ## What You Need
 
-- **hikyaku 1.5.0** or newer: `brew install xavidop/tap/hikyaku`, or `go install github.com/xavidop/hikyaku/cmd/hikyaku@latest`.
+- **hikyaku 1.6.1** or newer: `brew install xavidop/tap/hikyaku`, or `go install github.com/xavidop/hikyaku/cmd/hikyaku@latest`.
 - `curl`.
 - API keys for the providers you want to use. This guide uses `GEMINI_API_KEY`, `ANTHROPIC_API_KEY` and `OPENAI_API_KEY`.
 - A **TypeSafe API key** in `TYPESAFE_API_KEY`, for the decision model behind `auto`.
@@ -200,7 +200,7 @@ hikyaku doctor
 `hikyaku graph` draws the spec. The dashed lines are the fallbacks:
 
 {% raw %}
-```text
+```mermaid
 flowchart LR
   s0(["api<br/>openai"])
   r1{{"chat<br/>rules → ai → static"}}
@@ -529,7 +529,6 @@ In a real outage, the circuit breaker helps too. After enough failures on a dest
 Good to know:
 
 - Put fallbacks on a different provider. `smart` to `fast` crosses from Anthropic to Google. `fast` to `backup` crosses from Google to OpenAI.
-- On hikyaku 1.6.0 and older, a `googleai/` destination refuses a request that sets `max_tokens`, `temperature`, `top_p` or `stop`. The fallback answers it instead. Requests without those fields are not affected.
 - Providers accept different parameters. Some OpenAI models refuse `stop`, for example. A fallback can only answer a request that its model accepts.
 
 ## Step 8: Watch Tokens per Model
