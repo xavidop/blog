@@ -52,7 +52,7 @@ Nobody saw it, because nothing checked it. The behaviour that matters was never 
 - a **target**: your agent, wherever it runs (REST, gRPC, a LiveKit room, a phone line and more);
 - **assertions**: deterministic checks on tool calls, backend state and latency, plus **LLM judges** (a model that grades the conversation against a sentence you write).
 
-This is the second of two articles about tamesu. The first one, [Agentic Browser Testing with tamesu]({% post_url go/2026-11-13-agentic-browser-testing-tamesu %}), covers web apps. This one covers AI agents.
+This is the second of three articles about tamesu. The first one, [Agentic Browser Testing with tamesu]({% post_url go/2026-11-13-agentic-browser-testing-tamesu %}), covers web apps. This one covers AI agents. The third one, [Testing A2A Agents with tamesu]({% post_url go/2026-11-13-testing-a2a-agents-tamesu %}), covers agents that talk to other agents.
 
 ![One tamesu test: a persona and a scenario talk to the target, assertions grade it, and a report comes out](/assets/img/blog/tamesu/one-test.png)
 
@@ -809,7 +809,7 @@ The agent in this guide speaks REST. The suite format does not care. Change the 
 | `voice` | Any websocket that carries audio |
 | `model` | A system prompt and tools, with no agent server yet |
 | `mcp` | An MCP server's tools, driven by a model |
-| `a2a` | An agent that speaks the Agent2Agent protocol |
+| `a2a` | An agent that speaks the Agent2Agent protocol, as in [the third article]({% post_url go/2026-11-13-testing-a2a-agents-tamesu %}) |
 | `browser` | A web app in Chromium, as in [the first article]({% post_url go/2026-11-13-agentic-browser-testing-tamesu %}) |
 
 In audio mode, tamesu speaks through text to speech, listens through speech to text, interrupts the agent and measures the time to first audio. [Production-Ready AI Phone Agents with LiveKit]({% post_url gcp/2026-11-09-production-ready-ai-phone-agents-livekit %}) uses it to test real phone calls.
@@ -834,4 +834,5 @@ Start with one test: the rule your agent must never break. Write the persona tha
 - [Recipes](https://xavidop.github.io/tamesu/docs/recipes/): complete projects to copy, from a REST agent to a phone IVR
 - [CI](https://xavidop.github.io/tamesu/docs/ci/): shards, budgets, reporters and the security tab
 - [Agentic Browser Testing with tamesu]({% post_url go/2026-11-13-agentic-browser-testing-tamesu %}), the first article of this set
+- [Testing A2A Agents with tamesu]({% post_url go/2026-11-13-testing-a2a-agents-tamesu %}), the third article of this set
 - [Genkit Go](https://genkit.dev/docs/get-started/?lang=go), the framework the agent is built with

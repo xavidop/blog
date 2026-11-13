@@ -49,7 +49,7 @@ A person does not use a web page that way. A person wants something: "log in", "
 
 **[tamesu](https://github.com/xavidop/tamesu)** (試す, Japanese for *to try, to test*) lets you write tests that way. It is an open-source CLI written in Go. You describe a step in plain language. A browser agent (a model that reads the page and picks the next action) drives a real Chromium until the step is done. Then tamesu saves what the agent did, so the next run replays it without calling the model.
 
-This is the first of two articles about tamesu. This one covers web apps. The second one, [Testing AI Agents with tamesu]({% post_url go/2026-11-13-testing-ai-agents-tamesu %}), covers chatbots and other AI agents.
+This is the first of three articles about tamesu. This one covers web apps. The second one, [Testing AI Agents with tamesu]({% post_url go/2026-11-13-testing-ai-agents-tamesu %}), covers chatbots and other AI agents. The third one, [Testing A2A Agents with tamesu]({% post_url go/2026-11-13-testing-a2a-agents-tamesu %}), covers agents that talk to other agents.
 
 ![tamesu init, validate, list and doctor in a terminal](/assets/img/blog/tamesu/demo.gif)
 
@@ -539,7 +539,7 @@ The action cache is what makes this practical. The agent thinks once per goal. A
 
 Start small. Take the one flow that breaks most often in your selector suite, write it as two or three goals, and run it next to the old test for a week.
 
-The same YAML, the same assertions and the same reports also test AI agents: chatbots over REST, voice agents on LiveKit and phone lines. That is the second article: [Testing AI Agents with tamesu]({% post_url go/2026-11-13-testing-ai-agents-tamesu %}).
+The same YAML, the same assertions and the same reports also test AI agents: chatbots over REST, voice agents on LiveKit and phone lines. That is the second article: [Testing AI Agents with tamesu]({% post_url go/2026-11-13-testing-ai-agents-tamesu %}). The third one, [Testing A2A Agents with tamesu]({% post_url go/2026-11-13-testing-a2a-agents-tamesu %}), tests agents that delegate work to other agents.
 
 ## Further reading
 
@@ -549,4 +549,5 @@ The same YAML, the same assertions and the same reports also test AI agents: cha
 - [CI](https://xavidop.github.io/tamesu/docs/ci/): GitHub Actions, GitLab, Docker, shards and budgets
 - [The demo shop and its suite](https://github.com/xavidop/tamesu/tree/main/examples/browser-shop) in the tamesu repository
 - [Testing AI Agents with tamesu]({% post_url go/2026-11-13-testing-ai-agents-tamesu %}), the second article of this set
+- [Testing A2A Agents with tamesu]({% post_url go/2026-11-13-testing-a2a-agents-tamesu %}), the third article of this set
 - [Production-Ready AI Phone Agents with LiveKit]({% post_url gcp/2026-11-09-production-ready-ai-phone-agents-livekit %}), where tamesu tests real phone calls
