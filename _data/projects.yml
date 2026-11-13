@@ -72,6 +72,18 @@
     The Go work: libraries I maintain and command line tools that started
     because I needed them at work.
   projects:
+    - name: tamesu
+      url: https://github.com/xavidop/tamesu
+      homepage: https://xavidop.github.io/tamesu/
+      desc: Your agents, tested like users would. Agentic testing for web apps and AI agents, where a simulated user talks to your agent or drives your web app, and deterministic checks and LLM judges grade the result. Browser, REST, gRPC, LiveKit, SIP, Twilio, OpenAI Realtime, Pipecat, MCP and A2A targets.
+      lang: Go
+      stars: 5
+    - name: hikyaku
+      url: https://github.com/xavidop/hikyaku
+      homepage: https://xavidop.github.io/hikyaku/
+      desc: A message relay. Read from endpoints, deliver to endpoints, route with AI and never drop a message. Retries, fallbacks and a dead-letter queue at every step, an AI router on decision models, and an OpenAI-compatible LLM proxy, all from one YAML file.
+      lang: Go
+      stars: 1
     - name: tobira
       url: https://github.com/xavidop/tobira
       homepage: https://xavidop.github.io/tobira/
