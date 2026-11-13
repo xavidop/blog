@@ -874,6 +874,8 @@ The easy question went to the cheap, fast model. The hard one went to the strong
 
 Everything from the first seven steps still applies. `smart` has `fallback: [fast]`, so when Anthropic has a bad day, Gemini answers. Retries, the circuit breaker and the metrics work the same way. Any OpenAI SDK can use the proxy: set its base URL to `http://localhost:8080/v1`.
 
+The gateway has its own guide, with streaming, function calling, labeled cases for the model choice and a failover test: [Build an LLM Gateway with hikyaku]({% post_url go/2026-11-13-llm-gateway-hikyaku-openai-compatible %}).
+
 ## What Else Is in the Box
 
 This guide used HTTP on both sides. The relay speaks many more protocols, and each one is a `type:` in the same spec:
@@ -911,5 +913,6 @@ Start with the boring part. Put hikyaku in front of one webhook, with one fallba
 - [Routing and the AI router](https://xavidop.github.io/hikyaku/docs/routing/): engines, thresholds, shadow mode, cache and budget
 - [Retries and fallbacks](https://xavidop.github.io/hikyaku/docs/resilience/) and [the LLM proxy](https://xavidop.github.io/hikyaku/docs/llm-proxy/)
 - [The examples](https://github.com/xavidop/hikyaku/tree/main/examples): webhook fan-out, AI triage, a Kafka bridge, an LLM proxy and two plugins
+- [Build an LLM Gateway with hikyaku]({% post_url go/2026-11-13-llm-gateway-hikyaku-openai-compatible %}), the second hikyaku article
 - [Genkit Flows on Kubernetes with senro and jev]({% post_url genkit/2026-10-20-genkit-flows-kubernetes-senro-jev-decision-model %}), another use of the jev decision model
 - [Testing AI Agents with tamesu]({% post_url go/2026-11-13-testing-ai-agents-tamesu %}), the testing tool from the same family
