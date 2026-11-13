@@ -255,6 +255,22 @@ def clean_body(root, site, p):
     # them: dev.to escapes Liquid inside code itself, DZone has no Liquid.
     body = map_prose(body, lambda t: re.sub(r'^\{%-?\s*(?:end)?raw\s*-?%\}[ \t]*\n', '', t, flags=re.M))
 
+    # The blog draws ```mermaid blocks as diagrams; dev.to and DZone show them as code. The n-th mermaid block of a
+    # post becomes the image assets/img/blog/mermaid/<post-name>-<n>.png (a screenshot of the diagram on the blog,
+    # light theme) when that file exists, and stays a code block otherwise.
+    seen = [0]
+
+    def mermaid_image(m):
+        if not re.match(r'[ \t]*(?:```|~~~)mermaid\b', m.group(1)):
+            return m.group(1)
+        seen[0] += 1
+        rel = f'assets/img/blog/mermaid/{p.name}-{seen[0]}.png'
+        if not os.path.exists(os.path.join(root, rel)):
+            print(f'warning: {p.name}: mermaid block {seen[0]} has no image at {rel}; it stays a code block', file=sys.stderr)
+            return m.group(1)
+        return f'![Diagram of the flow described above]({site}/{rel})'
+    body = FENCED_BLOCK.sub(mermaid_image, body)
+
     def absolutize(text):
         text = re.sub(r'\]\((/[^)\s]*)\)', lambda m: f']({site}{m.group(1)})', text)                 # md links/images
         return re.sub(r'(src|href)="(/[^"]*)"', lambda m: f'{m.group(1)}="{site}{m.group(2)}"', text)  # raw HTML
