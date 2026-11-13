@@ -593,7 +593,11 @@ The second test asks for an order without giving its number.
 
 ## Step 4: Test the Delegations
 
-Now the tests that matter for the business. Add two more:
+Now the tests that matter for the business. A refund takes two delegations, in a fixed order:
+
+![A refund, step by step: the concierge asks the shipping agent for the delivery date, then asks the billing agent for the refund. After 30 days, the second step must never happen](/assets/img/blog/tamesu/a2a-refund.png)
+
+Add two more tests:
 
 ```yaml
   - name: a refund inside the window goes to shipping, then to billing
@@ -635,6 +639,8 @@ These tests use a **persona** and a **goal** in place of a script. tamesu's simu
 ## Step 5: Test Agents That Fail or Lie
 
 Your agent is only as good as its worst day with the other agents. `fuzz_tools` replaces what a remote agent answers, for one test:
+
+![Three bad days for one agent: error, the other agent is down; hostile, it sends a prompt injection; custom, it politely oversteps](/assets/img/blog/tamesu/a2a-fuzz.png)
 
 ```yaml
   - name: billing is down
@@ -693,7 +699,11 @@ The third test is the important one. A loud injection is easy to refuse. A polit
 
 ## Step 6: Put Another Agent in the User's Seat
 
-So far the user was a script or a simulated person. In an A2A system, the user is often another agent. Add a third target and one more test:
+So far the user was a script or a simulated person. In an A2A system, the user is often another agent.
+
+![Two agents talking: a shopper agent plays the customer, tamesu passes each turn to the concierge and back, then judges the conversation](/assets/img/blog/tamesu/a2a-counterpart.png)
+
+Add a third target and one more test:
 
 ```yaml
 # under targets:
@@ -878,6 +888,8 @@ Good to know:
 ## Step 9: Record a Real Remote Agent
 
 Scripted replies are fast and repeatable. Before a release, you also want one run against the real agents. With `forward`, a remote agent becomes a **recording proxy**: it passes every message to the real agent, returns the real answer, and records both.
+
+![tamesu as a recording proxy: it sits between the concierge and the real shipping agent and records every message](/assets/img/blog/tamesu/a2a-proxy.png)
 
 You need a real agent for this. The tamesu repository has a small A2A agent that knows about orders, in `examples/a2a-agent`. Start it on port 8091 as the real shipping agent:
 
