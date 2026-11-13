@@ -7,7 +7,7 @@ description: >
   the voice back catalogue.
 ---
 
-Everything here is public, most of it on [github.com/xavidop](https://github.com/xavidop) and the rest under the [genkit-ai](https://github.com/genkit-ai) org. This page is the curated version, grouped by what each thing is actually for. Star counts are a snapshot from September 2026.
+Everything here is public, most of it on [github.com/xavidop](https://github.com/xavidop) and the rest under the [genkit-ai](https://github.com/genkit-ai) org. This page is the curated version, grouped by what each thing is actually for. Star counts are a snapshot from November 2026.
 
 <div class="oss">
 {% for group in site.data.projects %}

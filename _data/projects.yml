@@ -1,5 +1,5 @@
 # Curated list of my open-source projects, grouped by category.
-# Shown on /open-source/. Star counts are a snapshot, last checked 2026-09-11.
+# Shown on /open-source/. Star counts are a snapshot, last checked 2026-11-13.
 
 - category: AI and Genkit
   blurb: >
@@ -17,7 +17,7 @@
       homepage: https://genkit-ai.github.io/genkit-java/
       desc: The port of Genkit to Java that I started, now living under the genkit-ai org. Flows, tools, generation and the dev UI on the JVM.
       lang: Java
-      stars: 24
+      stars: 26
     - name: aws-bedrock-js-plugin
       url: https://github.com/genkit-ai/aws-bedrock-js-plugin
       homepage: https://genkit-ai.github.io/aws-bedrock-js-plugin/
@@ -47,7 +47,7 @@
       homepage: https://xavidop.github.io/genkitx-temporal/
       desc: Deploy Genkit flows as durable Temporal workers.
       lang: TypeScript
-      stars: 4
+      stars: 5
     - name: azure-foundry-js-plugin
       url: https://github.com/genkit-ai/azure-foundry-js-plugin
       homepage: https://genkit-ai.github.io/azure-foundry-js-plugin/
@@ -89,19 +89,19 @@
       homepage: https://xavidop.github.io/tobira/
       desc: Every database, one terminal. A CLI and TUI for 31 SQL, document, key-value, time-series, graph and vector databases, with a read-only guard, an AI assistant and an MCP server for coding agents.
       lang: Go
-      stars: 2
+      stars: 5
     - name: dialogflow-cx-cli
       url: https://github.com/xavidop/dialogflow-cx-cli
       homepage: https://cxcli.xavidop.me
       desc: The missing Dialogflow CX CLI. Manage, test and automate your CX agents from the terminal.
       lang: Go
-      stars: 49
+      stars: 48
     - name: mamori
       url: https://github.com/xavidop/mamori
       homepage: https://mamorigo.dev
       desc: Typed, watchable config and secrets for Go. Loads from 30+ providers into validated structs and reconciles at runtime without a restart.
       lang: Go
-      stars: 17
+      stars: 18
     - name: voiceflow-cli
       url: https://github.com/xavidop/voiceflow-cli
       homepage: https://voiceflow.xavidop.me/
@@ -113,7 +113,7 @@
       homepage: https://xavidop.github.io/senro/
       desc: A pipeline engine defined in Go. Run pipelines locally, in containers, on Kubernetes or over SSH, and attach to them live while they run.
       lang: Go
-      stars: 4
+      stars: 12
     - name: dialogflow-cx-webhook-go
       url: https://github.com/xavidop/dialogflow-cx-webhook-go
       desc: Dialogflow CX webhook using protobuf types, with local debugging.
@@ -134,18 +134,23 @@
       url: https://github.com/xavidop/cardex
       desc: All-in-one AI platform for the Pokemon Trading Card Game.
       lang: TypeScript
-      stars: 32
+      stars: 33
     - name: diamond
       url: https://github.com/xavidop/diamond
       homepage: https://diamond.xavidop.me/
       desc: MLB stats in your terminal and your browser. A Go CLI, a web app and DiamondGPT, all on the public MLB Stats API.
       lang: Go and TypeScript
-      stars: 3
+      stars: 4
     - name: dash
       url: https://github.com/xavidop/dash
       desc: Ambient smart display for a wall tablet, in the spirit of a Nest Hub. Weather, calendar, news, markets, live sports boards, Spotify with lyrics, cooking mode, and a "Hey Dash" voice assistant on the Gemini Live API.
       lang: TypeScript
-      stars: 2
+      stars: 10
+    - name: chan
+      url: https://github.com/xavidop/chan
+      desc: Cute, configurable companion firmware for a Stack-chan robot. Gemini realtime voice, coding agent status, live sports, clock and weather.
+      lang: C
+      stars: 3
     - name: plato
       url: https://github.com/xavidop/plato
       desc: Baby cooking companion assistant.
