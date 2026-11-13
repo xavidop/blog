@@ -786,6 +786,7 @@ The CAP theorem states that a distributed data store can simultaneously provide 
 Because network partitions are inevitable in real-world systems, architects must fundamentally choose between serving the most up-to-date data (Consistency) or keeping the system operational (Availability) when a network failure occurs.
 ```
 
+{% raw %}
 ```go
 import (
     "github.com/tmc/langchaingo/chains"
@@ -801,6 +802,7 @@ out, err := chains.Predict(ctx, chain, map[string]any{
     "text": "Buenos días", "language": "English",
 })
 ```
+{% endraw %}
 
 ```
 Good morning

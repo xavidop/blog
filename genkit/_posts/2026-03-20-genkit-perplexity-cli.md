@@ -140,6 +140,7 @@ Genkit handles the entire tool-calling loop: the LLM decides it needs web result
 
 The chat agent combines the search tool with a prompt definition and Genkit's chat API:
 
+{% raw %}
 ```typescript
 export function createChatAgent(
   ai: GenkitBeta,
@@ -177,6 +178,7 @@ Answer:`,
   return ai.chat(searchPrompt, { model: model });
 }
 ```
+{% endraw %}
 
 Key things to notice:
 - **`ai.definePrompt`** creates a reusable prompt with typed input, tools, and instructions

@@ -508,6 +508,7 @@ Which of the eleven key components changed, both sides of each digest, and an ex
 
 The other job is the mutable directories tools keep for their own speed: `~/.npm`, `~/.cargo`, a Go module cache. You want yesterday's copy if there is one and you do not care if there is not:
 
+{% raw %}
 ```go
 gomod := senro.ScratchCache("gomod",
 	senro.Key(`gomod-{{ hashFiles "go.sum" }}`),
@@ -516,6 +517,7 @@ gomod := senro.ScratchCache("gomod",
 verify.Step("test", exec.Command("go", "test", "./...")).
 	Mount(gomod.At("/root/go/pkg/mod"))
 ```
+{% endraw %}
 
 A scratch cache is restored best-effort by key and **never enters a cache key**. `RestoreKeys` is the fallback, so a `go.sum` change misses the exact key but still starts from the last module cache rather than from nothing. A miss costs time and nothing else, and a stale entry cannot make a build produce the wrong answer, because nothing downstream is keyed on it.
 

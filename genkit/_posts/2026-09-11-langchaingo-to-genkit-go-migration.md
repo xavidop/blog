@@ -189,6 +189,7 @@ A LangChainGo chain wraps a prompt template and takes a `map[string]any`:
 
 **Before:**
 
+{% raw %}
 ```go
 prompt := prompts.NewPromptTemplate(
     "Triage this support ticket.\n{{.format}}\n\nTicket: {{.ticket}}",
@@ -200,6 +201,7 @@ raw, err := chains.Predict(ctx, chain, map[string]any{
     "ticket": ticket,
 })
 ```
+{% endraw %}
 
 A Genkit flow is a typed Go function. Your input and output types are the contract and the compiler enforces them:
 

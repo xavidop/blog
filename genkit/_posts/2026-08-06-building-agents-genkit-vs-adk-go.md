@@ -208,7 +208,7 @@ if s := aix.SessionFromContext[GameState](ctx); s != nil {
 }
 ```
 
-My run streamed `[{"op":"replace","path":"","value":{"moves":["e4"],"score":10}}]` and `conn.Custom()` returned `score=20 moves=[e4 Nf3]` as a struct. Prompts read the same state with `{{@state.score}}`.
+My run streamed `[{"op":"replace","path":"","value":{"moves":["e4"],"score":10}}]` and `conn.Custom()` returned `score=20 moves=[e4 Nf3]` as a struct. Prompts read the same state with {% raw %}`{{@state.score}}`{% endraw %}.
 
 ADK's session state is `Get(string) (any, error)` / `Set(string, any)`: a map, type assertions at every read, no schema. It works (my run: `score=20 (int)`), and instruction strings can template state with `{score}`, but nothing checks anything at compile time. The 2.0 graph engine does have typed parameter binding, but only for workflow function nodes, not for session state in a chat agent.
 
